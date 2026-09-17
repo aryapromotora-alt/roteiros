@@ -12,6 +12,6 @@ const bancos = [
     { id: 'icred', nome: 'ICRED', data: '17/09/2026' },
     { id: 'pan', nome: 'PAN', data: '17/09/2026' },
     { id: 'parana-banco', nome: 'PARANÁ BANCO', data: '17/09/2026' },
-    { id: 'quali', nome: 'QUALI', data: '17/09/2026' }
-    { id: 'total-cash', nome: 'QUALI', data: '17/09/2026' }  
+    { id: 'quali', nome: 'QUALI', data: '17/09/2026' },
+    { id: 'total-cash', nome: 'TOTAL CASH', data: '17/09/2026' }
 ];
