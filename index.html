@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Roteiros - Consignado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Central de Roteiros</h1>
+            <p class="subtitle">Roteiros atualizados de cada banco</p>
+            <input type="text" id="searchInput" placeholder="Buscar banco..." class="search-box">
+        </header>
+
+        <div class="banks-list" id="banksList"></div>
+
+        <footer>
+            <p>© 2026 - Uso Interno</p>
+        </footer>
+    </div>
+
+    <!-- Modal para Visualizar PDF -->
+    <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">PDF</h3>
+                <button onclick="closeModal()" class="close-btn">×</button>
+            </div>
+            <iframe id="pdfFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- Carrega os dados dos bancos -->
+    <script src="dados.js"></script>
+
+    <script>
+        const list = document.getElementById('banksList');
+        const searchInput = document.getElementById('searchInput');
+
+        // Renderiza os cards na tela
+        function renderBanks(filtro = '') {
+            list.innerHTML = '';
+            
+            bancos.forEach(banco => {
+                if (filtro && !banco.nome.toLowerCase().includes(filtro.toLowerCase())) return;
+                
+                const item = document.createElement('div');
+                item.className = 'bank-item';
+                item.innerHTML = `
+                    <div class="bank-info">
+                        <span class="bank-name">${banco.nome}</span>
+                        <span class="bank-date">${banco.data}</span>
+                    </div>
+                    <div class="bank-actions">
+                        <button onclick="visualizarPDF('${banco.id}')" class="view-btn" title="Visualizar PDF">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                        <a href="pdfs/${banco.id}.pdf" download class="download-btn" title="Baixar PDF">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 6 15 12 9 18"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+
+        // Abre o PDF no modal
+        function visualizarPDF(id) {
+            const banco = bancos.find(b => b.id === id);
+            if (banco) {
+                document.getElementById('modalTitle').textContent = banco.nome;
+                document.getElementById('pdfFrame').src = `pdfs/${id}.pdf`;
+                document.getElementById('pdfModal').style.display = 'flex';
+            }
+        }
+
+        // Fecha o modal
+        function closeModal() {
+            document.getElementById('pdfModal').style.display = 'none';
+            document.getElementById('pdfFrame').src = '';
+        }
+
+        // Busca
+        searchInput.addEventListener('input', (e) => renderBanks(e.target.value));
+        renderBanks();
+
+        // Fechar modal clicando fora
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
