@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roteiros - Consignado</title>
+    <title>Hub Arya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,16 +20,16 @@
         </div>
     </header>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
+    <!-- BARRA DE NAVEGAÇÃO (LINKS ÚTEIS AGORA É O ÚLTIMO) -->
     <nav class="nav-bar">
         <button class="nav-btn active" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
         <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
         <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
         <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
         <a href="simulador.html" class="nav-btn-link">SIMULADORES</a>
-        <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
         <button class="nav-btn" onclick="showSection('botao7', this)">Botão 7</button>
         <button class="nav-btn" onclick="showSection('botao8', this)">Botão 8</button>
+        <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
     </nav>
 
     <!-- SEÇÃO: ROTEIROS INSS -->
@@ -49,24 +49,6 @@
                 <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box">
             </div>
             <div class="links-grid" id="linksGrid">
-                <!-- AGIBANK -->
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">AGIBANK</div>
-                        <div class="link-url">bancoagibank.my.site.com</div>
-                    </div>
-                    <a href="https://bancoagibank.my.site.com/s/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <!-- AGIBANK (Force) -->
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">AGIBANK (Force)</div>
-                        <div class="link-url">agibank.force.com</div>
-                    </div>
-                    <a href="https://agibank.force.com/s" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
                 <!-- AMIGOZ -->
                 <div class="link-card">
                     <div class="link-info">
@@ -110,15 +92,6 @@
                         <div class="link-url">www.bibcred.com.br</div>
                     </div>
                     <a href="http://www.bibcred.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <!-- BANCO MASTER -->
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO MASTER</div>
-                        <div class="link-url">autenticacao.bancomaster.com.br</div>
-                    </div>
-                    <a href="https://autenticacao.bancomaster.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
                 <!-- BANCO NG CRED -->
@@ -263,15 +236,6 @@
                         <div class="link-url">app1.gerencialcredito.com.br</div>
                     </div>
                     <a href="https://app1.gerencialcredito.com.br/CREFISA/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <!-- CRONOS -->
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CRONOS</div>
-                        <div class="link-url">sistema.cronosbank.com.br</div>
-                    </div>
-                    <a href="https://sistema.cronosbank.com.br/backoffice/home" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
                 <!-- DAYCOVAL -->
@@ -508,15 +472,6 @@
                     <a href="https://phtech.uy3.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PICPAY -->
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PICPAY</div>
-                        <div class="link-url">consignado.picpay.com</div>
-                    </div>
-                    <a href="https://consignado.picpay.com/minhas-propostas" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
                 <!-- PORTAL AERONÁUTICA -->
                 <div class="link-card">
                     <div class="link-info">
@@ -685,7 +640,7 @@
         </div>
     </section>
 
-    <!-- SEÇÕES VAZIAS (placeholders) -->
+    <!-- SEÇÕES VAZIAS (placeholders para novos roteiros) -->
     <section id="botao7" class="section" style="display:none;"></section>
     <section id="botao8" class="section" style="display:none;"></section>
 
