@@ -3,51 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roteiros - Consignado</title>
+    <title>Links Úteis - Roteiros INSS</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .links-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .search-links-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 18px;
+            border: 1px solid #FFD700;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            margin: 0 auto;
+            display: block;
+            background: #1a1a1a;
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-links-box:focus {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-links-box::placeholder {
+            color: #a0a0a0;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            background: #252540;
+            border-color: #FFD700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .link-info {
+            flex: 1;
+        }
+
+        .link-name {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .link-url {
+            color: #8a8aa0;
+            font-size: 0.75rem;
+            word-break: break-all;
+        }
+
+        .link-btn {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .link-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+        }
+
+        .no-results {
+            text-align: center;
+            color: white;
+            font-size: 1.1rem;
+            padding: 40px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- HEADER PRINCIPAL -->
-    <header class="main-header">
-        <div class="header-content">
-            <div class="header-title">
-                <h1>Hub Arya</h1>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-side header-left">
+                    <a href="index.html" class="header-btn">VOLTAR AO INÍCIO</a>
+                </div>
+                
+                <div class="header-center">
+                    <h1>LINKS ÚTEIS</h1>
+                    <p class="subtitle">Acesso rápido aos sistemas dos bancos</p>
+                    <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-links-box">
+                </div>
+                
+                <div class="header-side header-right">
+                    <a href="index.html" class="header-btn">ROTEIROS</a>
+                </div>
             </div>
-            <div class="header-logos">
-                <img src="logo1.png" alt="Logo 1" class="logo logo1">
-                <img src="logo2.png" alt="Logo 2" class="logo logo2">
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
-    <nav class="nav-bar">
-        <button class="nav-btn active" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
-        <a href="simulador.html" class="nav-btn-link">SIMULADORES</a>
-        <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
-        <button class="nav-btn" onclick="showSection('botao7', this)">Botão 7</button>
-        <button class="nav-btn" onclick="showSection('botao8', this)">Botão 8</button>
-    </nav>
-
-    <!-- SEÇÃO: ROTEIROS INSS -->
-    <section id="roteiros-inss" class="section active">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box">
-            </div>
-            <div class="banks-list" id="banksList"></div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO: LINKS ÚTEIS -->
-    <section id="links-uteis" class="section">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box">
-            </div>
+        <div class="links-container">
             <div class="links-grid" id="linksGrid">
                 <!-- AGIBANK -->
                 <div class="link-card">
@@ -166,7 +250,7 @@
                     <a href="https://sistema.somabp2.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PORT TECH -->
+                <!-- BANCO: PORT TECH -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORT TECH</div>
@@ -445,7 +529,7 @@
                     <a href="https://mb-ui-pcb-site-pcb.meumb.mercantil.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- OLÉ - Sistema Consignado -->
+                <!-- OLÉ - Sistema Ole Consignado -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">OLÉ - Sistema Consignado</div>
@@ -616,7 +700,7 @@
                     <a href="https://portaldecredito.queromaisconsignado.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- SAFRA -->
+                <!-- Safra -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SAFRA</div>
@@ -679,88 +763,25 @@
                     <a href="https://gestao.sistemacorban.com.br/index.php/auth/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
             </div>
-            <div class="no-results" id="noResultsLinks">
+
+            <!-- MENSAGEM QUANDO NÃO ENCONTRAR -->
+            <div class="no-results" id="noResults">
                 Nenhum banco encontrado com esse nome.
             </div>
         </div>
-    </section>
 
-    <!-- SEÇÕES VAZIAS (placeholders) -->
-    <section id="botao7" class="section" style="display:none;"></section>
-    <section id="botao8" class="section" style="display:none;"></section>
+        <footer>
+            <p>© 2026 - Uso Interno</p>
+        </footer>
+    </div>
 
-    <footer>
-        <p>© 2026 - Uso Interno</p>
-    </footer>
-
-    <!-- Carrega os dados dos bancos -->
-    <script src="dados.js"></script>
-
+    <!-- SCRIPT DE BUSCA -->
     <script>
-        // Função para mostrar/esconder seções
-        function showSection(sectionId, clickedBtn) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-                section.style.display = 'none';
-            });
-            
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-                setTimeout(() => selectedSection.classList.add('active'), 10);
-            }
-            
-            if (clickedBtn) {
-                clickedBtn.classList.add('active');
-            }
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        const searchInput = document.getElementById('searchLinksInput');
+        const linkCards = document.querySelectorAll('.link-card');
+        const noResults = document.getElementById('noResults');
 
-        function openPdf(url) {
-            window.open(url, '_blank');
-        }
-
-        const list = document.getElementById('banksList');
-        const searchBanksInput = document.getElementById('searchBanksInput');
-
-        function renderBanks(filtro = '') {
-            list.innerHTML = '';
-            
-            bancos.forEach(banco => {
-                if (filtro && !banco.nome.toLowerCase().includes(filtro.toLowerCase())) return;
-                
-                const item = document.createElement('div');
-                item.className = 'bank-item';
-                item.innerHTML = `
-                    <div class="bank-info">
-                        <span class="bank-name">${banco.nome}</span>
-                        <span class="bank-date">${banco.data}</span>
-                    </div>
-                    <div class="bank-actions">
-                        <a href="pdfs/${banco.id}.pdf" target="_blank" class="download-btn" title="Abrir PDF">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 6 15 12 9 18"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                `;
-                list.appendChild(item);
-            });
-        }
-
-        searchBanksInput.addEventListener('input', (e) => renderBanks(e.target.value));
-        renderBanks();
-
-        const searchLinksInput = document.getElementById('searchLinksInput');
-        const linkCards = document.querySelectorAll('#linksGrid .link-card');
-        const noResultsLinks = document.getElementById('noResultsLinks');
-
-        searchLinksInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', function(e) {
             const filtro = e.target.value.toLowerCase().trim();
             let visiveis = 0;
 
@@ -776,41 +797,11 @@
                 }
             });
 
+            // Mostra mensagem se não encontrar nada
             if (visiveis === 0 && filtro !== '') {
-                noResultsLinks.style.display = 'block';
+                noResults.style.display = 'block';
             } else {
-                noResultsLinks.style.display = 'none';
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const section = urlParams.get('section');
-            
-            if (section) {
-                document.querySelectorAll('.section').forEach(s => {
-                    s.classList.remove('active');
-                    s.style.display = 'none';
-                });
-                
-                document.querySelectorAll('.nav-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                const targetSection = document.getElementById(section);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                    setTimeout(() => targetSection.classList.add('active'), 10);
-                    
-                    const botoes = document.querySelectorAll('.nav-btn');
-                    botoes.forEach(btn => {
-                        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${section}'`)) {
-                            btn.classList.add('active');
-                        }
-                    });
-                }
-                
-                window.scrollTo(0, 0);
+                noResults.style.display = 'none';
             }
         });
     </script>

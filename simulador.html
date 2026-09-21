@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simuladores - Roteiros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-title">
+                <h1>Hub Arya</h1>
+            </div>
+            <div class="header-logos">
+                <img src="logo1.png" alt="Logo 1" class="logo logo1">
+                <img src="logo2.png" alt="Logo 2" class="logo logo2">
+            </div>
+        </div>
+    </header>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-btn-link">ROTEIROS INSS</a>
+        <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
+        <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
+        <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
+        <button class="nav-btn active">SIMULADORES</button>
+        <a href="index.html?section=links-uteis" class="nav-btn-link">LINKS ÚTEIS</a>
+        <button class="nav-btn">Botão 7</button>
+        <button class="nav-btn">Botão 8</button>
+    </nav>
+
+    <!-- CONTEÚDO DOS SIMULADORES -->
+    <section class="section active">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box">
+            </div>
+            <div class="links-grid" id="simuladoresGrid">
+                
+                <!-- QUALI BANKING -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">QUALI BANKING</div>
+                        <div class="link-date">17/09/2026</div>
+                        <div class="link-url">qualibanking.com.br</div>
+                    </div>
+                    <a href="https://qualibanking.com.br/simulador/port-inss/" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+                <!-- SIMULADOR DAYCOVAL -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">SIMULADOR DAYCOVAL</div>
+                        <div class="link-date">22/09/2026</div>
+                        <div class="link-url">simulador-daycoval.xlsx</div>
+                    </div>
+                    <a href="simuladores/simulador-daycoval.xlsx" target="_blank" class="link-btn">Baixar / Abrir</a>
+                </div>
+
+                <!-- SIMULADOR 3 (Placeholder) -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">Simulador 3</div>
+                        <div class="link-date">--/--/----</div>
+                        <div class="link-url">em-breve.com</div>
+                    </div>
+                    <a href="#" target="_blank" class="link-btn">Em breve</a>
+                </div>
+
+            </div>
+            <div class="no-results" id="noResultsSimuladores">
+                Nenhum simulador encontrado com esse nome.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 - Uso Interno</p>
+    </footer>
+
+    <script>
+        function openPdf(url) {
+            window.open(url, '_blank');
+        }
+
+        const searchSimuladoresInput = document.getElementById('searchSimuladoresInput');
+        const simuladorCards = document.querySelectorAll('#simuladoresGrid .link-card');
+        const noResultsSimuladores = document.getElementById('noResultsSimuladores');
+
+        searchSimuladoresInput.addEventListener('input', function(e) {
+            const filtro = e.target.value.toLowerCase().trim();
+            let visiveis = 0;
+
+            simuladorCards.forEach(card => {
+                const nome = card.querySelector('.link-name').textContent.toLowerCase();
+                const url = card.querySelector('.link-url').textContent.toLowerCase();
+                
+                if (nome.includes(filtro) || url.includes(filtro)) {
+                    card.style.display = 'flex';
+                    visiveis++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visiveis === 0 && filtro !== '') {
+                noResultsSimuladores.style.display = 'block';
+            } else {
+                noResultsSimuladores.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
