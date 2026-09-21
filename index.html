@@ -20,13 +20,13 @@
         </div>
     </header>
 
-    <!-- BARRA DE NAVEGAÇÃO (LINKS ÚTEIS AGORA É O ÚLTIMO) -->
+    <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="nav-bar">
         <button class="nav-btn active" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
+        <button class="nav-btn" onclick="openPdf('pdfs/regras-portabilidade-geral.pdf')">RESUMO GERAL PORT</button>
         <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
         <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
-        <a href="simulador.html" class="nav-btn-link">SIMULADORES</a>
+        <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
         <button class="nav-btn" onclick="showSection('botao7', this)">Botão 7</button>
         <button class="nav-btn" onclick="showSection('botao8', this)">Botão 8</button>
         <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
@@ -42,6 +42,51 @@
         </div>
     </section>
 
+    <!-- SEÇÃO: SIMULADORES -->
+    <section id="simuladores" class="section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box">
+            </div>
+            <div class="links-grid" id="simuladoresGrid">
+                
+                <!-- QUALI BANKING -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">QUALI BANKING</div>
+                        <div class="link-date">17/09/2026</div>
+                        <div class="link-url">qualibanking.com.br</div>
+                    </div>
+                    <a href="https://qualibanking.com.br/simulador/port-inss/" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+                <!-- SIMULADOR DAYCOVAL -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">SIMULADOR DAYCOVAL</div>
+                        <div class="link-date">22/09/2026</div>
+                        <div class="link-url">simulador-daycoval.xlsx</div>
+                    </div>
+                    <a href="simuladores/simulador-daycoval.xlsx" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+                <!-- SIMULADOR QUERO MAIS -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">SIMULADOR QUERO MAIS</div>
+                        <div class="link-date">22/09/2026</div>
+                        <div class="link-url">simulador-quero-mais.xlsx</div>
+                    </div>
+                    <a href="simuladores/simulador-quero-mais.xlsx" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+            </div>
+            <div class="no-results" id="noResultsSimuladores">
+                Nenhum simulador encontrado com esse nome.
+            </div>
+        </div>
+    </section>
+
     <!-- SEÇÃO: LINKS ÚTEIS -->
     <section id="links-uteis" class="section">
         <div class="container">
@@ -49,6 +94,24 @@
                 <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box">
             </div>
             <div class="links-grid" id="linksGrid">
+                <!-- AGIBANK -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">AGIBANK</div>
+                        <div class="link-url">bancoagibank.my.site.com</div>
+                    </div>
+                    <a href="https://bancoagibank.my.site.com/s/" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+                <!-- AGIBANK (Force) -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">AGIBANK (Force)</div>
+                        <div class="link-url">agibank.force.com</div>
+                    </div>
+                    <a href="https://agibank.force.com/s" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
                 <!-- AMIGOZ -->
                 <div class="link-card">
                     <div class="link-info">
@@ -92,6 +155,15 @@
                         <div class="link-url">www.bibcred.com.br</div>
                     </div>
                     <a href="http://www.bibcred.com.br" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
+                <!-- BANCO MASTER -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">BANCO MASTER</div>
+                        <div class="link-url">autenticacao.bancomaster.com.br</div>
+                    </div>
+                    <a href="https://autenticacao.bancomaster.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
                 <!-- BANCO NG CRED -->
@@ -711,6 +783,35 @@
         searchBanksInput.addEventListener('input', (e) => renderBanks(e.target.value));
         renderBanks();
 
+        // Busca de simuladores
+        const searchSimuladoresInput = document.getElementById('searchSimuladoresInput');
+        const simuladorCards = document.querySelectorAll('#simuladoresGrid .link-card');
+        const noResultsSimuladores = document.getElementById('noResultsSimuladores');
+
+        searchSimuladoresInput.addEventListener('input', function(e) {
+            const filtro = e.target.value.toLowerCase().trim();
+            let visiveis = 0;
+
+            simuladorCards.forEach(card => {
+                const nome = card.querySelector('.link-name').textContent.toLowerCase();
+                const url = card.querySelector('.link-url').textContent.toLowerCase();
+                
+                if (nome.includes(filtro) || url.includes(filtro)) {
+                    card.style.display = 'flex';
+                    visiveis++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visiveis === 0 && filtro !== '') {
+                noResultsSimuladores.style.display = 'block';
+            } else {
+                noResultsSimuladores.style.display = 'none';
+            }
+        });
+
+        // Busca de links úteis
         const searchLinksInput = document.getElementById('searchLinksInput');
         const linkCards = document.querySelectorAll('#linksGrid .link-card');
         const noResultsLinks = document.getElementById('noResultsLinks');
