@@ -1,3 +1,6 @@
+/* =========================================
+   RESET E BASE
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +11,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #F5F5F0;
     min-height: 100vh;
+    color: #333;
+    overflow-x: hidden; /* ✅ CORREÇÃO: impede barra de rolagem horizontal */
 }
 
 /* =========================================
@@ -41,7 +46,7 @@ body {
     position: relative;
     width: 200px;
     height: 70px;
-    overflow: visible;
+    overflow: visible; /* Mantém visible para a animação funcionar */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,7 +126,9 @@ body {
     border-bottom: 2px solid #FFD700;
 }
 
-.nav-btn {
+/* Botões normais e Links de navegação */
+.nav-btn,
+.nav-btn-link {
     background: #F4D03F;
     color: #000000;
     border: 1px solid #D4AC0D;
@@ -138,12 +145,14 @@ body {
     font-family: inherit;
 }
 
-.nav-btn:hover {
+.nav-btn:hover,
+.nav-btn-link:hover {
     background: #F7DC6F;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* BOTÃO ATIVO - INVERTIDO (Preto com texto dourado) */
 .nav-btn.active {
     background: #000000;
     color: #FFD700;
@@ -152,28 +161,6 @@ body {
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(2px);
     font-weight: 700;
-}
-
-.nav-btn-link {
-    background: #F4D03F;
-    color: #000000;
-    border: 1px solid #D4AC0D;
-    border-bottom: 4px solid #D4AC0D;
-    padding: 10px 20px;
-    border-radius: 8px 8px 0 0;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.nav-btn-link:hover {
-    background: #F7DC6F;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* =========================================
@@ -230,7 +217,7 @@ body {
 }
 
 /* =========================================
-   LISTA DE BANCOS
+   LISTA DE BANCOS (ROTEIROS)
    ========================================= */
 .banks-list {
     display: grid;
@@ -342,6 +329,7 @@ body {
     margin-bottom: 5px;
 }
 
+/* DATA NOS CARDS */
 .link-date {
     color: #8a8aa0;
     font-size: 0.75rem;
