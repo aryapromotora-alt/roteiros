@@ -24,18 +24,83 @@
 
     <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="nav-bar">
-        <button class="nav-btn active" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
+        <button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
+        <button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
         <button class="nav-btn" onclick="openPdf('pdfs/regras-portabilidade-geral.pdf')">RESUMO GERAL PORT</button>
         <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
         <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
         <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
-        <button class="nav-btn" onclick="showSection('botao7', this)">Botão 7</button>
-        <button class="nav-btn" onclick="showSection('botao8', this)">Botão 8</button>
+        <button class="nav-btn" onclick="showSection('roteiro-siape', this)">ROTEIRO SIAPE</button>
         <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
     </nav>
 
-    <!-- SEÇÃO: ROTEIROS INSS -->
-    <section id="roteiros-inss" class="section active">
+    <!-- ========================================== -->
+    <!-- SEÇÃO 1: COMUNICADOS (ATIVA POR PADRÃO)    -->
+    <!-- ========================================== -->
+    <section id="mural" class="section active">
+        <div class="container">
+            <div class="mural-header">
+                <h2>COMUNICADOS</h2>
+                <p class="mural-subtitle">Avisos e informações importantes para a equipe</p>
+            </div>
+
+            <div class="mural-grid">
+                <!-- COLUNA ESQUERDA: 2 cards empilhados -->
+                <div class="mural-coluna mural-lateral">
+                    <div class="mural-card mural-small">
+                        <div class="mural-card-header">
+                            <span class="mural-titulo">BANCO BRB</span>
+                            <span class="mural-data">22/09/2026</span>
+                        </div>
+                        <p class="mural-texto">O banco BRB com problemas no SISTEMA, sem previsao de retorno. </p>
+                    </div>
+
+                    <div class="mural-card mural-small">
+                        <div class="mural-card-header">
+                            <span class="mural-titulo">Novos Simuladores</span>
+                            <span class="mural-data">22/09/2026</span>
+                        </div>
+                        <p class="mural-texto">Simulador, daycoval, quero+. Arquivo atualizado em 22/09/2026.</p>
+                    </div>
+                </div>
+
+                <!-- COLUNA CENTRAL: 1 card grande -->
+                <div class="mural-coluna mural-central">
+                    <div class="mural-card mural-large">
+                        <div class="mural-card-header">
+                            <span class="mural-titulo">Roteiros atualizados</span>
+                            <span class="mural-data">21/09/2026</span>
+                        </div>
+                        <p class="mural-texto">Roteiros atualizados</p>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA: 2 cards empilhados -->
+                <div class="mural-coluna mural-lateral">
+                    <div class="mural-card mural-small">
+                        <div class="mural-card-header">
+                            <span class="mural-titulo">Analise</span>
+                            <span class="mural-data">20/09/2026</span>
+                        </div>
+                        <p class="mural-texto">Breve</p>
+                    </div>
+
+                    <div class="mural-card mural-small">
+                        <div class="mural-card-header">
+                            <span class="mural-titulo">Atualização </span>
+                            <span class="mural-data">19/09/2026</span>
+                        </div>
+                        <p class="mural-texto">Breve</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO 2: ROTEIROS INSS                     -->
+    <!-- ========================================== -->
+    <section id="roteiros-inss" class="section">
         <div class="container">
             <div class="search-container">
                 <input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box">
@@ -44,15 +109,15 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: SIMULADORES -->
+    <!-- ========================================== -->
+    <!-- SEÇÃO 3: SIMULADORES                       -->
+    <!-- ========================================== -->
     <section id="simuladores" class="section">
         <div class="container">
             <div class="search-container">
                 <input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box">
             </div>
             <div class="links-grid" id="simuladoresGrid">
-                
-                <!-- QUALI BANKING -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">QUALI BANKING</div>
@@ -61,8 +126,6 @@
                     </div>
                     <a href="https://qualibanking.com.br/simulador/port-inss/" target="_blank" class="link-btn">Acessar</a>
                 </div>
-
-                <!-- SIMULADOR DAYCOVAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SIMULADOR DAYCOVAL</div>
@@ -71,8 +134,6 @@
                     </div>
                     <a href="simuladores/simulador-daycoval.xlsx" target="_blank" class="link-btn">Acessar</a>
                 </div>
-
-                <!-- SIMULADOR QUERO MAIS -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SIMULADOR QUERO MAIS</div>
@@ -81,23 +142,30 @@
                     </div>
                     <a href="simuladores/simulador-quero-mais.xlsx" target="_blank" class="link-btn">Acessar</a>
                 </div>
-
             </div>
-            <div class="no-results" id="noResultsSimuladores">
-                Nenhum simulador encontrado com esse nome.
-            </div>
+            <div class="no-results" id="noResultsSimuladores">Nenhum simulador encontrado.</div>
         </div>
     </section>
 
-    <!-- SEÇÃO: LINKS ÚTEIS (AGIBANK, AGIBANK FORCE E BANCO MASTER REMOVIDOS) -->
+    <!-- ========================================== -->
+    <!-- SEÇÃO 4: ROTEIRO SIAPE                     -->
+    <!-- ========================================== -->
+    <section id="roteiro-siape" class="section">
+        <div class="container">
+            <h2 style="color:white; text-align:center; padding:40px;">Roteiro SIAPE - Em breve</h2>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO 5: LINKS ÚTEIS                       -->
+    <!-- ========================================== -->
     <section id="links-uteis" class="section">
         <div class="container">
             <div class="search-container">
                 <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box">
             </div>
             <div class="links-grid" id="linksGrid">
-
-                <!-- AMIGOZ -->
+                
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">AMIGOZ</div>
@@ -106,7 +174,6 @@
                     <a href="https://amigozconsig.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO BRB INCONTA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO BRB INCONTA</div>
@@ -115,7 +182,6 @@
                     <a href="https://simulador.incontadigital.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO BTW -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO BTW</div>
@@ -124,7 +190,6 @@
                     <a href="https://consig.btwbank.com/WebSites/FIMenuMVC/Login/AC.UI.LOGIN.aspx?FISession=8882e7ec7173" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO HOPE -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO HOPE</div>
@@ -133,7 +198,6 @@
                     <a href="https://hope.titan.ceoslab.app/operacional/operacoes" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO INDUSTRIAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO INDUSTRIAL</div>
@@ -142,7 +206,6 @@
                     <a href="http://www.bibcred.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO NG CRED -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO NG CRED</div>
@@ -151,7 +214,6 @@
                     <a href="https://front.nossagentecard.com.br/appmenu/Login/ICLogin?ReturnUrl=%2Fappmenu%2F" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO NOSSA FINTECH -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO NOSSA FINTECH</div>
@@ -160,7 +222,6 @@
                     <a href="https://anossafintech.com.br/desk" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO PEGCARD -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO PEGCARD</div>
@@ -169,7 +230,6 @@
                     <a href="https://app.pegsystem.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANCO PRATA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO PRATA</div>
@@ -178,7 +238,6 @@
                     <a href="https://admin.bancoprata.com.br/hub" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- Banco SOMA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANCO SOMA</div>
@@ -187,7 +246,6 @@
                     <a href="https://sistema.somabp2.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PORT TECH -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORT TECH</div>
@@ -196,7 +254,6 @@
                     <a href="https://portpromotora.corban.tec.br/login/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BANRISUL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BANRISUL</div>
@@ -205,7 +262,6 @@
                     <a href="https://bemweb.bempromotora.com.br/autenticacao/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BMG CONSIG -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BMG CONSIG</div>
@@ -214,7 +270,6 @@
                     <a href="https://www.bmgconsig.com.br/principal/fsconsignataria.jsp" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- BRB RED -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">BRB RED</div>
@@ -223,7 +278,6 @@
                     <a href="https://esteira.redconsig.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- C6 BANK -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">C6 BANK</div>
@@ -232,7 +286,6 @@
                     <a href="https://c6.c6consig.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CAIXA 360 -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CAIXA 360</div>
@@ -241,7 +294,6 @@
                     <a href="https://promotoramax.consig360.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CÁLCULO IMPOSTO DE RENDA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CÁLCULO IMPOSTO DE RENDA</div>
@@ -250,7 +302,6 @@
                     <a href="http://www.receita.fazenda.gov.br/Aplicacoes/ATRJO/Simulador/simulador.asp" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CONSULTA MARGEM PREF. GUARULHOS -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CONSULTA MARGEM - GUARULHOS</div>
@@ -259,7 +310,6 @@
                     <a href="https://proconsig.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CREFAZ -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CREFAZ</div>
@@ -268,7 +318,6 @@
                     <a href="https://crefazon.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CREFISA CONSIGNADO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CREFISA CONSIGNADO</div>
@@ -277,7 +326,6 @@
                     <a href="https://sfc.sistemascr.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- CREFISA PESSOAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">CREFISA PESSOAL</div>
@@ -286,7 +334,6 @@
                     <a href="https://app1.gerencialcredito.com.br/CREFISA/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- DAYCOVAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">DAYCOVAL</div>
@@ -295,7 +342,6 @@
                     <a href="https://consignado.daycoval.com.br/Autorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- DIGIO BRADESCO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">DIGIO BRADESCO</div>
@@ -304,7 +350,6 @@
                     <a href="https://funcaoconsig.digio.com.br/FIMENU/Login/AC.UI.LOGIN.aspx?FISession=47abfee7fd97" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- EXÉRCITO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">EXÉRCITO</div>
@@ -313,7 +358,6 @@
                     <a href="https://www.econsig.com.br/ebconsig/v3/autenticar#no-back" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FACTA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FACTA</div>
@@ -322,7 +366,6 @@
                     <a href="https://desenv.facta.com.br/sistemaNovo/login.php" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FINANTO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FINANTO (Qualibank MAXI)</div>
@@ -331,7 +374,6 @@
                     <a href="https://finanto.joinbank.com.br/loan-simulations" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FINTECH -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FINTECH</div>
@@ -340,7 +382,6 @@
                     <a href="https://fintechdocorban.nossafintech.com.br/session/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FUNÇÃO QUERO+ -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FUNÇÃO QUERO+</div>
@@ -349,7 +390,6 @@
                     <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=df99aad33699" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FUTURO PREVIDÊNCIA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FUTURO PREVIDÊNCIA</div>
@@ -358,7 +398,6 @@
                     <a href="https://webagente.eaglecred.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- FUTURO PREVIDENCIA - EAGLE -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">FUTURO PREVIDENCIA - EAGLE</div>
@@ -367,7 +406,6 @@
                     <a href="https://webagente.eaglecred.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- GOOROO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">GOOROO</div>
@@ -376,7 +414,6 @@
                     <a href="https://portal.gooroocredito.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- HAPPY -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">HAPPY</div>
@@ -385,7 +422,6 @@
                     <a href="https://happyconsig.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- HOLERITE ELETRÔNICO PREF. SÃO PAULO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">HOLERITE ELETRÔNICO - SP</div>
@@ -394,7 +430,6 @@
                     <a href="https://www.areaprivada.prefeitura.sp.gov.br/PortalPMSP/PortalPMSP/Portal/PMSPprt001.tp" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- IC360 - ITAÚ -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">IC360 - ITAÚ</div>
@@ -403,7 +438,6 @@
                     <a href="https://openid.itau.com.br/services/oauth/authorize?client_id=f3c7c3bc-b4bb-48a4-8dad-07e0489cce70&redirect_uri=https:%2F%2Fic360.com.br%2Flogin%2Fcallback-partner-sts&scope=openid&response_type=code" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- ICRED -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">ICRED</div>
@@ -412,7 +446,6 @@
                     <a href="https://corban.icred.digital/inss" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- INTER -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">INTER</div>
@@ -421,7 +454,6 @@
                     <a href="http://portal.teste.s3-website-us-east-1.amazonaws.com/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- ITAUBMG -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">ITAUBMG</div>
@@ -430,7 +462,6 @@
                     <a href="https://www.ibconsigweb.com.br/Index.do?method=prepare" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- LEMIT -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">LEMIT</div>
@@ -439,7 +470,6 @@
                     <a href="https://lemitti.com/home" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- LOTUS + -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">LOTUS +</div>
@@ -448,7 +478,6 @@
                     <a href="https://app.lotusmais.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- MERCANTIL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">MERCANTIL</div>
@@ -457,7 +486,6 @@
                     <a href="https://mb-ui-pcb-site-pcb.meumb.mercantil.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- OLÉ - Sistema Consignado -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">OLÉ - Sistema Consignado</div>
@@ -466,7 +494,6 @@
                     <a href="https://ola.oleconsignado.com.br/Usuario/Index/?ReturnUrl=%2FConsultaDeProposta%2FIndex" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- OLÉ (Portal Orienta) -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">OLÉ (Portal Orienta)</div>
@@ -475,7 +502,6 @@
                     <a href="https://orienta.oleconsignado.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- OLÉ Função -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">OLÉ Função</div>
@@ -484,7 +510,6 @@
                     <a href="https://digitacaoproposta.oleconsignado.com.br/PROPBSOEMP_DLL.Dll" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PAGBANK -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PAGBANK</div>
@@ -493,7 +518,6 @@
                     <a href="https://wss.credisim.com.br/BSGWEBSITES/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PAN -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PAN</div>
@@ -502,16 +526,24 @@
                     <a href="https://panconsig.pansolucoes.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PARANÁ BANCO -->
+                <!-- PARANÁ BANCO 1 (CORRIGIDO) -->
                 <div class="link-card">
                     <div class="link-info">
-                        <div class="link-name">PARANÁ BANCO</div>
-                        <div class="link-url">portalconsignado.paranabanco.com.br</div>
+                        <div class="link-name">PARANÁ BANCO (Central)</div>
+                        <div class="link-url">portalcentralcorrespondente.paranabanco.com.br</div>
                     </div>
-                    <a href="https://portalconsignado.paranabanco.com.br/Paginas/home.aspx" target="_blank" class="link-btn">Acessar</a>
+                    <a href="https://portalcentralcorrespondente.paranabanco.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PHTECH -->
+                <!-- PARANÁ BANCO 2 (CORRIGIDO) -->
+                <div class="link-card">
+                    <div class="link-info">
+                        <div class="link-name">PARANÁ BANCO (Front)</div>
+                        <div class="link-url">front.paranabanco.b.br/front/front</div>
+                    </div>
+                    <a href="https://front.paranabanco.b.br/front/" target="_blank" class="link-btn">Acessar</a>
+                </div>
+
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PHTECH</div>
@@ -520,7 +552,6 @@
                     <a href="https://phtech.uy3.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PORTAL AERONÁUTICA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORTAL AERONÁUTICA</div>
@@ -529,7 +560,6 @@
                     <a href="https://www.aerconsig.com.br/fab/servidor/#no-back" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PORTAL DAYCOVAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORTAL DAYCOVAL</div>
@@ -538,7 +568,6 @@
                     <a href="https://portaldecredito.daycoval.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- Portal do Consignado Gov SP/PREF SP -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORTAL DO CONSIGNADO - SP</div>
@@ -547,7 +576,6 @@
                     <a href="https://www.portaldoconsignado.org.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PORTAL SANTANDER -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PORTAL SANTANDER</div>
@@ -556,7 +584,6 @@
                     <a href="https://www.parceirosantander.com.br/spa-base/landing-page" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PREF SÃO BERNARDO DO CAMPO -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PREF. SÃO BERNARDO DO CAMPO</div>
@@ -565,7 +592,6 @@
                     <a href="https://www.econsig.com.br/sbc" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PRESENÇA BANK -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PRESENÇA BANK</div>
@@ -574,7 +600,6 @@
                     <a href="https://portal.presencabank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PRO CONSIG -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PRO CONSIG</div>
@@ -583,7 +608,6 @@
                     <a href="https://proconsig.com.br" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- QUALIBANK -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">QUALIBANK</div>
@@ -592,7 +616,6 @@
                     <a href="https://quali.joinbank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- QUALICARD -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">QUALICARD</div>
@@ -601,7 +624,6 @@
                     <a href="https://qualibanking.app/WebAutorizador/Login/AC.UI.LOGIN.aspx?FISession=b29389e94368" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- QUERO+ -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">QUERO+</div>
@@ -610,7 +632,6 @@
                     <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=b51997a5b3a1" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- QUERO+ BEVI -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">QUERO+ BEVI</div>
@@ -619,7 +640,6 @@
                     <a href="https://portaldecredito.queromaisconsignado.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- SAFRA -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SAFRA</div>
@@ -628,7 +648,6 @@
                     <a href="https://epfweb.safra.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- SIAPE -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SIAPE</div>
@@ -637,7 +656,6 @@
                     <a href="https://www.siapenet.gov.br/Portal/Consignataria.asp" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- SIMPLIX -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SIMPLIX</div>
@@ -646,7 +664,6 @@
                     <a href="https://simplix.partner1.com.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- SISTEMA DE INCAPACIDADE -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">SISTEMA DE INCAPACIDADE</div>
@@ -655,7 +672,6 @@
                     <a href="https://www2.dataprev.gov.br/sabiweb/relatorio/imprimirCRER.view?acao=imprimir_CRER" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- TOTAL CASH -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">TOTAL CASH</div>
@@ -664,7 +680,6 @@
                     <a href="https://totalcash.net.br/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- V8 DIGITAL -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">V8 DIGITAL</div>
@@ -673,7 +688,6 @@
                     <a href="http://app.v8sistema.com" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- VANGUARD -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">VANGUARD</div>
@@ -681,22 +695,16 @@
                     </div>
                     <a href="https://gestao.sistemacorban.com.br/index.php/auth/login" target="_blank" class="link-btn">Acessar</a>
                 </div>
+
             </div>
-            <div class="no-results" id="noResultsLinks">
-                Nenhum banco encontrado com esse nome.
-            </div>
+            <div class="no-results" id="noResultsLinks">Nenhum banco encontrado.</div>
         </div>
     </section>
 
-    <!-- SEÇÕES VAZIAS (placeholders) -->
-    <section id="botao7" class="section" style="display:none;"></section>
-    <section id="botao8" class="section" style="display:none;"></section>
-
     <footer>
-        <p>© 2026 - Uso Interno</p>
+        <p>© 2026 - Uso Interno | Hub Arya</p>
     </footer>
 
-    <!-- Carrega os dados dos bancos -->
     <script src="dados.js"></script>
 
     <script>
@@ -705,21 +713,17 @@
                 section.classList.remove('active');
                 section.style.display = 'none';
             });
-            
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
             const selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
                 selectedSection.style.display = 'block';
                 setTimeout(() => selectedSection.classList.add('active'), 10);
             }
-            
             if (clickedBtn) {
                 clickedBtn.classList.add('active');
             }
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -732,10 +736,9 @@
 
         function renderBanks(filtro = '') {
             list.innerHTML = '';
-            
+            if(typeof bancos === 'undefined') return;
             bancos.forEach(banco => {
                 if (filtro && !banco.nome.toLowerCase().includes(filtro.toLowerCase())) return;
-                
                 const item = document.createElement('div');
                 item.className = 'bank-item';
                 item.innerHTML = `
@@ -754,96 +757,42 @@
                 list.appendChild(item);
             });
         }
-
-        searchBanksInput.addEventListener('input', (e) => renderBanks(e.target.value));
+        if(searchBanksInput) searchBanksInput.addEventListener('input', (e) => renderBanks(e.target.value));
         renderBanks();
 
-        // Busca de simuladores
         const searchSimuladoresInput = document.getElementById('searchSimuladoresInput');
         const simuladorCards = document.querySelectorAll('#simuladoresGrid .link-card');
         const noResultsSimuladores = document.getElementById('noResultsSimuladores');
-
-        searchSimuladoresInput.addEventListener('input', function(e) {
-            const filtro = e.target.value.toLowerCase().trim();
-            let visiveis = 0;
-
-            simuladorCards.forEach(card => {
-                const nome = card.querySelector('.link-name').textContent.toLowerCase();
-                const url = card.querySelector('.link-url').textContent.toLowerCase();
-                
-                if (nome.includes(filtro) || url.includes(filtro)) {
-                    card.style.display = 'flex';
-                    visiveis++;
-                } else {
-                    card.style.display = 'none';
-                }
+        if(searchSimuladoresInput) {
+            searchSimuladoresInput.addEventListener('input', function(e) {
+                const filtro = e.target.value.toLowerCase().trim();
+                let visiveis = 0;
+                simuladorCards.forEach(card => {
+                    const nome = card.querySelector('.link-name').textContent.toLowerCase();
+                    const url = card.querySelector('.link-url').textContent.toLowerCase();
+                    if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } 
+                    else { card.style.display = 'none'; }
+                });
+                if (noResultsSimuladores) noResultsSimuladores.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
             });
+        }
 
-            if (visiveis === 0 && filtro !== '') {
-                noResultsSimuladores.style.display = 'block';
-            } else {
-                noResultsSimuladores.style.display = 'none';
-            }
-        });
-
-        // Busca de links úteis
         const searchLinksInput = document.getElementById('searchLinksInput');
         const linkCards = document.querySelectorAll('#linksGrid .link-card');
         const noResultsLinks = document.getElementById('noResultsLinks');
-
-        searchLinksInput.addEventListener('input', function(e) {
-            const filtro = e.target.value.toLowerCase().trim();
-            let visiveis = 0;
-
-            linkCards.forEach(card => {
-                const nome = card.querySelector('.link-name').textContent.toLowerCase();
-                const url = card.querySelector('.link-url').textContent.toLowerCase();
-                
-                if (nome.includes(filtro) || url.includes(filtro)) {
-                    card.style.display = 'flex';
-                    visiveis++;
-                } else {
-                    card.style.display = 'none';
-                }
+        if(searchLinksInput) {
+            searchLinksInput.addEventListener('input', function(e) {
+                const filtro = e.target.value.toLowerCase().trim();
+                let visiveis = 0;
+                linkCards.forEach(card => {
+                    const nome = card.querySelector('.link-name').textContent.toLowerCase();
+                    const url = card.querySelector('.link-url').textContent.toLowerCase();
+                    if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } 
+                    else { card.style.display = 'none'; }
+                });
+                if (noResultsLinks) noResultsLinks.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
             });
-
-            if (visiveis === 0 && filtro !== '') {
-                noResultsLinks.style.display = 'block';
-            } else {
-                noResultsLinks.style.display = 'none';
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const section = urlParams.get('section');
-            
-            if (section) {
-                document.querySelectorAll('.section').forEach(s => {
-                    s.classList.remove('active');
-                    s.style.display = 'none';
-                });
-                
-                document.querySelectorAll('.nav-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                const targetSection = document.getElementById(section);
-                if (targetSection) {
-                    targetSection.style.display = 'block';
-                    setTimeout(() => targetSection.classList.add('active'), 10);
-                    
-                    const botoes = document.querySelectorAll('.nav-btn');
-                    botoes.forEach(btn => {
-                        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${section}'`)) {
-                            btn.classList.add('active');
-                        }
-                    });
-                }
-                
-                window.scrollTo(0, 0);
-            }
-        });
+        }
     </script>
 </body>
 </html>

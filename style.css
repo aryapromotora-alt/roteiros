@@ -12,7 +12,7 @@ body {
     background: #F5F5F0;
     min-height: 100vh;
     color: #333;
-    overflow-x: hidden; /* ✅ CORREÇÃO: impede barra de rolagem horizontal */
+    overflow-x: hidden;
 }
 
 /* =========================================
@@ -41,12 +41,11 @@ body {
     letter-spacing: 1px;
 }
 
-/* Container das logos */
 .header-logos {
     position: relative;
     width: 200px;
     height: 70px;
-    overflow: visible; /* Mantém visible para a animação funcionar */
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,57 +61,23 @@ body {
     opacity: 0;
 }
 
-/* Animação da Logo 1 */
 @keyframes slideLogo1 {
-    0% {
-        opacity: 0;
-        transform: translateX(300px);
-    }
-    10% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    40% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 0;
-        transform: translateX(-300px);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-300px);
-    }
+    0% { opacity: 0; transform: translateX(300px); }
+    10% { opacity: 1; transform: translateX(0); }
+    40% { opacity: 1; transform: translateX(0); }
+    50% { opacity: 0; transform: translateX(-300px); }
+    100% { opacity: 0; transform: translateX(-300px); }
 }
 
-/* Animação da Logo 2 */
 @keyframes slideLogo2 {
-    0%, 50% {
-        opacity: 0;
-        transform: translateX(300px);
-    }
-    60% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    90% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-300px);
-    }
+    0%, 50% { opacity: 0; transform: translateX(300px); }
+    60% { opacity: 1; transform: translateX(0); }
+    90% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(-300px); }
 }
 
-.logo1 {
-    animation: slideLogo1 12s infinite ease-in-out;
-}
-
-.logo2 {
-    animation: slideLogo2 12s infinite ease-in-out;
-}
+.logo1 { animation: slideLogo1 12s infinite ease-in-out; }
+.logo2 { animation: slideLogo2 12s infinite ease-in-out; }
 
 /* =========================================
    BARRA DE NAVEGAÇÃO
@@ -126,7 +91,6 @@ body {
     border-bottom: 2px solid #FFD700;
 }
 
-/* Botões normais e Links de navegação */
 .nav-btn,
 .nav-btn-link {
     background: #F4D03F;
@@ -152,8 +116,8 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* BOTÃO ATIVO - INVERTIDO (Preto com texto dourado) */
-.nav-btn.active {
+.nav-btn.active,
+.nav-btn-link.active {
     background: #000000;
     color: #FFD700;
     border-color: #FFD700;
@@ -217,7 +181,7 @@ body {
 }
 
 /* =========================================
-   LISTA DE BANCOS (ROTEIROS)
+   LISTA DE BANCOS (ROTEIROS) - CARDS ESCUROS
    ========================================= */
 .banks-list {
     display: grid;
@@ -318,9 +282,7 @@ body {
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
 }
 
-.link-info {
-    flex: 1;
-}
+.link-info { flex: 1; }
 
 .link-name {
     color: white;
@@ -329,7 +291,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* DATA NOS CARDS */
 .link-date {
     color: #8a8aa0;
     font-size: 0.75rem;
@@ -369,6 +330,140 @@ body {
 }
 
 /* =========================================
+   COMUNICADOS (MURAL) - ESTILO DOURADO UNIFORME
+   ========================================= */
+.mural-section {
+    background: #F5F5F0;
+    min-height: calc(100vh - 200px);
+    padding: 10px 0 20px 0;
+}
+
+.mural-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    background: #1a1a2e;
+    border-radius: 12px;
+    border-bottom: 4px solid #FFD700;
+}
+
+.mural-header h2 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.mural-subtitle {
+    color: #8a8aa0;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Grid do Mural: lateral | central | lateral */
+.mural-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.mural-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mural-lateral {
+    gap: 15px;
+}
+
+.mural-central {
+    gap: 0;
+}
+
+/* Card padrão do Mural - TODOS DOURADOS */
+.mural-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    border-left: 6px solid #FFD700; /* Borda dourada padrão */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.mural-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.25);
+}
+
+/* Card PEQUENO (laterais) */
+.mural-card.mural-small {
+    padding: 15px;
+}
+
+.mural-card.mural-small .mural-titulo {
+    font-size: 1rem;
+}
+
+.mural-card.mural-small .mural-texto {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Card GRANDE (centro) */
+.mural-card.mural-large {
+    padding: 30px;
+    min-height: 420px;
+}
+
+.mural-card.mural-large .mural-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.mural-card.mural-large .mural-texto {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Cabeçalho do card (título + data lado a lado) */
+.mural-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mural-titulo {
+    color: #1a1a2e;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.mural-data {
+    color: #8a8aa0; /* Data em dourado */
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.mural-texto {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================
    RODAPÉ
    ========================================= */
 footer {
@@ -385,6 +480,14 @@ footer {
 @media (max-width: 1100px) {
     .banks-list {
         grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .mural-grid {
+        grid-template-columns: 1fr 1.5fr 1fr;
+    }
+    
+    .mural-card.mural-large {
+        min-height: 350px;
     }
 }
 
@@ -411,6 +514,14 @@ footer {
     .banks-list {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .mural-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mural-card.mural-large {
+        min-height: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -422,6 +533,10 @@ footer {
     .nav-btn-link {
         font-size: 0.75rem;
         padding: 8px 12px;
+    }
+    
+    .mural-header h2 {
+        font-size: 1.4rem;
     }
 }
 
