@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <!-- BARRA DE NAVEGAÇÃO (ORDEM CORRETA) -->
+    <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="nav-bar">
         <button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
         <button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
@@ -64,14 +64,18 @@
                     </div>
                 </div>
 
-                <!-- COLUNA CENTRAL: 1 card grande -->
+                <!-- COLUNA CENTRAL: IMAGEM QUE EXPANDE AO CLICAR -->
                 <div class="mural-coluna mural-central">
-                    <div class="mural-card mural-large">
+                    <div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
                         <div class="mural-card-header">
-                            <span class="mural-titulo">Roteiros Atualizados</span>
-                            <span class="mural-data">21/09/2026</span>
+                            <span class="mural-titulo">Imagem do Dia</span>
+                            <span class="mural-data">24/09/2026</span>
                         </div>
-                        <p class="mural-texto">Roteiros atualizados. Verifiquem na aba ROTEIROS INSS. Todas as alterações estão destacadas em amarelo no documento para facilitar a visualização das mudanças recentes. É importante que toda a equipe leia com atenção antes de realizar novas operações.</p>
+                        <div class="mural-imagem-container">
+                            <!-- TROQUE O NOME DA IMAGEM AQUI QUANDO ATUALIZAR -->
+                            <img src="imagens/imagem-do-dia.jpg" alt="Imagem do dia" class="mural-imagem">
+                        </div>
+                        <p class="mural-imagem-legenda">Clique para ampliar</p>
                     </div>
                 </div>
 
@@ -96,6 +100,15 @@
             </div>
         </div>
     </section>
+
+    <!-- ========================================== -->
+    <!-- MODAL PARA EXPANDIR A IMAGEM               -->
+    <!-- ========================================== -->
+    <div id="modalImagem" class="modal-imagem" onclick="fecharModal()">
+        <span class="modal-fechar">&times;</span>
+        <img class="modal-conteudo" id="imgExpandida">
+        <div class="modal-legenda" id="modalLegenda"></div>
+    </div>
 
     <!-- ========================================== -->
     <!-- SEÇÃO 2: ROTEIROS INSS                     -->
@@ -719,6 +732,27 @@
         function openPdf(url) {
             window.open(url, '_blank');
         }
+
+        // Funções do Modal de Imagem
+        function abrirModal() {
+            const modal = document.getElementById('modalImagem');
+            const imgMini = document.querySelector('.mural-imagem');
+            const imgExpandida = document.getElementById('imgExpandida');
+            const legenda = document.getElementById('modalLegenda');
+            
+            imgExpandida.src = imgMini.src;
+            legenda.textContent = 'Imagem do Dia - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
+            modal.style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modalImagem').style.display = 'none';
+        }
+
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharModal();
+        });
 
         const list = document.getElementById('banksList');
         const searchBanksInput = document.getElementById('searchBanksInput');

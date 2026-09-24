@@ -476,6 +476,95 @@ footer {
 }
 
 /* =========================================
+   CARD DE IMAGEM NO MURAL
+   ========================================= */
+.mural-imagem-card {
+    cursor: pointer;
+    padding: 15px !important;
+}
+
+.mural-imagem-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.mural-imagem-container {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.mural-imagem {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Mostra a imagem inteira sem cortar */
+    transition: transform 0.3s ease;
+}
+
+.mural-imagem-legenda {
+    text-align: center;
+    color: #FFD700;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   MODAL (JANELA QUE EXPANDE A IMAGEM)
+   ========================================= */
+.modal-imagem {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-conteudo {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.modal-legenda {
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #FFD700;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10000;
+}
+
+.modal-fechar:hover {
+    color: #ffffff;
+}
+/* =========================================
    RESPONSIVIDADE
    ========================================= */
 @media (max-width: 1100px) {
