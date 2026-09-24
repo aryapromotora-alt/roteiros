@@ -1,10 +1,12 @@
 /* =========================================
-   RESET E BASE
+   RESET E BASE (CORREÇÃO DE ROLAGEM HORIZONTAL)
    ========================================= */
-* {
+html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden; /* TRAVA QUALQUER ROLAGEM PARA A DIREITA */
 }
 
 body {
@@ -12,7 +14,10 @@ body {
     background: #F5F5F0;
     min-height: 100vh;
     color: #333;
-    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* =========================================
@@ -25,6 +30,7 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .header-content {
@@ -32,6 +38,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .header-title h1 {
@@ -45,7 +53,7 @@ body {
     position: relative;
     width: 200px;
     height: 70px;
-    overflow: visible;
+    overflow: visible; /* Necessário para a animação */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +88,7 @@ body {
 .logo2 { animation: slideLogo2 12s infinite ease-in-out; }
 
 /* =========================================
-   BARRA DE NAVEGAÇÃO (CENTRALIZADA)
+   BARRA DE NAVEGAÇÃO
    ========================================= */
 .nav-bar {
     background: #E0E0E0;
@@ -89,7 +97,8 @@ body {
     gap: 10px;
     flex-wrap: wrap;
     border-bottom: 2px solid #FFD700;
-    justify-content: center; /* Centraliza os botões */
+    justify-content: center;
+    width: 100%;
 }
 
 .nav-btn,
@@ -135,6 +144,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
+    width: 100%;
 }
 
 .section {
@@ -182,7 +192,7 @@ body {
 }
 
 /* =========================================
-   LISTA DE BANCOS (ROTEIROS) - CARDS ESCUROS
+   LISTA DE BANCOS (ROTEIROS)
    ========================================= */
 .banks-list {
     display: grid;
@@ -331,7 +341,7 @@ body {
 }
 
 /* =========================================
-   COMUNICADOS (MURAL) - ESTILO DOURADO UNIFORME
+   COMUNICADOS (MURAL) - ESTILO DOURADO
    ========================================= */
 .mural-section {
     background: #F5F5F0;
@@ -363,7 +373,6 @@ body {
     margin: 0;
 }
 
-/* Grid do Mural: lateral | central | lateral */
 .mural-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -378,20 +387,14 @@ body {
     gap: 15px;
 }
 
-.mural-lateral {
-    gap: 15px;
-}
+.mural-lateral { gap: 15px; }
+.mural-central { gap: 0; }
 
-.mural-central {
-    gap: 0;
-}
-
-/* Card padrão do Mural - TODOS DOURADOS */
 .mural-card {
     background: #ffffff;
     border-radius: 12px;
     padding: 18px;
-    border-left: 6px solid #FFD700; /* Borda dourada padrão */
+    border-left: 6px solid #FFD700;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     width: 100%;
@@ -402,21 +405,10 @@ body {
     box-shadow: 0 8px 20px rgba(255, 215, 0, 0.25);
 }
 
-/* Card PEQUENO (laterais) */
-.mural-card.mural-small {
-    padding: 15px;
-}
+.mural-card.mural-small { padding: 15px; }
+.mural-card.mural-small .mural-titulo { font-size: 1rem; }
+.mural-card.mural-small .mural-texto { font-size: 0.85rem; line-height: 1.4; }
 
-.mural-card.mural-small .mural-titulo {
-    font-size: 1rem;
-}
-
-.mural-card.mural-small .mural-texto {
-    font-size: 0.85rem;
-    line-height: 1.4;
-}
-
-/* Card GRANDE (centro) */
 .mural-card.mural-large {
     padding: 30px;
     min-height: 420px;
@@ -432,7 +424,6 @@ body {
     line-height: 1.7;
 }
 
-/* Cabeçalho do card (título + data lado a lado) */
 .mural-card-header {
     display: flex;
     justify-content: space-between;
@@ -450,7 +441,7 @@ body {
 }
 
 .mural-data {
-    color: #8a8aa0; /* Data em cinza */
+    color: #8a8aa0;
     font-size: 0.8rem;
     font-weight: 500;
     white-space: nowrap;
@@ -462,17 +453,6 @@ body {
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
-}
-
-/* =========================================
-   RODAPÉ
-   ========================================= */
-footer {
-    text-align: center;
-    color: #1a1a2e;
-    padding: 20px;
-    font-size: 0.9rem;
-    margin-top: 40px;
 }
 
 /* =========================================
@@ -503,7 +483,7 @@ footer {
 .mural-imagem {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Mostra a imagem inteira sem cortar */
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -564,91 +544,47 @@ footer {
 .modal-fechar:hover {
     color: #ffffff;
 }
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    text-align: center;
+    color: #1a1a2e;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
 /* =========================================
    RESPONSIVIDADE
    ========================================= */
 @media (max-width: 1100px) {
-    .banks-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .mural-grid {
-        grid-template-columns: 1fr 1.5fr 1fr;
-    }
-    
-    .mural-card.mural-large {
-        min-height: 350px;
-    }
+    .banks-list { grid-template-columns: repeat(3, 1fr); }
+    .mural-grid { grid-template-columns: 1fr 1.5fr 1fr; }
+    .mural-card.mural-large { min-height: 350px; }
 }
 
 @media (max-width: 900px) {
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .main-header {
-        height: auto;
-        padding: 15px 20px;
-    }
-    
-    .header-logos {
-        width: 250px;
-        height: 80px;
-    }
-    
-    .nav-bar {
-        justify-content: center;
-    }
-    
-    .banks-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .mural-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .mural-card.mural-large {
-        min-height: auto;
-    }
+    .header-content { flex-direction: column; gap: 15px; }
+    .main-header { height: auto; padding: 15px 20px; }
+    .header-logos { width: 250px; height: 80px; }
+    .nav-bar { justify-content: center; }
+    .banks-list { grid-template-columns: repeat(2, 1fr); }
+    .mural-grid { grid-template-columns: 1fr; }
+    .mural-card.mural-large { min-height: auto; }
 }
 
 @media (max-width: 768px) {
-    .links-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .nav-btn,
-    .nav-btn-link {
-        font-size: 0.75rem;
-        padding: 8px 12px;
-    }
-    
-    .mural-header h2 {
-        font-size: 1.4rem;
-    }
+    .links-grid { grid-template-columns: 1fr; }
+    .nav-btn, .nav-btn-link { font-size: 0.75rem; padding: 8px 12px; }
+    .mural-header h2 { font-size: 1.4rem; }
 }
 
 @media (max-width: 500px) {
-    .banks-list {
-        grid-template-columns: 1fr;
-    }
-    
-    .bank-item {
-        padding: 15px 18px;
-    }
-    
-    .bank-name {
-        font-size: 1rem;
-    }
-    
-    .header-title h1 {
-        font-size: 1.2rem;
-    }
-    
-    .header-logos {
-        width: 200px;
-        height: 70px;
-    }
+    .banks-list { grid-template-columns: 1fr; }
+    .bank-item { padding: 15px 18px; }
+    .bank-name { font-size: 1rem; }
+    .header-title h1 { font-size: 1.2rem; }
+    .header-logos { width: 200px; height: 70px; }
 }
