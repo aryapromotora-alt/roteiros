@@ -64,7 +64,7 @@
                     </div>
                 </div>
 
-                <!-- COLUNA CENTRAL: IMAGEM QUE EXPANDE AO CLICAR -->
+                <!-- COLUNA CENTRAL: IMAGEM EM DESTAQUE -->
                 <div class="mural-coluna mural-central">
                     <div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
                         <div class="mural-card-header">
@@ -72,8 +72,7 @@
                             <span class="mural-data">24/09/2026</span>
                         </div>
                         <div class="mural-imagem-container">
-                            <!-- TROQUE O NOME DA IMAGEM AQUI QUANDO ATUALIZAR -->
-                            <img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem">
+                            <img src="imagens/imagem-do-dia.jpg" alt="Destaque do dia" class="mural-imagem">
                         </div>
                         <p class="mural-imagem-legenda">Clique para ampliar</p>
                     </div>
@@ -740,13 +739,16 @@
             const imgExpandida = document.getElementById('imgExpandida');
             const legenda = document.getElementById('modalLegenda');
             
-            imgExpandida.src = imgMini.src;
-            legenda.textContent = 'Destaque - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
-            modal.style.display = 'flex';
+            if (imgMini && imgExpandida && legenda) {
+                imgExpandida.src = imgMini.src;
+                legenda.textContent = 'Destaque - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
+                modal.style.display = 'flex';
+            }
         }
 
         function fecharModal() {
-            document.getElementById('modalImagem').style.display = 'none';
+            const modal = document.getElementById('modalImagem');
+            if (modal) modal.style.display = 'none';
         }
 
         // Fechar modal com tecla ESC
@@ -758,6 +760,7 @@
         const searchBanksInput = document.getElementById('searchBanksInput');
 
         function renderBanks(filtro = '') {
+            if (!list) return;
             list.innerHTML = '';
             if(typeof bancos === 'undefined') return;
             bancos.forEach(banco => {
