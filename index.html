@@ -22,15 +22,14 @@
         </div>
     </header>
 
-    <!-- BARRA DE NAVEGAÇÃO -->
+    <!-- BARRA DE NAVEGAÇÃO (BOTÕES CENTRALIZADOS E REORGANIZADOS) -->
     <nav class="nav-bar">
         <button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
+        <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
         <button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/regras-portabilidade-geral.pdf')">RESUMO GERAL PORT</button>
         <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
         <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
         <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
-        <button class="nav-btn" onclick="showSection('roteiro-gov', this)">ROTEIRO GOV</button>
         <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
     </nav>
 
@@ -41,7 +40,7 @@
         <div class="container">
             <div class="mural-header">
                 <h2>COMUNICADOS</h2>
-                <p class="mural-subtitle">Avisos e informações importantes</p>
+                <p class="mural-subtitle">Avisos e informações importantes para a equipe</p>
             </div>
 
             <div class="mural-grid">
@@ -49,10 +48,10 @@
                 <div class="mural-coluna mural-lateral">
                     <div class="mural-card mural-small">
                         <div class="mural-card-header">
-                            <span class="mural-titulo">BANCO BRB</span>
+                            <span class="mural-titulo">Banco BRB</span>
                             <span class="mural-data">22/09/2026</span>
                         </div>
-                        <p class="mural-texto">O banco BRB com problemas no SISTEMA, sem previsao de retorno. </p>
+                        <p class="mural-texto">O banco BRB com problemas no SISTEMA, sem previsão de retorno.</p>
                     </div>
 
                     <div class="mural-card mural-small">
@@ -60,7 +59,7 @@
                             <span class="mural-titulo">Novos Simuladores</span>
                             <span class="mural-data">22/09/2026</span>
                         </div>
-                        <p class="mural-texto">Simulador, daycoval, quero+. Arquivo atualizado em 22/09/2026.</p>
+                        <p class="mural-texto">Simulador Daycoval e Quero+ disponíveis. Arquivo atualizado em 22/09/2026.</p>
                     </div>
                 </div>
 
@@ -68,10 +67,10 @@
                 <div class="mural-coluna mural-central">
                     <div class="mural-card mural-large">
                         <div class="mural-card-header">
-                            <span class="mural-titulo">Roteiros atualizados</span>
+                            <span class="mural-titulo">Roteiros Atualizados</span>
                             <span class="mural-data">21/09/2026</span>
                         </div>
-                        <p class="mural-texto">Roteiros atualizados</p>
+                        <p class="mural-texto">Roteiros atualizados. Verifiquem na aba ROTEIROS INSS. Todas as alterações estão destacadas em amarelo no documento para facilitar a visualização das mudanças recentes. É importante que toda a equipe leia com atenção antes de realizar novas operações.</p>
                     </div>
                 </div>
 
@@ -79,7 +78,7 @@
                 <div class="mural-coluna mural-lateral">
                     <div class="mural-card mural-small">
                         <div class="mural-card-header">
-                            <span class="mural-titulo">Analise</span>
+                            <span class="mural-titulo">Análise</span>
                             <span class="mural-data">20/09/2026</span>
                         </div>
                         <p class="mural-texto">Breve</p>
@@ -87,7 +86,7 @@
 
                     <div class="mural-card mural-small">
                         <div class="mural-card-header">
-                            <span class="mural-titulo">Atualização </span>
+                            <span class="mural-titulo">Atualização</span>
                             <span class="mural-data">19/09/2026</span>
                         </div>
                         <p class="mural-texto">Breve</p>
@@ -148,16 +147,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- SEÇÃO 4: ROTEIRO GOV                     -->
-    <!-- ========================================== -->
-    <section id="roteiro-gov" class="section">
-        <div class="container">
-            <h2 style="color:white; text-align:center; padding:40px;">Roteiro GOV - Em breve</h2>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- SEÇÃO 5: LINKS ÚTEIS                       -->
+    <!-- SEÇÃO 4: LINKS ÚTEIS                       -->
     <!-- ========================================== -->
     <section id="links-uteis" class="section">
         <div class="container">
@@ -526,7 +516,6 @@
                     <a href="https://panconsig.pansolucoes.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PARANÁ BANCO 1 (CORRIGIDO) -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PARANÁ BANCO (Central)</div>
@@ -535,11 +524,10 @@
                     <a href="https://portalcentralcorrespondente.paranabanco.com.br/" target="_blank" class="link-btn">Acessar</a>
                 </div>
 
-                <!-- PARANÁ BANCO 2 (CORRIGIDO) -->
                 <div class="link-card">
                     <div class="link-info">
                         <div class="link-name">PARANÁ BANCO (Front)</div>
-                        <div class="link-url">front.paranabanco.b.br/front/front</div>
+                        <div class="link-url">front.paranabanco.b.br/front</div>
                     </div>
                     <a href="https://front.paranabanco.b.br/front/" target="_blank" class="link-btn">Acessar</a>
                 </div>
