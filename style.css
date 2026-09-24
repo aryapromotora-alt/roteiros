@@ -353,17 +353,22 @@ body {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
-    padding: 15px 20px;
+    padding: 20px; /* Padding igual em todos os lados */
     background: #1a1a2e;
     border-radius: 12px;
     border-bottom: 4px solid #FFD700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100px; /* Altura mínima para ficar proporcional */
 }
 
 .mural-header h2 {
     color: #FFD700;
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0; /* Zera margin-top para não empurrar para baixo */
     letter-spacing: 1px;
 }
 
