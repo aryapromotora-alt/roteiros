@@ -351,9 +351,9 @@ body {
 
 .mural-header {
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding: 12px 20px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    padding: 8px 20px; /* Reduzido de 12px para 8px */
     background: #1a1a2e;
     border-radius: 12px;
     border-bottom: 4px solid #FFD700;
@@ -361,15 +361,15 @@ body {
 
 .mural-header h2 {
     color: #FFD700;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reduzido de 1.8rem para 1.5rem */
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 2px; /* Reduzido de 5px para 2px */
     letter-spacing: 1px;
 }
 
 .mural-subtitle {
     color: #8a8aa0;
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Reduzido de 0.95rem para 0.85rem */
     margin: 0;
 }
 
