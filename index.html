@@ -73,7 +73,7 @@
                         </div>
                         <div class="mural-imagem-container">
                             <!-- TROQUE O NOME DA IMAGEM AQUI QUANDO ATUALIZAR -->
-                            <img src="imagens/imagem-do-dia.jpg" alt="Imagem do dia" class="mural-imagem">
+                            <img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem">
                         </div>
                         <p class="mural-imagem-legenda">Clique para ampliar</p>
                     </div>
@@ -741,7 +741,7 @@
             const legenda = document.getElementById('modalLegenda');
             
             imgExpandida.src = imgMini.src;
-            legenda.textContent = 'Imagem do Dia - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
+            legenda.textContent = 'Destaque - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
             modal.style.display = 'flex';
         }
 
