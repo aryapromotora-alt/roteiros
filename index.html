@@ -15,42 +15,16 @@
 </header>
 
 <nav class="nav-bar">
-<button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
-<button class="nav-btn" onclick="showSection('resumo-roteiros', this)">RESUMO ROTEIROS</button>
-<button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
+<button class="nav-btn active" onclick="showSection('resumo-roteiros', this)">RESUMO ROTEIROS</button>
 <button class="nav-btn" onclick="showSection('regras-idades', this)">REGRAS IDADES</button>
+<button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
+<button class="nav-btn" onclick="showSection('mural', this)">COMUNICADOS</button>
 <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
 <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
 </nav>
 
-<section id="mural" class="section active">
-<div class="container">
-<div class="mural-header"><h2>COMUNICADOS</h2><p class="mural-subtitle">Avisos e informações importantes para a equipe</p></div>
-<div class="mural-grid">
-<div class="mural-coluna mural-lateral">
-<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Banco BRB</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">Banco BRB ESTA DE VOLTA, ATENÇAO AS NOVAS REGRAS</p></div>
-<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Novo Simulador</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">Simulador Daycoval disponíveis. Arquivo atualizado em 28/09/2026.</p></div>
-</div>
-<div class="mural-coluna mural-central">
-<div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
-<div class="mural-card-header"><span class="mural-titulo">Destaque</span><span class="mural-data">28/09/2026</span></div>
-<div class="mural-imagem-container"><img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem"></div>
-<p class="mural-imagem-legenda">Clique para ampliar</p>
-</div>
-</div>
-<div class="mural-coluna mural-lateral">
-<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Análise</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">COMUNICADO ICRED<br>
-clientes especie 32<br>
-Se atentar a tabela liberada no ato da digitação:<br>
-Tabela normal = comissão normal (clientes mulheres)<br>
-Tabela invalidez = comissão reduzida (clientes homens).</p></div>
-<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Melhores Oportunidades</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">QUALI<br>BRB<br>BANCO PARANÁ<br>ICRED<br>TOTALCASH<br>BANRISUL<br>QUERO MAIS<br>DAYCOVAL</p></div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="resumo-roteiros" class="section">
+<!-- 1. RESUMO ROTEIROS (Agora é a seção ativa/inicial) -->
+<section id="resumo-roteiros" class="section active">
 <div class="container">
 <div class="mural-header"><h2>RESUMO OPERACIONAL DOS BANCOS</h2><p class="mural-subtitle">Regras rápidas e valores de referência</p></div>
 <div class="bank-tabs">
@@ -178,7 +152,7 @@ Tabela invalidez = comissão reduzida (clientes homens).</p></div>
 
 <div id="op-digio" class="bank-content">
 <h2 class="resumo-titulo">DIGIO – RESUMO OPERACIONAL</h2>
-<div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Saldo Mínimo Port: <span class="destaque-dourado">R$ 4.500,00</span> | Port Pura: <span class="destaque-dourado">Sim</span> | Reduz Taxa: Sim | Redução de Parcela: Sim</li><li>Agregação: <span class="destaque-vermelho">Não</span> | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">12 pagas</span> | Banco de rede: <span class="destaque-dourado">0 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Banrisul, Bradesco (237), Pan, Caixa e Paraná</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Saldo Mínimo Port: <span class="destaque-dourado">R$ 4.500,00</span> | Port Pura: <span class="destaque-dourado">Sim</span> | Reduz Taxa: Sim | Redução de Parcela: Sim</li><li>Agregação: <span class="destaque-vermelho">Não</span> | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">12 pagas</span> | Banco de rede: <span class="destaque-dourado">0 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Banco do Brasil, Banrisul, Bradesco (237), Pan, Caixa e Paraná</li></ul></div>
 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco Mín: <span class="destaque-dourado">R$ 250,00</span> | Mín parcelas pagas: <span class="destaque-dourado">8 pagas</span></li><li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Agregação: Sim (mín R$ 25,00) | Redução de Parcela: <span class="destaque-vermelho">Não</span></li><li>Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li>Sem agregação + prazo 108x: <span class="destaque-dourado">1 paga</span> | Sem agregação + prazo menor 108x: <span class="destaque-dourado">8 pagas</span></li></ul></div>
 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 1.200,00</span> | Refin Mín: <span class="destaque-dourado">R$ 250,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li><li>Parcela Mínima: <span class="destaque-dourado">Não tem</span> | Máx 13 contratos | Taxa Máx: 1,85%</li><li>Invalidez: <span class="destaque-dourado">Sim</span> (acima de 60 anos) | Pensão 21: Sim</li></ul></div>
 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> RL, LOAS (87/88), Analfabetos, Ordem de Pagamento</li><li>Idosos 60+: Figital obrigatória em AP, PB, RR, TO e Poços de Caldas (MG)</li><li><span class="destaque-vermelho">Bancos não aceitos p/ crédito:</span> Pagbank, BS2, BMG, Mercado Pago, Digio, C6, Super Digital, XP, PicPay, HUB, iugu, Fitbank, Omni, C6 Consignado, Smartbank, Sofisa, Indusval, SouDigi+, Neon, Modal, Sicoob</li><li>Documentos: RG, CNH</li></ul></div>
@@ -186,13 +160,7 @@ Tabela invalidez = comissão reduzida (clientes homens).</p></div>
 </div>
 </section>
 
-<section id="roteiros-inss" class="section">
-<div class="container">
-<div class="search-container"><input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box"></div>
-<div class="banks-list" id="banksList"></div>
-</div>
-</section>
-
+<!-- 2. REGRAS IDADES -->
 <section id="regras-idades" class="section">
 <div class="container">
 <div class="mural-header"><h2>POLÍTICA DE IDADES POR BANCO</h2><p class="mural-subtitle">Prazos e valores conforme a faixa etária</p></div>
@@ -325,6 +293,43 @@ Tabela invalidez = comissão reduzida (clientes homens).</p></div>
 </div>
 </section>
 
+<!-- 3. ROTEIROS INSS -->
+<section id="roteiros-inss" class="section">
+<div class="container">
+<div class="search-container"><input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box"></div>
+<div class="banks-list" id="banksList"></div>
+</div>
+</section>
+
+<!-- 4. COMUNICADOS -->
+<section id="mural" class="section">
+<div class="container">
+<div class="mural-header"><h2>COMUNICADOS</h2><p class="mural-subtitle">Avisos e informações importantes para a equipe</p></div>
+<div class="mural-grid">
+<div class="mural-coluna mural-lateral">
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Banco BRB</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">Banco BRB ESTA DE VOLTA, ATENÇAO AS NOVAS REGRAS</p></div>
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Novo Simulador</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">Simulador Daycoval disponíveis. Arquivo atualizado em 28/09/2026.</p></div>
+</div>
+<div class="mural-coluna mural-central">
+<div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
+<div class="mural-card-header"><span class="mural-titulo">Destaque</span><span class="mural-data">28/09/2026</span></div>
+<div class="mural-imagem-container"><img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem"></div>
+<p class="mural-imagem-legenda">Clique para ampliar</p>
+</div>
+</div>
+<div class="mural-coluna mural-lateral">
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Análise</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">COMUNICADO ICRED<br>
+clientes especie 32<br>
+Se atentar a tabela liberada no ato da digitação:<br>
+Tabela normal = comissão normal (clientes mulheres)<br>
+Tabela invalidez = comissão reduzida (clientes homens).</p></div>
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Melhores Oportunidades</span><span class="mural-data">28/09/2026</span></div><p class="mural-texto">QUALI<br>BRB<br>BANCO PARANÁ<br>ICRED<br>TOTALCASH<br>BANRISUL<br>QUERO MAIS<br>DAYCOVAL</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5. SIMULADORES -->
 <section id="simuladores" class="section">
 <div class="container">
 <div class="search-container"><input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box"></div>
@@ -337,6 +342,7 @@ Tabela invalidez = comissão reduzida (clientes homens).</p></div>
 </div>
 </section>
 
+<!-- 6. LINKS ÚTEIS -->
 <section id="links-uteis" class="section">
 <div class="container">
 <div class="search-container"><input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box"></div>
