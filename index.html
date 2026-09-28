@@ -1,774 +1,488 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Arya</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub Arya</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HEADER PRINCIPAL -->
-    <header class="main-header">
-        <div class="header-content">
-            <div class="header-title">
-                <h1>Hub Arya</h1>
-            </div>
-            <div class="header-logos">
-                <img src="logo1.png" alt="Logo 1" class="logo logo1">
-                <img src="logo2.png" alt="Logo 2" class="logo logo2">
-            </div>
-        </div>
-    </header>
-
-    <!-- BARRA DE NAVEGAÇÃO -->
-    <nav class="nav-bar">
-        <button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
-        <button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/regras-portabilidade-geral.pdf')">RESUMO GERAL PORT</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/resumo-roteiro-amf.pdf')">RESUMO ROTEIRO AMF</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/resumo-invalidez.pdf')">RESUMO INVALIDEZ</button>
-        <button class="nav-btn" onclick="openPdf('pdfs/regras-idade-inss-novo-e-refin.pdf')">REGRA IDADE NOVO-REFIN</button>
-        <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
-        <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
-    </nav>
-
-    <!-- ========================================== -->
-    <!-- SEÇÃO 1: COMUNICADOS (ATIVA POR PADRÃO)    -->
-    <!-- ========================================== -->
-    <section id="mural" class="section active">
-        <div class="container">
-            <div class="mural-header">
-                <h2>COMUNICADOS</h2>
-                <p class="mural-subtitle">Avisos e informações importantes para a equipe</p>
-            </div>
-
-            <div class="mural-grid">
-                <!-- COLUNA ESQUERDA: 2 cards empilhados -->
-                <div class="mural-coluna mural-lateral">
-                    <div class="mural-card mural-small">
-                        <div class="mural-card-header">
-                            <span class="mural-titulo">Banco BRB</span>
-                            <span class="mural-data">22/09/2026</span>
-                        </div>
-                        <p class="mural-texto">O banco BRB com problemas no SISTEMA, sem previsão de retorno.</p>
-                    </div>
-
-                    <div class="mural-card mural-small">
-                        <div class="mural-card-header">
-                            <span class="mural-titulo">Novos Simuladores</span>
-                            <span class="mural-data">22/09/2026</span>
-                        </div>
-                        <p class="mural-texto">Simulador Daycoval e Quero+ disponíveis. Arquivo atualizado em 22/09/2026.</p>
-                    </div>
-                </div>
-
-                <!-- COLUNA CENTRAL: IMAGEM EM DESTAQUE -->
-                <div class="mural-coluna mural-central">
-                    <div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
-                        <div class="mural-card-header">
-                            <span class="mural-titulo">Destaque</span>
-                            <span class="mural-data">24/09/2026</span>
-                        </div>
-                        <div class="mural-imagem-container">
-                            <img src="imagens/imagem-do-dia.jpg" alt="Destaque do dia" class="mural-imagem">
-                        </div>
-                        <p class="mural-imagem-legenda">Clique para ampliar</p>
-                    </div>
-                </div>
-
-                <!-- COLUNA DIREITA: 2 cards empilhados -->
-                <div class="mural-coluna mural-lateral">
-                    <div class="mural-card mural-small">
-                        <div class="mural-card-header">
-                            <span class="mural-titulo">Análise</span>
-                            <span class="mural-data">24/09/2026</span>
-                        </div>
-                        <p class="mural-texto">
-Nova funcionalidade no Banco TOTAL CASH<br>
-Se tiver desbloqueado, jogando o CPF no MULTIPRODUTOS o banco já dá todas as opções e taxas disponiveis para o cliente.</p>
-                    </div>
-
-<div class="mural-card mural-small">
-    <div class="mural-card-header">
-        <span class="mural-titulo">Melhores Oportunidades</span>
-        <span class="mural-data">24/09/2026</span>
-    </div>
-    <p class="mural-texto">
-        QUALI<br>
-        BANCO PARANÁ<br>
-        ICRED<br>
-        TOTALCASH<br>
-        BANRISUL<br>
-        QUERO MAIS<br>
-        DAYCOVAL
-    </p>
+<header class="main-header">
+<div class="header-content">
+<div class="header-title"><h1>Hub Arya</h1></div>
+<div class="header-logos"><img src="logo1.png" alt="Logo 1" class="logo logo1"><img src="logo2.png" alt="Logo 2" class="logo logo2"></div>
 </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- MODAL PARA EXPANDIR A IMAGEM               -->
-    <!-- ========================================== -->
-    <div id="modalImagem" class="modal-imagem" onclick="fecharModal()">
-        <span class="modal-fechar">&times;</span>
-        <img class="modal-conteudo" id="imgExpandida">
-        <div class="modal-legenda" id="modalLegenda"></div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- SEÇÃO 2: ROTEIROS INSS                     -->
-    <!-- ========================================== -->
-    <section id="roteiros-inss" class="section">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box">
-            </div>
-            <div class="banks-list" id="banksList"></div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- SEÇÃO 3: SIMULADORES                       -->
-    <!-- ========================================== -->
-    <section id="simuladores" class="section">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box">
-            </div>
-            <div class="links-grid" id="simuladoresGrid">
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">QUALI BANKING</div>
-                        <div class="link-date">17/09/2026</div>
-                        <div class="link-url">qualibanking.com.br</div>
-                    </div>
-                    <a href="https://qualibanking.com.br/simulador/port-inss/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">SIMULADOR DAYCOVAL</div>
-                        <div class="link-date">22/09/2026</div>
-                        <div class="link-url">simulador-daycoval.xlsx</div>
-                    </div>
-                    <a href="simuladores/simulador-daycoval.xlsx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">SIMULADOR QUERO MAIS</div>
-                        <div class="link-date">22/09/2026</div>
-                        <div class="link-url">simulador-quero-mais.xlsx</div>
-                    </div>
-                    <a href="simuladores/simulador-quero-mais.xlsx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-            </div>
-            <div class="no-results" id="noResultsSimuladores">Nenhum simulador encontrado.</div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- SEÇÃO 4: LINKS ÚTEIS                       -->
-    <!-- ========================================== -->
-    <section id="links-uteis" class="section">
-        <div class="container">
-            <div class="search-container">
-                <input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box">
-            </div>
-            <div class="links-grid" id="linksGrid">
-                
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">AMIGOZ</div>
-                        <div class="link-url">amigozconsig.com.br</div>
-                    </div>
-                    <a href="https://amigozconsig.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO BTW</div>
-                        <div class="link-url">consig.btwbank.com</div>
-                    </div>
-                    <a href="https://consig.btwbank.com/WebSites/FIMenuMVC/Login/AC.UI.LOGIN.aspx?FISession=8882e7ec7173" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO HOPE</div>
-                        <div class="link-url">hope.titan.ceoslab.app</div>
-                    </div>
-                    <a href="https://hope.titan.ceoslab.app/operacional/operacoes" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO INDUSTRIAL</div>
-                        <div class="link-url">www.bibcred.com.br</div>
-                    </div>
-                    <a href="http://www.bibcred.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO NG CRED</div>
-                        <div class="link-url">front.nossagentecard.com.br</div>
-                    </div>
-                    <a href="https://front.nossagentecard.com.br/appmenu/Login/ICLogin?ReturnUrl=%2Fappmenu%2F" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO NOSSA FINTECH</div>
-                        <div class="link-url">anossafintech.com.br</div>
-                    </div>
-                    <a href="https://anossafintech.com.br/desk" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO PEGCARD</div>
-                        <div class="link-url">app.pegsystem.com.br</div>
-                    </div>
-                    <a href="https://app.pegsystem.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANCO SOMA</div>
-                        <div class="link-url">sistema.somabp2.com.br</div>
-                    </div>
-                    <a href="https://sistema.somabp2.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PORT TECH</div>
-                        <div class="link-url">portpromotora.corban.tec.br</div>
-                    </div>
-                    <a href="https://portpromotora.corban.tec.br/login/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BANRISUL</div>
-                        <div class="link-url">bemweb.bempromotora.com.br</div>
-                    </div>
-                    <a href="https://bemweb.bempromotora.com.br/autenticacao/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BMG CONSIG</div>
-                        <div class="link-url">www.bmgconsig.com.br</div>
-                    </div>
-                    <a href="https://www.bmgconsig.com.br/principal/fsconsignataria.jsp" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">BRB RED</div>
-                        <div class="link-url">esteira.redconsig.com.br</div>
-                    </div>
-                    <a href="https://esteira.redconsig.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">C6 BANK</div>
-                        <div class="link-url">c6.c6consig.com.br</div>
-                    </div>
-                    <a href="https://c6.c6consig.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CAIXA 360</div>
-                        <div class="link-url">promotoramax.consig360.com.br</div>
-                    </div>
-                    <a href="https://promotoramax.consig360.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CONSULTA MARGEM - GUARULHOS</div>
-                        <div class="link-url">proconsig.com.br</div>
-                    </div>
-                    <a href="https://proconsig.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CREFAZ</div>
-                        <div class="link-url">crefazon.com.br</div>
-                    </div>
-                    <a href="https://crefazon.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CREFISA CONSIGNADO</div>
-                        <div class="link-url">sfc.sistemascr.com.br</div>
-                    </div>
-                    <a href="https://sfc.sistemascr.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CREFISA PESSOAL</div>
-                        <div class="link-url">app1.gerencialcredito.com.br</div>
-                    </div>
-                    <a href="https://app1.gerencialcredito.com.br/CREFISA/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">DAYCOVAL</div>
-                        <div class="link-url">consignado.daycoval.com.br</div>
-                    </div>
-                    <a href="https://consignado.daycoval.com.br/Autorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">DIGIO BRADESCO</div>
-                        <div class="link-url">funcaoconsig.digio.com.br</div>
-                    </div>
-                    <a href="https://funcaoconsig.digio.com.br/FIMENU/Login/AC.UI.LOGIN.aspx?FISession=47abfee7fd97" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">EXÉRCITO</div>
-                        <div class="link-url">www.econsig.com.br</div>
-                    </div>
-                    <a href="https://www.econsig.com.br/ebconsig/v3/autenticar#no-back" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FACTA</div>
-                        <div class="link-url">desenv.facta.com.br</div>
-                    </div>
-                    <a href="https://desenv.facta.com.br/sistemaNovo/login.php" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FINANTO (Qualibank MAXI)</div>
-                        <div class="link-url">finanto.joinbank.com.br</div>
-                    </div>
-                    <a href="https://finanto.joinbank.com.br/loan-simulations" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FINTECH</div>
-                        <div class="link-url">fintechdocorban.nossafintech.com.br</div>
-                    </div>
-                    <a href="https://fintechdocorban.nossafintech.com.br/session/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FUNÇÃO QUERO+</div>
-                        <div class="link-url">consignado.queromaisconsignado.com.br</div>
-                    </div>
-                    <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=df99aad33699" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FUTURO PREVIDÊNCIA</div>
-                        <div class="link-url">webagente.eaglecred.com.br</div>
-                    </div>
-                    <a href="https://webagente.eaglecred.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">FUTURO PREVIDENCIA - EAGLE</div>
-                        <div class="link-url">webagente.eaglecred.com.br</div>
-                    </div>
-                    <a href="https://webagente.eaglecred.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">HAPPY</div>
-                        <div class="link-url">happyconsig.com.br</div>
-                    </div>
-                    <a href="https://happyconsig.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">HOLERITE ELETRÔNICO - SP</div>
-                        <div class="link-url">areaprivada.prefeitura.sp.gov.br</div>
-                    </div>
-                    <a href="https://www.areaprivada.prefeitura.sp.gov.br/PortalPMSP/PortalPMSP/Portal/PMSPprt001.tp" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">IC360 - ITAÚ</div>
-                        <div class="link-url">ic360.com.br</div>
-                    </div>
-                    <a href="https://openid.itau.com.br/services/oauth/authorize?client_id=f3c7c3bc-b4bb-48a4-8dad-07e0489cce70&redirect_uri=https:%2F%2Fic360.com.br%2Flogin%2Fcallback-partner-sts&scope=openid&response_type=code" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">ICRED</div>
-                        <div class="link-url">corban.icred.digital</div>
-                    </div>
-                    <a href="https://corban.icred.digital/inss" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">ITAUBMG</div>
-                        <div class="link-url">www.ibconsigweb.com.br</div>
-                    </div>
-                    <a href="https://www.ibconsigweb.com.br/Index.do?method=prepare" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">LEMIT</div>
-                        <div class="link-url">lemitti.com</div>
-                    </div>
-                    <a href="https://lemitti.com/home" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">LOTUS +</div>
-                        <div class="link-url">app.lotusmais.com.br</div>
-                    </div>
-                    <a href="https://app.lotusmais.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">MERCANTIL</div>
-                        <div class="link-url">mb-ui-pcb-site-pcb.meumb.mercantil.com.br</div>
-                    </div>
-                    <a href="https://mb-ui-pcb-site-pcb.meumb.mercantil.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PAGBANK</div>
-                        <div class="link-url">wss.credisim.com.br</div>
-                    </div>
-                    <a href="https://wss.credisim.com.br/BSGWEBSITES/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PAN</div>
-                        <div class="link-url">panconsig.pansolucoes.com.br</div>
-                    </div>
-                    <a href="https://panconsig.pansolucoes.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PARANÁ BANCO (Central)</div>
-                        <div class="link-url">portalcentralcorrespondente.paranabanco.com.br</div>
-                    </div>
-                    <a href="https://portalcentralcorrespondente.paranabanco.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PARANÁ BANCO (Front)</div>
-                        <div class="link-url">front.paranabanco.b.br/front</div>
-                    </div>
-                    <a href="https://front.paranabanco.b.br/front/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PHTECH</div>
-                        <div class="link-url">phtech.uy3.com.br</div>
-                    </div>
-                    <a href="https://phtech.uy3.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PORTAL AERONÁUTICA</div>
-                        <div class="link-url">www.aerconsig.com.br</div>
-                    </div>
-                    <a href="https://www.aerconsig.com.br/fab/servidor/#no-back" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PORTAL DAYCOVAL</div>
-                        <div class="link-url">portaldecredito.daycoval.com.br</div>
-                    </div>
-                    <a href="https://portaldecredito.daycoval.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PORTAL DO CONSIGNADO - SP</div>
-                        <div class="link-url">www.portaldoconsignado.org.br</div>
-                    </div>
-                    <a href="https://www.portaldoconsignado.org.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PORTAL SANTANDER</div>
-                        <div class="link-url">www.parceirosantander.com.br</div>
-                    </div>
-                    <a href="https://www.parceirosantander.com.br/spa-base/landing-page" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PREF. SÃO BERNARDO DO CAMPO</div>
-                        <div class="link-url">www.econsig.com.br</div>
-                    </div>
-                    <a href="https://www.econsig.com.br/sbc" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PRESENÇA BANK</div>
-                        <div class="link-url">portal.presencabank.com.br</div>
-                    </div>
-                    <a href="https://portal.presencabank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">PRO CONSIG</div>
-                        <div class="link-url">proconsig.com.br</div>
-                    </div>
-                    <a href="https://proconsig.com.br" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">QUALIBANK</div>
-                        <div class="link-url">quali.joinbank.com.br</div>
-                    </div>
-                    <a href="https://quali.joinbank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">QUALICARD</div>
-                        <div class="link-url">qualibanking.app</div>
-                    </div>
-                    <a href="https://qualibanking.app/WebAutorizador/Login/AC.UI.LOGIN.aspx?FISession=b29389e94368" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">QUERO+</div>
-                        <div class="link-url">consignado.queromaisconsignado.com.br</div>
-                    </div>
-                    <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=b51997a5b3a1" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">QUERO+ BEVI</div>
-                        <div class="link-url">portaldecredito.queromaisconsignado.com.br</div>
-                    </div>
-                    <a href="https://portaldecredito.queromaisconsignado.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">SAFRA</div>
-                        <div class="link-url">epfweb.safra.com.br</div>
-                    </div>
-                    <a href="https://epfweb.safra.com.br/" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">SIAPE</div>
-                        <div class="link-url">www.siapenet.gov.br</div>
-                    </div>
-                    <a href="https://www.siapenet.gov.br/Portal/Consignataria.asp" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">SIMPLIX</div>
-                        <div class="link-url">simplix.partner1.com.br</div>
-                    </div>
-                    <a href="https://simplix.partner1.com.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">CALCULADORA DO CIDADÃO - FINANCIAMENTO</div>
-                        <div class="link-url">bcb.gov.br</div>
-                    </div>
-                    <a href="https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormFinanciamentoPrestacoesFixas.do?method=exibirFormFinanciamentoPrestacoesFixas" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">TOTAL CASH</div>
-                        <div class="link-url">totalcash.net.br</div>
-                    </div>
-                    <a href="https://totalcash.net.br/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">V8 DIGITAL</div>
-                        <div class="link-url">app.v8sistema.com</div>
-                    </div>
-                    <a href="http://app.v8sistema.com" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="link-info">
-                        <div class="link-name">VANGUARD</div>
-                        <div class="link-url">gestao.sistemacorban.com.br/index.php/auth/login</div>
-                    </div>
-                    <a href="https://gestao.sistemacorban.com.br/index.php/auth/login" target="_blank" class="link-btn">Acessar</a>
-                </div>
-
-            </div>
-            <div class="no-results" id="noResultsLinks">Nenhum banco encontrado.</div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 - Uso Interno | Hub Arya</p>
-    </footer>
-
-    <script src="dados.js"></script>
-
-    <script>
-        function showSection(sectionId, clickedBtn) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-                section.style.display = 'none';
-            });
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-                setTimeout(() => selectedSection.classList.add('active'), 10);
-            }
-            if (clickedBtn) {
-                clickedBtn.classList.add('active');
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function openPdf(url) {
-            window.open(url, '_blank');
-        }
-
-        // Funções do Modal de Imagem
-        function abrirModal() {
-            const modal = document.getElementById('modalImagem');
-            const imgMini = document.querySelector('.mural-imagem');
-            const imgExpandida = document.getElementById('imgExpandida');
-            const legenda = document.getElementById('modalLegenda');
-            
-            if (imgMini && imgExpandida && legenda) {
-                imgExpandida.src = imgMini.src;
-                legenda.textContent = 'Destaque - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
-                modal.style.display = 'flex';
-            }
-        }
-
-        function fecharModal() {
-            const modal = document.getElementById('modalImagem');
-            if (modal) modal.style.display = 'none';
-        }
-
-        // Fechar modal com tecla ESC
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') fecharModal();
-        });
-
-        const list = document.getElementById('banksList');
-        const searchBanksInput = document.getElementById('searchBanksInput');
-
-        function renderBanks(filtro = '') {
-            if (!list) return;
-            list.innerHTML = '';
-            if(typeof bancos === 'undefined') return;
-            bancos.forEach(banco => {
-                if (filtro && !banco.nome.toLowerCase().includes(filtro.toLowerCase())) return;
-                const item = document.createElement('div');
-                item.className = 'bank-item';
-                item.innerHTML = `
-                    <div class="bank-info">
-                        <span class="bank-name">${banco.nome}</span>
-                        <span class="bank-date">${banco.data}</span>
-                    </div>
-                    <div class="bank-actions">
-                        <a href="pdfs/${banco.id}.pdf" target="_blank" class="download-btn" title="Abrir PDF">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 6 15 12 9 18"></polyline>
-                            </svg>
-                        </a>
-                    </div>
-                `;
-                list.appendChild(item);
-            });
-        }
-        if(searchBanksInput) searchBanksInput.addEventListener('input', (e) => renderBanks(e.target.value));
-        renderBanks();
-
-        const searchSimuladoresInput = document.getElementById('searchSimuladoresInput');
-        const simuladorCards = document.querySelectorAll('#simuladoresGrid .link-card');
-        const noResultsSimuladores = document.getElementById('noResultsSimuladores');
-        if(searchSimuladoresInput) {
-            searchSimuladoresInput.addEventListener('input', function(e) {
-                const filtro = e.target.value.toLowerCase().trim();
-                let visiveis = 0;
-                simuladorCards.forEach(card => {
-                    const nome = card.querySelector('.link-name').textContent.toLowerCase();
-                    const url = card.querySelector('.link-url').textContent.toLowerCase();
-                    if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } 
-                    else { card.style.display = 'none'; }
-                });
-                if (noResultsSimuladores) noResultsSimuladores.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
-            });
-        }
-
-        const searchLinksInput = document.getElementById('searchLinksInput');
-        const linkCards = document.querySelectorAll('#linksGrid .link-card');
-        const noResultsLinks = document.getElementById('noResultsLinks');
-        if(searchLinksInput) {
-            searchLinksInput.addEventListener('input', function(e) {
-                const filtro = e.target.value.toLowerCase().trim();
-                let visiveis = 0;
-                linkCards.forEach(card => {
-                    const nome = card.querySelector('.link-name').textContent.toLowerCase();
-                    const url = card.querySelector('.link-url').textContent.toLowerCase();
-                    if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } 
-                    else { card.style.display = 'none'; }
-                });
-                if (noResultsLinks) noResultsLinks.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
-            });
-        }
-    </script>
+</header>
+
+<nav class="nav-bar">
+<button class="nav-btn active" onclick="showSection('mural', this)">COMUNICADOS</button>
+<button class="nav-btn" onclick="showSection('resumo-roteiros', this)">RESUMO ROTEIROS</button>
+<button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
+<button class="nav-btn" onclick="showSection('regras-idades', this)">REGRAS IDADES</button>
+<button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
+<button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
+</nav>
+
+<section id="mural" class="section active">
+<div class="container">
+<div class="mural-header"><h2>COMUNICADOS</h2><p class="mural-subtitle">Avisos e informações importantes para a equipe</p></div>
+<div class="mural-grid">
+<div class="mural-coluna mural-lateral">
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Banco BRB</span><span class="mural-data">22/09/2026</span></div><p class="mural-texto">O banco BRB com problemas no SISTEMA, sem previsão de retorno.</p></div>
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Novos Simuladores</span><span class="mural-data">22/09/2026</span></div><p class="mural-texto">Simulador Daycoval e Quero+ disponíveis. Arquivo atualizado em 22/09/2026.</p></div>
+</div>
+<div class="mural-coluna mural-central">
+<div class="mural-card mural-large mural-imagem-card" onclick="abrirModal()">
+<div class="mural-card-header"><span class="mural-titulo">Destaque</span><span class="mural-data">24/09/2026</span></div>
+<div class="mural-imagem-container"><img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem"></div>
+<p class="mural-imagem-legenda">Clique para ampliar</p>
+</div>
+</div>
+<div class="mural-coluna mural-lateral">
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Análise</span><span class="mural-data">24/09/2026</span></div><p class="mural-texto">Nova funcionalidade no Banco TOTAL CASH<br>Se tiver desbloqueado, jogando o CPF no MULTIPRODUTOS o banco já dá todas as opções e taxas disponiveis para o cliente.</p></div>
+<div class="mural-card mural-small"><div class="mural-card-header"><span class="mural-titulo">Melhores Oportunidades</span><span class="mural-data">24/09/2026</span></div><p class="mural-texto">QUALI<br>BANCO PARANÁ<br>ICRED<br>TOTALCASH<br>BANRISUL<br>QUERO MAIS<br>DAYCOVAL</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="resumo-roteiros" class="section">
+<div class="container">
+<div class="mural-header"><h2>RESUMO OPERACIONAL DOS BANCOS</h2><p class="mural-subtitle">Regras rápidas e valores de referência</p></div>
+<div class="bank-tabs">
+<button class="bank-btn active" onclick="mudarBanco('op-parana', this)">Paraná</button>
+<button class="bank-btn" onclick="mudarBanco('op-quali', this)">Quali</button>
+<button class="bank-btn" onclick="mudarBanco('op-daycoval', this)">Daycoval</button>
+<button class="bank-btn" onclick="mudarBanco('op-banrisul', this)">Banrisul</button>
+<button class="bank-btn" onclick="mudarBanco('op-c6', this)">C6</button>
+<button class="bank-btn" onclick="mudarBanco('op-facta', this)">Facta</button>
+<button class="bank-btn" onclick="mudarBanco('op-safra', this)">Safra</button>
+<button class="bank-btn" onclick="mudarBanco('op-bmg', this)">BMG</button>
+<button class="bank-btn" onclick="mudarBanco('op-finanto', this)">Finanto</button>
+<button class="bank-btn" onclick="mudarBanco('op-icred', this)">Icred</button>
+<button class="bank-btn" onclick="mudarBanco('op-brb', this)">BRB</button>
+<button class="bank-btn" onclick="mudarBanco('op-quero-mais', this)">Quero Mais</button>
+<button class="bank-btn" onclick="mudarBanco('op-totalcash', this)">Totalcash</button>
+<button class="bank-btn" onclick="mudarBanco('op-digio', this)">Digio</button>
+</div>
+
+<div id="op-parana" class="bank-content active">
+<h2 class="resumo-titulo">PARANÁ BANCO – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máximo: <span class="destaque-dourado">108 meses</span> | Taxa Máx: 1,85% a.m.</li><li>Parcela Mín (Novo): <span class="destaque-dourado">R$ 60,00</span> | Port+Refin: <span class="destaque-dourado">R$ 120,00</span></li><li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li><li>Máx 13 contratos por benefício | Data de Corte: 2º dia útil</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Bancos de rede: <span class="destaque-dourado">0 parcelas pagas</span> | Demais: <span class="destaque-dourado">12 parcelas pagas</span></li><li>Taxa Entrada Port: <span class="destaque-dourado">0,60%</span> | Refin Port: <span class="destaque-dourado">1,60%</span></li><li>C6: 25 pagas | Agibank: 13 pagas | Inbursa: 13 pagas</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Deficientes Visuais, Rep. Legal, LOAS, Pensão Alimentícia</li><li>PB, AP, TO, RR (60+): exigem assinatura física (reprovado automaticamente)</li><li>Margem Negativa: <span class="destaque-vermelho">Não opera</span> (permite port com margem zerada)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG, CNH, RNE/RNM | Consulta "Não Me Perturbe": realiza consulta</li></ul></div>
+</div>
+
+<div id="op-quali" class="bank-content">
+<h2 class="resumo-titulo">QUALI – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Port+Refin: <span class="destaque-dourado">R$ 50,00</span> | Port Pura: <span class="destaque-dourado">R$ 8.000,00</span> de saldo</li><li>Novo (Parcela mín): <span class="destaque-dourado">R$ 20,00</span> | Troco mín Refin: <span class="destaque-dourado">R$ 100,00</span></li><li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3><ul><li>Pan, Daycoval, Facta, C6: <span class="destaque-dourado">360 dias</span> | Demais: <span class="destaque-dourado">0 pagas</span> (mín 30 dias)</li><li><span class="destaque-vermelho">NÃO portamos:</span> Inbursa, Alfa, Sergipe, Bradescard, Topázio, Original, Master, ABC, Paraná (254), Senff, CCB, QI, Bari, AL5, Zema, Bradesco Fin, Crediare, Industrial, Pine, Digimais, Paulista</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Rep. Legal, Analfabetos, Port Pura em Invalidez</li><li>Margem negativa: opera se cobrir o troco</li><li>PB, AP, TO, RR (60+): CCB assinada + selfie segurando CCB</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG (10 anos), CNH (vencida ok), Passaporte (novo com pais), RNE</li></ul></div>
+</div>
+
+<div id="op-daycoval" class="bank-content">
+<h2 class="resumo-titulo">DAYCOVAL – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li><li>Agregação/Unificação: <span class="destaque-dourado">Apenas no Refin</span></li><li>Refin Puro: <span class="destaque-vermelho">Temporariamente suspenso</span></li><li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização</h3><ul><li>Digital padrão | <span class="destaque-vermelho">Híbrida obrigatória para 60+</span></li><li>Anuência: Obrigatória em até 5 dias corridos após averbação</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li><li>Bloqueio benefício: 180 dias da concessão, 60 dias da transferência</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG ou CNH (vencida ok), Termo IN100, Comprovante Endereço, Extrato Bancário</li></ul></div>
+</div>
+
+<div id="op-banrisul" class="bank-content">
+<h2 class="resumo-titulo">BANRISUL – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 700,00</span> | Refin Mín: <span class="destaque-dourado">R$ 100,00</span></li><li>Máx Operação: <span class="destaque-dourado">R$ 70.000,00</span> | Parcela Mín: <span class="destaque-dourado">R$ 8,00</span></li><li>Máx 13 contratos | Margem: 35%</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Mín 10 parcelas pagas (ou 5 com financiamento ≥ R$ 5.000)</li><li>Até 5 contratos juntos | Permite agregar margem</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização</h3><ul><li>Eletrônica ou Figital | Kit à New Space em até 5 dias úteis</li><li>Anuência via Meu INSS: Confirmar Empréstimo → Detalhar → Confirmar</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Rep. Legal, Acordos Internacionais, Empresa Convenente</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG, CNH, Passaporte, RNE, Protocolos PF | <span class="destaque-vermelho">Não aceita CTPS</span></li></ul></div>
+</div>
+
+<div id="op-c6" class="bank-content">
+<h2 class="resumo-titulo">C6 BANK – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Margem Livre Mín: <span class="destaque-dourado">R$ 1.000,00</span> | Refin Mín: <span class="destaque-dourado">R$ 700,00</span></li><li>Port Mín: <span class="destaque-dourado">R$ 2.000,00</span> | Troco Port: <span class="destaque-dourado">R$ 50,00</span></li><li>Prazo Máx: 108 meses | Carência: 30, 60 ou 90 dias</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Incremento mín: <span class="destaque-dourado">12 parcelas</span> | Permite reduzir/aumentar parcela</li><li>Permite unificar parcelas e carência na 1ª parcela</li><li>Margem negativa: deduzir da parcela do contrato refinanciado</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3><ul><li>Permite port pura e reduzir parcela | <span class="destaque-vermelho">Não unifica parcelas</span></li><li>Refin da Port: concluído em até 45 dias (após, vira refin normal)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Bancos não aceitos:</span> Inter, Stone, Arbi, Bs2, Pagseguro, Mercado Pago, Safra, Votorantim, PicPay</li><li>Agências Digitais: Caixa Tem, Next, Iti, Neon | Santander contas começando com 77</li></ul></div>
+</div>
+
+<div id="op-facta" class="bank-content">
+<h2 class="resumo-titulo">FACTA – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Risco Máx CPF: <span class="destaque-dourado">R$ 150.000,00</span> | Parcela Mín: <span class="destaque-dourado">R$ 50,00</span></li><li>Troco Mín Refin Carteira: <span class="destaque-dourado">R$ 100,00</span> | Troco Port: <span class="destaque-dourado">R$ 50,00</span></li><li>Dia de Corte: 2º dia útil</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade (Parcelas Pagas)</h3><ul><li>0 pagas: Demais | 12: BMG, C6, Santander | 15: Agibank, Paraná</li><li>24: Daycoval | 30: PAN</li><li><span class="destaque-vermelho">Não porta:</span> Inbursa, BRB, Pine, Socicred, Paulista, Zema (originados Facta)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Pensão alimentícia, Previdência complementar, Deficientes visuais/surdos/mudos, Procurador, Perícia < Jan/2018, PI</li><li>PB, AP, TO, RR, SC (60+): formalização digital + via assinada</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Analfabetos</h3><ul><li>Atende só operações novas | Rogado: 1º ou 2º grau | Selfie + docs obrigatórios</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>Apenas RG ou CNH (vencida ok) | <span class="destaque-vermelho">Não aceita CTPS</span> | Selfie obrigatória</li></ul></div>
+</div>
+
+<div id="op-safra" class="bank-content">
+<h2 class="resumo-titulo">BANCO SAFRA – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Margem: <span class="destaque-dourado">35%</span> | Mín Operação: <span class="destaque-dourado">R$ 400,00</span></li><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Risco Máx: <span class="destaque-dourado">R$ 80.000,00</span> (com histórico)</li><li>Máx 13 empréstimos | Tempo Mín Benefício: 90 dias</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Retenção: 0 parcelas pagas | Refin Carteira: 3 parcelas pagas</li><li>Permite junção 1 para 1 e agregação de margem no Refin/Retenção</li><li><span class="destaque-vermelho">Não permite</span> agregação no Refin de Portabilidade</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Tribos indígenas, Deficientes visuais, Rep. Legal, LOAS, ECT</li><li>Fechamento completo: PagSeguro (290) e MercadoPago (323)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG, CNH, DNI, CIN, RNE, RNM, CTPS (novo), Carteiras Funcionais/Classe</li></ul></div>
+</div>
+
+<div id="op-bmg" class="bank-content">
+<h2 class="resumo-titulo">BANCO BMG – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Margem</h3><ul><li>Global: <span class="destaque-dourado">40%</span> (35% emp + 5% cartão) | Máx 13 contratos</li><li>Refin: Mín 5 parcelas pagas | Permite agregação e margem negativa</li><li>Port: Mín 1 parcela paga | Troco mín Refin Port: <span class="destaque-dourado">R$ 50,00</span></li><li>Permite até 8 portabilidades em uma única digitação</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização</h3><ul><li>Digital/Digital Token | Híbrida obrigatória para Analfabetos e UFs (AP, PB, RR, TO) 60+</li><li>Anuência: Obrigatória em até 5 dias corridos após averbação</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Analfabetos</h3><ul><li>Rogado: 21 a 75 anos | Parentesco: 1º grau (pai, mãe, filhos) e 2º (irmãos)</li><li>Formalização: Rogado + Polegar cliente + 2 Testemunhas (não podem ser digitadores)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG/CIN, CNH, Passaporte, Carteira Profissional, CTPS (novo), CRNM/RNM/RNE (Máx 10 anos)</li></ul></div>
+</div>
+
+<div id="op-finanto" class="bank-content">
+<h2 class="resumo-titulo">FINANTO – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Produtos</h3><ul><li>Novo: Taxa 1,85% | 48-108x | Parcela mín <span class="destaque-dourado">R$ 20,00</span></li><li>Port Pura: Saldo mín R$ 8.000 | Taxa 1,66-1,80% | Redução mín 1%</li><li>Port+Refin: Taxa 1,60-1,85% | 108x | Troco mín <span class="destaque-dourado">R$ 100,00</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras</h3><ul><li>Agregar Margem: <span class="destaque-dourado">Apenas no Refin Puro</span></li><li>Margem Negativa: Opera só em Port+/Refin se cobrir o negativo</li><li>Junção de Parcelas: Via Refin Puro (tabela da menor parcela portada)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">NÃO PORTA acima de 12 pagas:</span> Inbursa, Pan, Pine, Picpay, Agibank, Parati, Santander, C6, Qi, Paraná, BNP, Facta, Daycoval, Mercantil, Alfa, Safra, BRB</li><li>Rep. Legal: <span class="destaque-vermelho">Não opera</span> | PB, AP, TO, RR: <span class="destaque-vermelho">Não opera acima de 60 anos</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Evidência</h3><ul><li>Obrigatória para Contrato Novo (Gravação, Vídeo ou Print WhatsApp)</li><li>Anuência: Obrigatória após averbação | Prazo: 5 dias</li></ul></div>
+</div>
+
+<div id="op-icred" class="bank-content">
+<h2 class="resumo-titulo">ICRED – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 35%</li><li>Formalização: <span class="destaque-dourado">100% Digital</span> | Liberação: PIX na conta do beneficiário</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Margem Livre Mín: <span class="destaque-dourado">R$ 1.200,00</span> (Prazo mín: 36x)</li><li>Refin Mín: <span class="destaque-dourado">R$ 800,00</span> (Mín 1 parcela paga) | Troco Port: <span class="destaque-dourado">R$ 100,00</span></li><li>Refin Port Mín: <span class="destaque-dourado">R$ 3.000,00</span> | Port: Mín 1 parcela paga</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras por Produto</h3><ul><li>Refin: Permite reduzir só para margem negativa | <span class="destaque-vermelho">Não aumenta parcela, não unifica</span></li><li>Margem Livre: <span class="destaque-vermelho">Não opera com margem negativa</span></li><li>Port: Permite digitar apenas port? <span class="destaque-vermelho">Não</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Rep. Legal (suspenso IN 190/2025), LOAS/BPC, Pensão Alimentícia, Exterior, ECT</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>Termo IN100, RG ou CNH (físico em mãos para captura)</li></ul></div>
+</div>
+
+<div id="op-brb" class="bank-content">
+<h2 class="resumo-titulo">BRB – RESUMO OPERACIONAL (Setembro/2026)</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores (ATUALIZADO)</h3><ul><li>Margem Livre Mín: <span class="destaque-dourado">R$ 2.000,00</span> (Parcela mín R$ 25)</li><li>Refin Mín: R$ 500,00 (Troco mín R$ 50)</li><li>Portabilidade: <span class="destaque-dourado">R$ 5.000,00</span> (unificado todas as taxas)</li><li>Troco Mín Port: <span class="destaque-dourado">R$ 100,00</span> | Prazo Máx: 108 meses</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3><ul><li>Só aceita saldos com <span class="destaque-dourado">mais de 360 dias</span> da contratação original</li><li><span class="destaque-vermelho">Não porta:</span> Picpay, Agibank, C6, C6 Consignado</li><li>Margem negativa: <span class="destaque-vermelho">Não pode finalizar só na port</span> (subtrair do troco)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Permite unificar parcelas e agregar margem</li><li>Taxa não pode ser inferior à do contrato original</li><li><span class="destaque-vermelho">Não permite</span> refin de carteira com Facta e Pine (contratos iniciados em 4, 5, 6)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições (ATUALIZADO)</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Menores de 18, Analfabetos, Deficientes visuais, Rep. Legal, LOAS/BPC (87/88)</li><li><span class="destaque-vermelho">Invalidez (32, 33, 34, 51, 83, 92): NÃO ATUA MAIS</span> (movido para lista de não aceitos)</li><li>Exterior, ECT, Pensão Alimentícia, Índios, Previdência Complementar</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG, CNH Funcional, CTPS, RNE (originais, sem cópia) | Comprovante Residência | Hiscon | IN100</li></ul></div>
+</div>
+
+<div id="op-quero-mais" class="bank-content">
+<h2 class="resumo-titulo">QUERO MAIS – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li><li>Data de Corte: 2º dia útil | Digitação até 16h (D+0) | Port até 13h</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Permite agregar margem e unificar parcelas</li><li>Port: <span class="destaque-vermelho">NÃO permite</span> agregar margem nem unificar parcelas</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização</h3><ul><li>Digital: Link via SMS | Híbrida obrigatória para 60+ (imprimir e assinar fisicamente)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC (87/88), Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia, ECT</li><li>Invalidez (32/92): 40-52 anos | 53-59 anos (mín 13 anos benefício) | 60+ (normal)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>Ficha Cadastral, CCB, Detalhamento Crédito, CNH/RG, Termo Autorização, Extrato Bancário, Comprovante Endereço</li></ul></div>
+</div>
+
+<div id="op-totalcash" class="bank-content">
+<h2 class="resumo-titulo">TOTAL CASH – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Produtos</h3><ul><li>Margem Livre, Port+Refin, Port Pura disponíveis</li><li>Refin Puro: <span class="destaque-vermelho">Temporariamente Suspenso</span></li><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores</h3><ul><li>Troco Mín Port+Refin: <span class="destaque-dourado">R$ 100,00</span></li><li>Valor Máx: <span class="destaque-dourado">R$ 85.000,00</span> (independente da qtd contratos)</li><li>Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>Idade Mín: <span class="destaque-dourado">55 anos</span> | 55-59 anos: mín 15 anos benefício | 60+: normal</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Idade < 21 anos, PEP, CPF irregular, ECT, Previdência Complementar</li><li>AP, PB, TO, RR (60+): formalização fígital (digital + físico)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>CCB (com geolocalização), Selfie, RG ou CNH (vencida ok), RG Estrangeiro</li></ul></div>
+</div>
+
+<div id="op-digio" class="bank-content">
+<h2 class="resumo-titulo">DIGIO – RESUMO OPERACIONAL</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Taxa Máx: 1,85%</li><li>Refin/Port Troco Mín: <span class="destaque-dourado">R$ 250,00</span></li><li><span class="destaque-vermelho">Não permite</span> reduzir parcela com margem negativa nem unificar parcelas</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Mín parcelas pagas: 1 paga (108x) ou 8 pagas (prazo menor)</li><li>Refin+Margem < 108x com agregação ≥ R$ 25: 1 parcela paga</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização</h3><ul><li>Digital: Link via SMS | Fígital obrigatória: 60+ em AP, PB, RR, TO, MG (Poços de Caldas)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC (87/88), Rep. Legal, Analfabetos, Exterior, Timbiras-MA, Silvícolas, Pensão alimentícia, Nubank (260), Orizona-GO</li><li>Bancos não aceitos: Pagbank, BS2, BMG, Mercado Pago, Digio, C6, Super Digital, XP, PicPay, HUB, iugu, Fitbank, Omni, C6 Consignado, Smartbank, Sofisa, Indusval, SouDigi+, Neon, Modal, Sicoob</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos</h3><ul><li>RG/CIN (físico/digital), CNH (física/digital), RNE/RNM, Carteira Classe (OAB, CRM, CREA), Certidão Casamento (divergência nome), CCB digital, Termo IN100</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="roteiros-inss" class="section">
+<div class="container">
+<div class="search-container"><input type="text" id="searchBanksInput" placeholder="Buscar banco..." class="search-box"></div>
+<div class="banks-list" id="banksList"></div>
+</div>
+</section>
+
+<section id="regras-idades" class="section">
+<div class="container">
+<div class="mural-header"><h2>POLÍTICA DE IDADES POR BANCO</h2><p class="mural-subtitle">Prazos e valores conforme a faixa etária</p></div>
+<div class="bank-tabs">
+<button class="bank-btn active" onclick="mudarBanco('id-parana', this)">Paraná</button>
+<button class="bank-btn" onclick="mudarBanco('id-quali', this)">Quali</button>
+<button class="bank-btn" onclick="mudarBanco('id-daycoval', this)">Daycoval</button>
+<button class="bank-btn" onclick="mudarBanco('id-banrisul', this)">Banrisul</button>
+<button class="bank-btn" onclick="mudarBanco('id-c6', this)">C6</button>
+<button class="bank-btn" onclick="mudarBanco('id-facta', this)">Facta</button>
+<button class="bank-btn" onclick="mudarBanco('id-safra', this)">Safra</button>
+<button class="bank-btn" onclick="mudarBanco('id-bmg', this)">BMG</button>
+<button class="bank-btn" onclick="mudarBanco('id-finanto', this)">Finanto</button>
+<button class="bank-btn" onclick="mudarBanco('id-icred', this)">Icred</button>
+<button class="bank-btn" onclick="mudarBanco('id-brb', this)">BRB</button>
+<button class="bank-btn" onclick="mudarBanco('id-quero-mais', this)">Quero Mais</button>
+<button class="bank-btn" onclick="mudarBanco('id-totalcash', this)">Totalcash</button>
+<button class="bank-btn" onclick="mudarBanco('id-digio', this)">Digio</button>
+</div>
+
+<div id="id-parana" class="bank-content active">
+<h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (INSS Padrão)</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 68 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>69 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>70 e 71 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>72 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>73 e 74 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (32 e 92)</h3><ul><li>Término: <span class="destaque-dourado">73 anos, 11 meses e 29 dias</span></li><li>55-57 anos: Mín 15 anos benefício | >= 58: Validação automática</li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 64 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>65 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>66 e 67 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>68 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>69 e 70 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensionistas</h3><ul><li>Encerrar antes do término da pensão ou <span class="destaque-dourado">81 anos</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 21 anos</td><td>3 anos</td></tr><tr><td>21 a 26 anos</td><td>6 anos</td></tr><tr><td>27 a 29 anos</td><td>10 anos</td></tr><tr><td>30 a 40 anos</td><td>15 anos</td></tr><tr><td>41 a 43 anos</td><td>20 anos</td></tr><tr><td>> 44 anos</td><td>Vitalícia</td></tr></tbody></table></div>
+</div>
+
+<div id="id-quali" class="bank-content">
+<h2 class="resumo-titulo">QUALI – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 71a 9m</td><td>R$ 150.000</td><td>108x</td></tr><tr><td>18 a 72a 9m</td><td>R$ 150.000</td><td>96x</td></tr><tr><td>18 a 73a 11m</td><td>R$ 150.000</td><td>84x</td></tr><tr><td>18 a 74a 11m</td><td>R$ 50.000</td><td>72x</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade Pura</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 71a 9m</td><td>R$ 150.000</td><td>72-108x</td></tr><tr><td>Até 74a 9m</td><td>R$ 50.000</td><td>72x</td></tr></tbody></table><p style="color:#dc3545; font-weight:bold; margin-top:10px;">* Port. Pura NÃO opera com Invalidez</p></div>
+</div>
+
+<div id="id-daycoval" class="bank-content">
+<h2 class="resumo-titulo">DAYCOVAL – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 69a 11m</td><td>R$ 400.000</td><td>108x</td></tr><tr><td>70 a 72a 11m</td><td>R$ 350.000</td><td>96x</td></tr><tr><td>73 a 80a 11m</td><td>R$ 300.000</td><td>84x</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 62a 11m</td><td>R$ 400.000</td><td>108x</td></tr><tr><td>63 a 65a 11m</td><td>R$ 350.000</td><td>96x</td></tr><tr><td>66 a 72a 11m</td><td>R$ 300.000</td><td>84x</td></tr></tbody></table></div>
+</div>
+
+<div id="id-banrisul" class="bank-content">
+<h2 class="resumo-titulo">BANRISUL – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 65 anos</td><td>R$ 70.000</td></tr><tr><td>66 a 69 anos</td><td>R$ 50.000</td></tr><tr><td>70 a 73 anos</td><td>R$ 40.000</td></tr><tr><td>74 a 75 anos</td><td>R$ 15.000</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (18 a 20 anos)</h3><ul><li>Encerrar contrato 2 meses antes de completar 21 anos</li></ul></div>
+</div>
+
+<div id="id-c6" class="bank-content">
+<h2 class="resumo-titulo">C6 BANK – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 71 anos</td><td>108x</td><td>Margem</td></tr><tr><td>72 anos</td><td>96x (ML) / 108x (Port)</td><td>Margem</td></tr><tr><td>73 anos</td><td>84x (ML) / 108x (Port)</td><td>Margem</td></tr><tr><td>74 anos</td><td>72x</td><td>R$ 35.000</td></tr><tr><td>75 anos</td><td>60x</td><td>R$ 20.000</td></tr><tr><td>76 anos</td><td>48x</td><td>R$ 15.000</td></tr><tr><td>77 anos</td><td>36x</td><td>R$ 10.000</td></tr><tr><td>78 anos</td><td>24x</td><td>R$ 8.000</td></tr><tr><td>79 anos</td><td>12x</td><td>R$ 5.000</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>< 55 anos: Perícia desde JAN/2017 | 55-59 anos: Mín 15 anos benefício | >= 60: Isento</li></ul></div>
+</div>
+
+<div id="id-facta" class="bank-content">
+<h2 class="resumo-titulo">FACTA – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 71a 11m</td><td>R$ 150.000</td><td>108x</td></tr><tr><td>72 anos</td><td>R$ 150.000</td><td>96x</td></tr><tr><td>73 anos</td><td>R$ 150.000</td><td>84x</td></tr><tr><td>74 anos</td><td>R$ 50.000</td><td>72x</td></tr><tr><td>75 anos</td><td>R$ 30.000</td><td>60x</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições Regionais (60+)</h3><ul><li>Estados: <span class="destaque-vermelho">PB, AP, TO, RR e SC</span> (Exige formalização digital + via assinada)</li></ul></div>
+</div>
+
+<div id="id-safra" class="bank-content">
+<h2 class="resumo-titulo">BANCO SAFRA – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Idade Máx: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>26 a 76a 11m</td><td>108x</td><td>Margem</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>31 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalício</td></tr></tbody></table></div>
+</div>
+
+<div id="id-bmg" class="bank-content">
+<h2 class="resumo-titulo">BANCO BMG – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx: <span class="destaque-dourado">75 anos</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 70 anos</td><td>108x</td><td>Margem</td></tr><tr><td>71 anos</td><td>96x</td><td>Margem</td></tr><tr><td>72 anos</td><td>84x</td><td>Margem</td></tr><tr><td>73 anos</td><td>72x</td><td>Margem</td></tr><tr><td>74 anos</td><td>60x</td><td>R$ 30.000</td></tr><tr><td>75 anos</td><td>48x</td><td>R$ 20.000</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (04, 05, 06, 32, 33, 92)</h3><ul><li>>= 60 anos: Opera | 55-59 anos: Mín 15 anos benefício | < 55: <span class="destaque-vermelho">Não opera</span></li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3><ul><li>Idade Mínima: <span class="destaque-dourado">28 anos</span></li></ul></div>
+</div>
+
+<div id="id-finanto" class="bank-content">
+<h2 class="resumo-titulo">FINANTO – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Limites</h3><ul><li>Idade Mín: <span class="destaque-dourado">22 anos</span></li><li>Idade Máx Novo: <span class="destaque-vermelho">73a 10m</span> (48x) | Port+Refin: <span class="destaque-vermelho">68a 10m</span> | Port Pura: <span class="destaque-vermelho">70 anos</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>22 a 68 anos</td><td>108x</td><td>Margem</td></tr><tr><td>69 anos</td><td>96x</td><td>Margem</td></tr><tr><td>70 anos</td><td>84x</td><td>Margem</td></tr><tr><td>71 anos</td><td>72x</td><td>Margem</td></tr><tr><td>72 anos</td><td>60x</td><td>Margem</td></tr><tr><td>73 anos</td><td>48x</td><td>Margem</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li>Invalidez 32: > 60 anos (Novos 108x) | Invalidez 92: > 68 anos</li><li>Pensão 21: > 45 anos | LOAS 87: <span class="destaque-vermelho">Não opera</span></li><li>PB, AP, TO, RR: <span class="destaque-vermelho">Não opera acima de 60 anos</span></li></ul></div>
+</div>
+
+<div id="id-icred" class="bank-content">
+<h2 class="resumo-titulo">ICRED – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx: <span class="destaque-dourado">73 anos e 11 meses</span> (para 60x)</li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 61a 11m</td><td>108x</td><td>R$ 100.000</td></tr><tr><td>62 a 62a 11m</td><td>108x</td><td>R$ 90.000</td></tr><tr><td>63 a 63a 11m</td><td>108x</td><td>R$ 80.000</td></tr><tr><td>64 a 64a 11m</td><td>108x</td><td>R$ 70.000</td></tr><tr><td>65 a 65a 11m</td><td>108x</td><td>R$ 60.000</td></tr><tr><td>66 a 66a 11m</td><td>108x</td><td>R$ 50.000</td></tr><tr><td>67 a 67a 11m</td><td>108x</td><td>R$ 40.000</td></tr><tr><td>68 a 68a 11m</td><td>108x</td><td>R$ 30.000</td></tr><tr><td>69 a 69a 11m</td><td>108x</td><td>R$ 25.000</td></tr><tr><td>70 a 70a 11m</td><td>96x</td><td>R$ 25.000</td></tr><tr><td>71 a 71a 11m</td><td>84x</td><td>R$ 25.000</td></tr><tr><td>72 a 72a 11m</td><td>72x</td><td>R$ 25.000</td></tr><tr><td>73 a 73a 11m</td><td>60x</td><td>R$ 25.000</td></tr><tr><td>>= 74 anos</td><td>Não opera</td><td>Não opera</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (32 e 92)</h3><ul><li>55-59 anos: Mín 15 anos benefício | >= 60: Opera normalmente</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>31 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalícia</td></tr></tbody></table></div>
+</div>
+
+<div id="id-brb" class="bank-content">
+<h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES (Setembro/2026)</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 65 anos</td><td>R$ 70.000</td></tr><tr><td>66 a 69 anos</td><td>R$ 50.000</td></tr><tr><td>70 a 73 anos</td><td>R$ 40.000</td></tr><tr><td>74 a 75 anos</td><td>R$ 15.000</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (ATUALIZADO)</h3><ul><li><span class="destaque-vermelho">NÃO ATUA MAIS com espécies 32, 33, 34, 51, 83 e 92</span> (movido para lista de não aceitos em Setembro/2026)</li></ul></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>30 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalício</td></tr></tbody></table></div>
+</div>
+
+<div id="id-quero-mais" class="bank-content">
+<h2 class="resumo-titulo">QUERO MAIS – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 69a 11m</td><td>R$ 400.000</td></tr><tr><td>70 a 72a 11m</td><td>R$ 350.000</td></tr><tr><td>73 a 80a 11m</td><td>R$ 300.000</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 62a 11m</td><td>R$ 400.000</td></tr><tr><td>63 a 65a 11m</td><td>R$ 350.000</td></tr><tr><td>66 a 72a 11m</td><td>R$ 300.000</td></tr></tbody></table></div>
+</div>
+
+<div id="id-totalcash" class="bank-content">
+<h2 class="resumo-titulo">TOTAL CASH – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li><li>Valor Máx: <span class="destaque-dourado">R$ 85.000,00</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Prazo</th><th>Duração</th><th>Iniciar até</th></tr></thead><tbody><tr><td>108x</td><td>9 anos</td><td>69a 11m 29d</td></tr><tr><td>96x</td><td>8 anos</td><td>70a 11m 29d</td></tr><tr><td>84x</td><td>7 anos</td><td>71a 11m 29d</td></tr><tr><td>72x</td><td>6 anos</td><td>72a 11m 29d</td></tr><tr><td>60x</td><td>5 anos</td><td>73a 11m 29d</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>Idade Mín: <span class="destaque-dourado">55 anos</span> (55-59: mín 15 anos benefício | >=60: normal)</li></ul></div>
+</div>
+
+<div id="id-digio" class="bank-content">
+<h2 class="resumo-titulo">DIGIO – POLÍTICA DE IDADES</h2>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul>
+<table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 60a 11m</td><td>R$ 120.000</td><td>108 meses</td></tr><tr><td>61 a 65a 11m</td><td>R$ 100.000</td><td>108 meses</td></tr><tr><td>66 a 70a 11m</td><td>R$ 85.000</td><td>108 meses</td></tr><tr><td>71 anos</td><td>R$ 85.000</td><td>96 meses</td></tr><tr><td>72 anos</td><td>R$ 85.000</td><td>84 meses</td></tr><tr><td>73 anos</td><td>R$ 85.000</td><td>72 meses</td></tr><tr><td>74 anos</td><td>R$ 85.000</td><td>60 meses</td></tr><tr><td>75 anos</td><td>R$ 85.000</td><td>48 meses</td></tr><tr><td>76 anos</td><td>R$ 85.000</td><td>36 meses</td></tr><tr><td>77 anos</td><td>R$ 85.000</td><td>24 meses</td></tr><tr><td>78 anos</td><td>R$ 85.000</td><td>12 meses</td></tr></tbody></table></div>
+<div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>Idade Mín: <span class="destaque-dourado">60 anos</span></li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="simuladores" class="section">
+<div class="container">
+<div class="search-container"><input type="text" id="searchSimuladoresInput" placeholder="Buscar simulador..." class="search-box"></div>
+<div class="links-grid" id="simuladoresGrid">
+<div class="link-card"><div class="link-info"><div class="link-name">QUALI BANKING</div><div class="link-date">17/09/2026</div><div class="link-url">qualibanking.com.br</div></div><a href="https://qualibanking.com.br/simulador/port-inss/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">SIMULADOR DAYCOVAL</div><div class="link-date">22/09/2026</div><div class="link-url">simulador-daycoval.xlsx</div></div><a href="simuladores/simulador-daycoval.xlsx" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">SIMULADOR QUERO MAIS</div><div class="link-date">22/09/2026</div><div class="link-url">simulador-quero-mais.xlsx</div></div><a href="simuladores/simulador-quero-mais.xlsx" target="_blank" class="link-btn">Acessar</a></div>
+</div>
+<div class="no-results" id="noResultsSimuladores">Nenhum simulador encontrado.</div>
+</div>
+</section>
+
+<section id="links-uteis" class="section">
+<div class="container">
+<div class="search-container"><input type="text" id="searchLinksInput" placeholder="Buscar banco..." class="search-box"></div>
+<div class="links-grid" id="linksGrid">
+<div class="link-card"><div class="link-info"><div class="link-name">AMIGOZ</div><div class="link-url">amigozconsig.com.br</div></div><a href="https://amigozconsig.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO BTW</div><div class="link-url">consig.btwbank.com</div></div><a href="https://consig.btwbank.com/WebSites/FIMenuMVC/Login/AC.UI.LOGIN.aspx?FISession=8882e7ec7173" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO HOPE</div><div class="link-url">hope.titan.ceoslab.app</div></div><a href="https://hope.titan.ceoslab.app/operacional/operacoes" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO INDUSTRIAL</div><div class="link-url">www.bibcred.com.br</div></div><a href="http://www.bibcred.com.br" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO NG CRED</div><div class="link-url">front.nossagentecard.com.br</div></div><a href="https://front.nossagentecard.com.br/appmenu/Login/ICLogin?ReturnUrl=%2Fappmenu%2F" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO NOSSA FINTECH</div><div class="link-url">anossafintech.com.br</div></div><a href="https://anossafintech.com.br/desk" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO PEGCARD</div><div class="link-url">app.pegsystem.com.br</div></div><a href="https://app.pegsystem.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANCO SOMA</div><div class="link-url">sistema.somabp2.com.br</div></div><a href="https://sistema.somabp2.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PORT TECH</div><div class="link-url">portpromotora.corban.tec.br</div></div><a href="https://portpromotora.corban.tec.br/login/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BANRISUL</div><div class="link-url">bemweb.bempromotora.com.br</div></div><a href="https://bemweb.bempromotora.com.br/autenticacao/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BMG CONSIG</div><div class="link-url">www.bmgconsig.com.br</div></div><a href="https://www.bmgconsig.com.br/principal/fsconsignataria.jsp" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">BRB RED</div><div class="link-url">esteira.redconsig.com.br</div></div><a href="https://esteira.redconsig.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">C6 BANK</div><div class="link-url">c6.c6consig.com.br</div></div><a href="https://c6.c6consig.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CAIXA 360</div><div class="link-url">promotoramax.consig360.com.br</div></div><a href="https://promotoramax.consig360.com.br" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CONSULTA MARGEM - GUARULHOS</div><div class="link-url">proconsig.com.br</div></div><a href="https://proconsig.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CREFAZ</div><div class="link-url">crefazon.com.br</div></div><a href="https://crefazon.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CREFISA CONSIGNADO</div><div class="link-url">sfc.sistemascr.com.br</div></div><a href="https://sfc.sistemascr.com.br" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CREFISA PESSOAL</div><div class="link-url">app1.gerencialcredito.com.br</div></div><a href="https://app1.gerencialcredito.com.br/CREFISA/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">DAYCOVAL</div><div class="link-url">consignado.daycoval.com.br</div></div><a href="https://consignado.daycoval.com.br/Autorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">DIGIO BRADESCO</div><div class="link-url">funcaoconsig.digio.com.br</div></div><a href="https://funcaoconsig.digio.com.br/FIMENU/Login/AC.UI.LOGIN.aspx?FISession=47abfee7fd97" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">EXÉRCITO</div><div class="link-url">www.econsig.com.br</div></div><a href="https://www.econsig.com.br/ebconsig/v3/autenticar#no-back" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FACTA</div><div class="link-url">desenv.facta.com.br</div></div><a href="https://desenv.facta.com.br/sistemaNovo/login.php" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FINANTO (Qualibank MAXI)</div><div class="link-url">finanto.joinbank.com.br</div></div><a href="https://finanto.joinbank.com.br/loan-simulations" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FINTECH</div><div class="link-url">fintechdocorban.nossafintech.com.br</div></div><a href="https://fintechdocorban.nossafintech.com.br/session/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FUNÇÃO QUERO+</div><div class="link-url">consignado.queromaisconsignado.com.br</div></div><a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=df99aad33699" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FUTURO PREVIDÊNCIA</div><div class="link-url">webagente.eaglecred.com.br</div></div><a href="https://webagente.eaglecred.com.br" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">FUTURO PREVIDENCIA - EAGLE</div><div class="link-url">webagente.eaglecred.com.br</div></div><a href="https://webagente.eaglecred.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">HAPPY</div><div class="link-url">happyconsig.com.br</div></div><a href="https://happyconsig.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">HOLERITE ELETRÔNICO - SP</div><div class="link-url">areaprivada.prefeitura.sp.gov.br</div></div><a href="https://www.areaprivada.prefeitura.sp.gov.br/PortalPMSP/PortalPMSP/Portal/PMSPprt001.tp" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">IC360 - ITAÚ</div><div class="link-url">ic360.com.br</div></div><a href="https://openid.itau.com.br/services/oauth/authorize?client_id=f3c7c3bc-b4bb-48a4-8dad-07e0489cce70&redirect_uri=https:%2F%2Fic360.com.br%2Flogin%2Fcallback-partner-sts&scope=openid&response_type=code" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">ICRED</div><div class="link-url">corban.icred.digital</div></div><a href="https://corban.icred.digital/inss" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">ITAUBMG</div><div class="link-url">www.ibconsigweb.com.br</div></div><a href="https://www.ibconsigweb.com.br/Index.do?method=prepare" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">LEMIT</div><div class="link-url">lemitti.com</div></div><a href="https://lemitti.com/home" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">LOTUS +</div><div class="link-url">app.lotusmais.com.br</div></div><a href="https://app.lotusmais.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">MERCANTIL</div><div class="link-url">mb-ui-pcb-site-pcb.meumb.mercantil.com.br</div></div><a href="https://mb-ui-pcb-site-pcb.meumb.mercantil.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PAGBANK</div><div class="link-url">wss.credisim.com.br</div></div><a href="https://wss.credisim.com.br/BSGWEBSITES/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PAN</div><div class="link-url">panconsig.pansolucoes.com.br</div></div><a href="https://panconsig.pansolucoes.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PARANÁ BANCO (Central)</div><div class="link-url">portalcentralcorrespondente.paranabanco.com.br</div></div><a href="https://portalcentralcorrespondente.paranabanco.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PARANÁ BANCO (Front)</div><div class="link-url">front.paranabanco.b.br/front</div></div><a href="https://front.paranabanco.b.br/front/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PHTECH</div><div class="link-url">phtech.uy3.com.br</div></div><a href="https://phtech.uy3.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PORTAL AERONÁUTICA</div><div class="link-url">www.aerconsig.com.br</div></div><a href="https://www.aerconsig.com.br/fab/servidor/#no-back" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PORTAL DAYCOVAL</div><div class="link-url">portaldecredito.daycoval.com.br</div></div><a href="https://portaldecredito.daycoval.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PORTAL DO CONSIGNADO - SP</div><div class="link-url">www.portaldoconsignado.org.br</div></div><a href="https://www.portaldoconsignado.org.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PORTAL SANTANDER</div><div class="link-url">www.parceirosantander.com.br</div></div><a href="https://www.parceirosantander.com.br/spa-base/landing-page" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PREF. SÃO BERNARDO DO CAMPO</div><div class="link-url">www.econsig.com.br</div></div><a href="https://www.econsig.com.br/sbc" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PRESENÇA BANK</div><div class="link-url">portal.presencabank.com.br</div></div><a href="https://portal.presencabank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">PRO CONSIG</div><div class="link-url">proconsig.com.br</div></div><a href="https://proconsig.com.br" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">QUALIBANK</div><div class="link-url">quali.joinbank.com.br</div></div><a href="https://quali.joinbank.com.br/sign-in" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">QUALICARD</div><div class="link-url">qualibanking.app</div></div><a href="https://qualibanking.app/WebAutorizador/Login/AC.UI.LOGIN.aspx?FISession=b29389e94368" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">QUERO+</div><div class="link-url">consignado.queromaisconsignado.com.br</div></div><a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=b51997a5b3a1" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">QUERO+ BEVI</div><div class="link-url">portaldecredito.queromaisconsignado.com.br</div></div><a href="https://portaldecredito.queromaisconsignado.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">SAFRA</div><div class="link-url">epfweb.safra.com.br</div></div><a href="https://epfweb.safra.com.br/" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">SIAPE</div><div class="link-url">www.siapenet.gov.br</div></div><a href="https://www.siapenet.gov.br/Portal/Consignataria.asp" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">SIMPLIX</div><div class="link-url">simplix.partner1.com.br</div></div><a href="https://simplix.partner1.com.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">CALCULADORA DO CIDADÃO - FINANCIAMENTO</div><div class="link-url">bcb.gov.br</div></div><a href="https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormFinanciamentoPrestacoesFixas.do?method=exibirFormFinanciamentoPrestacoesFixas" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">TOTAL CASH</div><div class="link-url">totalcash.net.br</div></div><a href="https://totalcash.net.br/login" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">V8 DIGITAL</div><div class="link-url">app.v8sistema.com</div></div><a href="http://app.v8sistema.com" target="_blank" class="link-btn">Acessar</a></div>
+<div class="link-card"><div class="link-info"><div class="link-name">VANGUARD</div><div class="link-url">gestao.sistemacorban.com.br/index.php/auth/login</div></div><a href="https://gestao.sistemacorban.com.br/index.php/auth/login" target="_blank" class="link-btn">Acessar</a></div>
+</div>
+<div class="no-results" id="noResultsLinks">Nenhum banco encontrado.</div>
+</div>
+</section>
+
+<footer><p>© 2026 - Uso Interno | Hub Arya</p></footer>
+
+<script src="dados.js"></script>
+<script>
+function showSection(sectionId, clickedBtn) {
+document.querySelectorAll('.section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+const el = document.getElementById(sectionId);
+if (el) { el.style.display = 'block'; setTimeout(() => el.classList.add('active'), 10); }
+if (clickedBtn) clickedBtn.classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function abrirModal() {
+const modal = document.getElementById('modalImagem');
+const imgMini = document.querySelector('.mural-imagem');
+const imgExpandida = document.getElementById('imgExpandida');
+const legenda = document.getElementById('modalLegenda');
+if (imgMini && imgExpandida && legenda) {
+imgExpandida.src = imgMini.src;
+legenda.textContent = 'Destaque - ' + document.querySelector('.mural-imagem-card .mural-data').textContent;
+modal.style.display = 'flex';
+}
+}
+function fecharModal() { const modal = document.getElementById('modalImagem'); if (modal) modal.style.display = 'none'; }
+function mudarBanco(bankId, btn) {
+const categoriaPai = btn.closest('.section');
+categoriaPai.querySelectorAll('.bank-content').forEach(el => el.classList.remove('active'));
+categoriaPai.querySelectorAll('.bank-btn').forEach(el => el.classList.remove('active'));
+document.getElementById(bankId).classList.add('active');
+btn.classList.add('active');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
+
+const list = document.getElementById('banksList');
+const searchBanksInput = document.getElementById('searchBanksInput');
+function renderBanks(filtro = '') {
+if (!list) return; list.innerHTML = '';
+if(typeof bancos === 'undefined') return;
+bancos.forEach(banco => {
+if (filtro && !banco.nome.toLowerCase().includes(filtro.toLowerCase())) return;
+const item = document.createElement('div'); item.className = 'bank-item';
+item.innerHTML = `<div class="bank-info"><span class="bank-name">${banco.nome}</span><span class="bank-date">${banco.data}</span></div><div class="bank-actions"><a href="pdfs/${banco.id}.pdf" target="_blank" class="download-btn" title="Abrir PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg></a></div>`;
+list.appendChild(item);
+});
+}
+if(searchBanksInput) searchBanksInput.addEventListener('input', e => renderBanks(e.target.value));
+renderBanks();
+
+const searchSimuladoresInput = document.getElementById('searchSimuladoresInput');
+const simuladorCards = document.querySelectorAll('#simuladoresGrid .link-card');
+const noResultsSimuladores = document.getElementById('noResultsSimuladores');
+if(searchSimuladoresInput) {
+searchSimuladoresInput.addEventListener('input', function(e) {
+const filtro = e.target.value.toLowerCase().trim(); let visiveis = 0;
+simuladorCards.forEach(card => {
+const nome = card.querySelector('.link-name').textContent.toLowerCase();
+const url = card.querySelector('.link-url').textContent.toLowerCase();
+if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } else { card.style.display = 'none'; }
+});
+if (noResultsSimuladores) noResultsSimuladores.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
+});
+}
+
+const searchLinksInput = document.getElementById('searchLinksInput');
+const linkCards = document.querySelectorAll('#linksGrid .link-card');
+const noResultsLinks = document.getElementById('noResultsLinks');
+if(searchLinksInput) {
+searchLinksInput.addEventListener('input', function(e) {
+const filtro = e.target.value.toLowerCase().trim(); let visiveis = 0;
+linkCards.forEach(card => {
+const nome = card.querySelector('.link-name').textContent.toLowerCase();
+const url = card.querySelector('.link-url').textContent.toLowerCase();
+if (nome.includes(filtro) || url.includes(filtro)) { card.style.display = 'flex'; visiveis++; } else { card.style.display = 'none'; }
+});
+if (noResultsLinks) noResultsLinks.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
+});
+}
+</script>
 </body>
 </html>
