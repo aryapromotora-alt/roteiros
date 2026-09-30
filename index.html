@@ -6,7 +6,7 @@
 <title>Hub Arya</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Estilos específicos das tabelas comparativas (mantidos para garantir funcionamento) */
+/* Estilos específicos das tabelas comparativas */
 .tabela-comparativa { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; min-width: 1200px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; margin-bottom: 30px; }
 .tabela-comparativa th { background-color: #0f172a; color: #ffffff; font-weight: 600; padding: 14px 12px; white-space: nowrap; position: sticky; top: 0; z-index: 10; }
 .tabela-comparativa th:first-child, .tabela-comparativa td:first-child { text-align: left; padding-left: 20px; font-weight: 600; color: #334155; position: sticky; left: 0; background-color: #ffffff; z-index: 5; border-right: 2px solid #e2e8f0; }
@@ -59,40 +59,40 @@
 <!-- 1. RESUMO ROTEIROS (COM SIDEBAR) -->
 <section id="resumo-roteiros" class="section active">
     <div class="main-layout">
-<div class="sidebar-bancos">
-    <div class="sidebar-title">Bancos Parceiros</div>
-    <button class="sidebar-item active" onclick="mudarBanco('op-quali', this)">Quali</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-brb', this)">BRB</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-icred', this)">iCred</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-finanto', this)">Finanto</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-parana', this)">Paraná</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-quero-mais', this)">Quero Mais</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-digio', this)">Digio</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-banrisul', this)">Banrisul</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-daycoval', this)">Daycoval</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-totalcash', this)">TotalCash</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-c6', this)">C6</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-facta', this)">Facta</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-safra', this)">Safra</button>
-    <button class="sidebar-item" onclick="mudarBanco('op-bmg', this)">BMG</button>
-</div>
+        <div class="sidebar-bancos">
+            <div class="sidebar-title">Bancos Parceiros</div>
+            <button class="sidebar-item active" onclick="mudarBanco('op-quali', this)">Quali</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-brb', this)">BRB</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-icred', this)">iCred</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-finanto', this)">Finanto</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-parana', this)">Paraná</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-quero-mais', this)">Quero Mais</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-digio', this)">Digio</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-banrisul', this)">Banrisul</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-daycoval', this)">Daycoval</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-totalcash', this)">TotalCash</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-c6', this)">C6</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-facta', this)">Facta</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-safra', this)">Safra</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-bmg', this)">BMG</button>
+        </div>
         <div class="content-area">
             <div class="mural-header"><h2>RESUMO OPERACIONAL DOS BANCOS</h2><p class="mural-subtitle">Regras rápidas e valores de referência</p></div>
 
-            <div id="op-parana" class="bank-content active">
-                <h2 class="resumo-titulo">PARANÁ BANCO – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Taxa Entrada Port: <span class="destaque-dourado">0,60%</span> | Refin Port: <span class="destaque-dourado">1,60%</span></li><li>Bancos de rede (gerais): <span class="destaque-dourado">0 parcelas pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa, Qi Sociedade, Picpay, Pine, BNP Paribas, Alfa, Facta, C6, Safra</li><li><span class="destaque-dourado">ACIMA DE 12 PAGAS:</span> Pan, Paraná, Santander, Mercantil, Agibank, Daycoval, Parati</li><li>C6 Consignado (626): <span class="destaque-vermelho">25 pagas</span> | Agibank (121): <span class="destaque-vermelho">13 pagas</span> | Inbursa (012/055): <span class="destaque-vermelho">13 pagas</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Solicitar após <span class="destaque-dourado">7 dias úteis</span> da integração do contrato original</li><li>Margem negativa após regularização: atualizada também após 7 dias úteis</li><li>Permite unificar parcelas e agregar margem (somente no Refin)</li><li>Anuência individual obrigatória no Meu INSS a cada operação</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máximo: <span class="destaque-dourado">108 meses</span> | Taxa Máx: 1,85% a.m.</li><li>Parcela Mín (Novo): <span class="destaque-dourado">R$ 60,00</span> | Port+Refin: <span class="destaque-dourado">R$ 120,00</span></li><li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span> | Demais operações: R$ 1,00</li><li>Máx 13 contratos por benefício | Data de Corte: 2º dia útil</li><li>Margem Negativa: <span class="destaque-vermelho">Não opera</span> (permite port com margem zerada)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Deficientes Visuais, Rep. Legal, LOAS, Pensão Alimentícia</li><li>PB, AP, TO, RR (60+): exigem assinatura física (reprovado automaticamente)</li><li>Bloqueio por operação (desde 22/04): concessão 90 dias | TBM 60 dias</li><li>Documentos: RG, CNH, RNE/RNM | Consulta "Não Me Perturbe": realiza consulta</li></ul></div>
-            </div>
-
-            <div id="op-quali" class="bank-content">
+            <div id="op-quali" class="bank-content active">
                 <h2 class="resumo-titulo">QUALI – RESUMO OPERACIONAL</h2>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><strong>Port+Refin:</strong> Pan, Daycoval, Facta, C6: <span class="destaque-dourado">360 dias</span> da data do contrato | Demais bancos: <span class="destaque-dourado">0 parcelas pagas</span> (mínimo 30 dias do contrato de origem)</li><li><strong>Portabilidade Pura:</strong> Redução mínima de <span class="destaque-dourado">1% do valor da parcela original</span> (aplicável entre 72 e 108 parcelas em aberto) | Mesma regra de parcelas pagas acima</li><li><span class="destaque-vermelho">NÃO portamos:</span> Inbursa (012), Alfa (025), Sergipe (047), Bradescard (063), Topázio (082), Original (212), Master (243), ABC Brasil (246), <strong>Paraná (254)</strong>, Senff (276), CCB Brasil (320), QI Sociedade (329), Bari (330), AL5 (349), Zema (359), Bradesco Financiamentos (394), Crediare (429), Industrial (604), Pine (643), Digimais (654), Paulista (611)</li><li><span class="destaque-vermelho">Invalidez NÃO opera com Portabilidade Pura</span></li></ul></div>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco mínimo: <span class="destaque-dourado">R$ 100,00</span> OU % do endividamento (2% se 72+ pcl, 3% se 57-71 pcl, 5% se 56- pcl)</li><li>Margem negativa: opera, desde que o negativo seja retirado da parcela e a operação cubra o troco</li></ul></div>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Port+Refin: <span class="destaque-dourado">R$ 50,00</span> | Port Pura: <span class="destaque-dourado">R$ 8.000,00</span> de saldo</li><li>Novo (Parcela mín): <span class="destaque-dourado">R$ 20,00</span></li><li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li><li>Limites Port. Pura: 18 a 71a 9m → <span class="destaque-dourado">72 a 108 parcelas em aberto</span> | R$ 150.000,00 | Até 74a 9m → <span class="destaque-dourado">72 parcelas em aberto</span> | R$ 50.000,00</li></ul></div>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Rep. Legal, Analfabetos, Port Pura em Invalidez</li><li>PB, AP, TO, RR (60+): CCB assinada + selfie segurando CCB</li><li>Documentos: RG (10 anos), CNH (vencida ok), Passaporte (novo com pais), RNE</li></ul></div>
+            </div>
+
+            <div id="op-parana" class="bank-content">
+                <h2 class="resumo-titulo">PARANÁ BANCO – RESUMO OPERACIONAL</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Taxa Entrada Port: <span class="destaque-dourado">0,60%</span> | Refin Port: <span class="destaque-dourado">1,60%</span></li><li>Bancos de rede (gerais): <span class="destaque-dourado">0 parcelas pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa, Qi Sociedade, Picpay, Pine, BNP Paribas, Alfa, Facta, C6, Safra</li><li><span class="destaque-dourado">ACIMA DE 12 PAGAS:</span> Pan, Paraná, Santander, Mercantil, Agibank, Daycoval, Parati</li><li>C6 Consignado (626): <span class="destaque-vermelho">25 pagas</span> | Agibank (121): <span class="destaque-vermelho">13 pagas</span> | Inbursa (012/055): <span class="destaque-vermelho">13 pagas</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Solicitar após <span class="destaque-dourado">7 dias úteis</span> da integração do contrato original</li><li>Margem negativa após regularização: atualizada também após 7 dias úteis</li><li>Permite unificar parcelas e agregar margem (somente no Refin)</li><li>Anuência individual obrigatória no Meu INSS a cada operação</li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máximo: <span class="destaque-dourado">108 meses</span> | Taxa Máx: 1,85% a.m.</li><li>Parcela Mín (Novo): <span class="destaque-dourado">R$ 60,00</span> | Port+Refin: <span class="destaque-dourado">R$ 120,00</span></li><li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span> | Demais operações: R$ 1,00</li><li>Máx 13 contratos por benefício | Data de Corte: 2º dia útil</li><li>Margem Negativa: <span class="destaque-vermelho">Não opera</span> (permite port com margem zerada)</li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Deficientes Visuais, Rep. Legal, LOAS, Pensão Alimentícia</li><li>PB, AP, TO, RR (60+): exigem assinatura física (reprovado automaticamente)</li><li>Bloqueio por operação (desde 22/04): concessão 90 dias | TBM 60 dias</li><li>Documentos: RG, CNH, RNE/RNM | Consulta "Não Me Perturbe": realiza consulta</li></ul></div>
             </div>
 
             <div id="op-daycoval" class="bank-content">
@@ -199,24 +199,24 @@
 <!-- 2. REGRAS IDADES (COM SIDEBAR) -->
 <section id="regras-idades" class="section">
     <div class="main-layout">
-<div class="sidebar-bancos">
-    <div class="sidebar-title">Bancos Parceiros</div>
-    <button class="sidebar-item active" onclick="mudarBanco('id-tabela', this)">📊 Tabela Comparativa</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-quali', this)">Quali</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-brb', this)">BRB</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-icred', this)">iCred</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-finanto', this)">Finanto</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-parana', this)">Paraná</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-quero-mais', this)">Quero Mais</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-digio', this)">Digio</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-banrisul', this)">Banrisul</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-daycoval', this)">Daycoval</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-totalcash', this)">TotalCash</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-c6', this)">C6</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-facta', this)">Facta</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-safra', this)">Safra</button>
-    <button class="sidebar-item" onclick="mudarBanco('id-bmg', this)">BMG</button>
-</div>
+        <div class="sidebar-bancos">
+            <div class="sidebar-title">Bancos Parceiros</div>
+            <button class="sidebar-item active" onclick="mudarBanco('id-tabela', this)">📊 Tabela Comparativa</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-quali', this)">Quali</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-brb', this)">BRB</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-icred', this)">iCred</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-finanto', this)">Finanto</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-parana', this)">Paraná</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-quero-mais', this)">Quero Mais</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-digio', this)">Digio</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-banrisul', this)">Banrisul</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-daycoval', this)">Daycoval</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-totalcash', this)">TotalCash</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-c6', this)">C6</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-facta', this)">Facta</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-safra', this)">Safra</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-bmg', this)">BMG</button>
+        </div>
         <div class="content-area">
             <div class="mural-header"><h2>POLÍTICA DE IDADES POR BANCO</h2><p class="mural-subtitle">Prazos e valores conforme a faixa etária</p></div>
             
@@ -267,17 +267,17 @@
                             <tr><td>Até 40 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
                             <tr><td>41 a 52 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
                             <tr><td>53 a 54 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
-                            <tr><td>55 a 59 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">108x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>60 a 64 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">96x <span class="tooltip-icon">ⓘ</span></td></tr>
+                            <tr><td>55 a 59 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon"></span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">108x <span class="tooltip-icon">ⓘ</span></td></tr>
+                            <tr><td>60 a 64 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">72x <span class="tooltip-icon"></span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon"></span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">96x <span class="tooltip-icon"></span></td></tr>
                             <tr><td>65 a 68 anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">60x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">60x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">60x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">84x <span class="tooltip-icon">ⓘ</span></td></tr>
                             <tr><td>69 a 72 anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">36x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">48x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">48x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">72x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>73+ anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="Apenas >= 60 anos.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">—</td><td class="status-none">Não Autorizado</td><td class="status-none">—</td></tr>
+                            <tr><td>73+ anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">84x <span class="tooltip-icon"></span></td><td class="status-none">Não Atua</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="Apenas >= 60 anos.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">—</td><td class="status-none">Não Autorizado</td><td class="status-none">—</td></tr>
                         </tbody>
                     </table>
                 </div></div>
 
                 <div class="info-boxes-container">
-                    <div class="info-box"><h4>📌 Idade Máxima de Término do Contrato</h4><ul><li><strong>Daycoval / Quero Mais:</strong> 80 anos, 11 meses e 29 dias</li><li><strong>Quali:</strong> 80 anos e 9 meses</li><li><strong>TotalCash / Digio:</strong> 78 anos, 11 meses e 29 dias</li><li><strong>Paraná / Banrisul / BRB:</strong> 77 anos, 11 meses e 29 dias</li><li><strong>Safra:</strong> 76 anos, 11 meses e 29 dias</li><li><strong>BMG:</strong> 75 anos</li><li><strong>C6 / iCred:</strong> 73 anos e 11 meses</li><li><strong>Finanto:</strong> 73 anos e 10 meses (Novo) | 68a10m (Port+Refin)</li></ul></div>
+                    <div class="info-box"><h4> Idade Máxima de Término do Contrato</h4><ul><li><strong>Daycoval / Quero Mais:</strong> 80 anos, 11 meses e 29 dias</li><li><strong>Quali:</strong> 80 anos e 9 meses</li><li><strong>TotalCash / Digio:</strong> 78 anos, 11 meses e 29 dias</li><li><strong>Paraná / Banrisul / BRB:</strong> 77 anos, 11 meses e 29 dias</li><li><strong>Safra:</strong> 76 anos, 11 meses e 29 dias</li><li><strong>BMG:</strong> 75 anos</li><li><strong>C6 / iCred:</strong> 73 anos e 11 meses</li><li><strong>Finanto:</strong> 73 anos e 10 meses (Novo) | 68a10m (Port+Refin)</li></ul></div>
                     <div class="info-box"><h4>⚠️ Regras Especiais de Portabilidade</h4><ul><li><strong>Safra e BMG:</strong> Portabilidade Suspensa.</li><li><strong>Daycoval e Quero Mais:</strong> Na Portabilidade, o limite de idade é menor (para em 72a11m).</li><li><strong>C6 Bank:</strong> Na Portabilidade, permite mais parcelas que o Novo aos 72 e 73 anos (108x).</li><li><strong>Finanto:</strong> Port+Refin para até 68a10m. Port Pura até 70 anos.</li></ul></div>
                 </div>
                 <div class="legenda-comparativa">
@@ -285,16 +285,6 @@
                     <div class="legenda-item"><div class="cor-box" style="background:#f1f5f9; border-color:#e2e8f0"></div> Não opera</div>
                     <div class="legenda-item"><div class="cor-box" style="background:#fff; border-color:#94a3b8"></div> <span class="tooltip-icon" style="margin:0;">ⓘ</span> Regra de idade (passe o mouse)</div>
                 </div>
-            </div>
-
-            <div id="id-parana" class="bank-content">
-                <h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (INSS Padrão)</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 68 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>69 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>70 e 71 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>72 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>73 e 74 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (32 e 92)</h3><ul><li>Término: <span class="destaque-dourado">73 anos, 11 meses e 29 dias</span></li><li>55-57 anos: Mín 15 anos benefício | >= 58: Validação automática</li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 64 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>65 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>66 e 67 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>68 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>69 e 70 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensionistas</h3><ul><li>Encerrar antes do término da pensão ou <span class="destaque-dourado">81 anos</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 21 anos</td><td>3 anos</td></tr><tr><td>21 a 26 anos</td><td>6 anos</td></tr><tr><td>27 a 29 anos</td><td>10 anos</td></tr><tr><td>30 a 40 anos</td><td>15 anos</td></tr><tr><td>41 a 43 anos</td><td>20 anos</td></tr><tr><td>> 44 anos</td><td>Vitalícia</td></tr></tbody></table></div>
             </div>
 
             <div id="id-quali" class="bank-content">
@@ -305,102 +295,78 @@
                 <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 71a 9m</td><td>R$ 150.000</td><td>72-108x</td></tr><tr><td>Até 74a 9m</td><td>R$ 50.000</td><td>72x</td></tr></tbody></table><p style="color:#dc3545; font-weight:bold; margin-top:10px;">* Port. Pura NÃO opera com Invalidez</p></div>
             </div>
 
-            <div id="id-daycoval" class="bank-content">
-                <h2 class="resumo-titulo">DAYCOVAL – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 69a 11m</td><td>R$ 400.000</td><td>108x</td></tr><tr><td>70 a 72a 11m</td><td>R$ 350.000</td><td>96x</td></tr><tr><td>73 a 80a 11m</td><td>R$ 300.000</td><td>84x</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 62a 11m</td><td>R$ 400.000</td><td>108x</td></tr><tr><td>63 a 65a 11m</td><td>R$ 350.000</td><td>96x</td></tr><tr><td>66 a 72a 11m</td><td>R$ 300.000</td><td>84x</td></tr></tbody></table></div>
+            <div id="id-parana" class="bank-content">
+                <h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (INSS Padrão)</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
+                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 68 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>69 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>70 e 71 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>72 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>73 e 74 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
             </div>
 
-            <div id="id-banrisul" class="bank-content">
-                <h2 class="resumo-titulo">BANRISUL – POLÍTICA DE IDADES</h2>
+            <div id="id-brb" class="bank-content">
+                <h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES</h2>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
                 <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 65 anos</td><td>R$ 70.000</td></tr><tr><td>66 a 69 anos</td><td>R$ 50.000</td></tr><tr><td>70 a 73 anos</td><td>R$ 40.000</td></tr><tr><td>74 a 75 anos</td><td>R$ 15.000</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (18 a 20 anos)</h3><ul><li>Encerrar contrato 2 meses antes de completar 21 anos</li></ul></div>
-            </div>
-
-            <div id="id-c6" class="bank-content">
-                <h2 class="resumo-titulo">C6 BANK – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 71 anos</td><td>108x</td><td>Margem</td></tr><tr><td>72 anos</td><td>96x (ML) / 108x (Port)</td><td>Margem</td></tr><tr><td>73 anos</td><td>84x (ML) / 108x (Port)</td><td>Margem</td></tr><tr><td>74 anos</td><td>72x</td><td>R$ 35.000</td></tr><tr><td>75 anos</td><td>60x</td><td>R$ 20.000</td></tr><tr><td>76 anos</td><td>48x</td><td>R$ 15.000</td></tr><tr><td>77 anos</td><td>36x</td><td>R$ 10.000</td></tr><tr><td>78 anos</td><td>24x</td><td>R$ 8.000</td></tr><tr><td>79 anos</td><td>12x</td><td>R$ 5.000</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>< 55 anos: Perícia desde JAN/2017 | 55-59 anos: Mín 15 anos benefício | >= 60: Isento</li></ul></div>
-            </div>
-
-            <div id="id-facta" class="bank-content">
-                <h2 class="resumo-titulo">FACTA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>21 a 71a 11m</td><td>R$ 150.000</td><td>108x</td></tr><tr><td>72 anos</td><td>R$ 150.000</td><td>96x</td></tr><tr><td>73 anos</td><td>R$ 150.000</td><td>84x</td></tr><tr><td>74 anos</td><td>R$ 50.000</td><td>72x</td></tr><tr><td>75 anos</td><td>R$ 30.000</td><td>60x</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições Regionais (60+)</h3><ul><li>Estados: <span class="destaque-vermelho">PB, AP, TO, RR e SC</span> (Exige formalização digital + via assinada)</li></ul></div>
-            </div>
-
-            <div id="id-safra" class="bank-content">
-                <h2 class="resumo-titulo">BANCO SAFRA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Idade Máx: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>26 a 76a 11m</td><td>108x</td><td>Margem</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>31 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalício</td></tr></tbody></table></div>
-            </div>
-
-            <div id="id-bmg" class="bank-content">
-                <h2 class="resumo-titulo">BANCO BMG – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx: <span class="destaque-dourado">75 anos</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 70 anos</td><td>108x</td><td>Margem</td></tr><tr><td>71 anos</td><td>96x</td><td>Margem</td></tr><tr><td>72 anos</td><td>84x</td><td>Margem</td></tr><tr><td>73 anos</td><td>72x</td><td>Margem</td></tr><tr><td>74 anos</td><td>60x</td><td>R$ 30.000</td></tr><tr><td>75 anos</td><td>48x</td><td>R$ 20.000</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (04, 05, 06, 32, 33, 92)</h3><ul><li>>= 60 anos: Opera | 55-59 anos: Mín 15 anos benefício | < 55: <span class="destaque-vermelho">Não opera</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3><ul><li>Idade Mínima: <span class="destaque-dourado">28 anos</span></li></ul></div>
-            </div>
-
-            <div id="id-finanto" class="bank-content">
-                <h2 class="resumo-titulo">FINANTO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Limites</h3><ul><li>Idade Mín: <span class="destaque-dourado">22 anos</span></li><li>Idade Máx Novo: <span class="destaque-vermelho">73a 10m</span> (48x) | Port+Refin: <span class="destaque-vermelho">68a 10m</span> | Port Pura: <span class="destaque-vermelho">70 anos</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>22 a 68 anos</td><td>108x</td><td>Margem</td></tr><tr><td>69 anos</td><td>96x</td><td>Margem</td></tr><tr><td>70 anos</td><td>84x</td><td>Margem</td></tr><tr><td>71 anos</td><td>72x</td><td>Margem</td></tr><tr><td>72 anos</td><td>60x</td><td>Margem</td></tr><tr><td>73 anos</td><td>48x</td><td>Margem</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrições</h3><ul><li>Invalidez 32: > 60 anos (Novos 108x) | Invalidez 92: > 68 anos</li><li>Pensão 21: > 45 anos | LOAS 87: <span class="destaque-vermelho">Não opera</span></li><li>PB, AP, TO, RR: <span class="destaque-vermelho">Não opera acima de 60 anos</span></li></ul></div>
             </div>
 
             <div id="id-icred" class="bank-content">
                 <h2 class="resumo-titulo">ICRED – POLÍTICA DE IDADES</h2>
                 <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx: <span class="destaque-dourado">73 anos e 11 meses</span> (para 60x)</li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 61a 11m</td><td>108x</td><td>R$ 100.000</td></tr><tr><td>62 a 62a 11m</td><td>108x</td><td>R$ 90.000</td></tr><tr><td>63 a 63a 11m</td><td>108x</td><td>R$ 80.000</td></tr><tr><td>64 a 64a 11m</td><td>108x</td><td>R$ 70.000</td></tr><tr><td>65 a 65a 11m</td><td>108x</td><td>R$ 60.000</td></tr><tr><td>66 a 66a 11m</td><td>108x</td><td>R$ 50.000</td></tr><tr><td>67 a 67a 11m</td><td>108x</td><td>R$ 40.000</td></tr><tr><td>68 a 68a 11m</td><td>108x</td><td>R$ 30.000</td></tr><tr><td>69 a 69a 11m</td><td>108x</td><td>R$ 25.000</td></tr><tr><td>70 a 70a 11m</td><td>96x</td><td>R$ 25.000</td></tr><tr><td>71 a 71a 11m</td><td>84x</td><td>R$ 25.000</td></tr><tr><td>72 a 72a 11m</td><td>72x</td><td>R$ 25.000</td></tr><tr><td>73 a 73a 11m</td><td>60x</td><td>R$ 25.000</td></tr><tr><td>>= 74 anos</td><td>Não opera</td><td>Não opera</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (32 e 92)</h3><ul><li>55-59 anos: Mín 15 anos benefício | >= 60: Opera normalmente</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>31 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalícia</td></tr></tbody></table></div>
+                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 69a 11m</td><td>108x</td><td>R$ 100.000 → R$ 25.000</td></tr><tr><td>>= 74 anos</td><td>Não opera</td><td>Não opera</td></tr></tbody></table></div>
             </div>
 
-            <div id="id-brb" class="bank-content">
-                <h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES (Setembro/2026)</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 65 anos</td><td>R$ 70.000</td></tr><tr><td>66 a 69 anos</td><td>R$ 50.000</td></tr><tr><td>70 a 73 anos</td><td>R$ 40.000</td></tr><tr><td>74 a 75 anos</td><td>R$ 15.000</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (ATUALIZADO)</h3><ul><li><span class="destaque-vermelho">NÃO ATUA MAIS com espécies 32, 33, 34, 51, 83 e 92</span> (movido para lista de não aceitos em Setembro/2026)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Pensão por Morte (21)</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Dependente</th><th>Duração Máx</th></tr></thead><tbody><tr><td>< 22 anos</td><td>3 anos</td></tr><tr><td>22 a 27 anos</td><td>6 anos</td></tr><tr><td>28 a 30 anos</td><td>10 anos</td></tr><tr><td>30 a 41 anos</td><td>15 anos</td></tr><tr><td>42 a 44 anos</td><td>20 anos</td></tr><tr><td>>= 45 anos</td><td>Vitalício</td></tr></tbody></table></div>
+            <div id="id-finanto" class="bank-content">
+                <h2 class="resumo-titulo">FINANTO – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Limites</h3><ul><li>Idade Mín: <span class="destaque-dourado">22 anos</span></li><li>Idade Máx Novo: <span class="destaque-vermelho">73a 10m</span> (48x) | Port+Refin: <span class="destaque-vermelho">68a 10m</span> | Port Pura: <span class="destaque-vermelho">70 anos</span></li></ul></div>
             </div>
 
             <div id="id-quero-mais" class="bank-content">
                 <h2 class="resumo-titulo">QUERO MAIS – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 69a 11m</td><td>R$ 400.000</td></tr><tr><td>70 a 72a 11m</td><td>R$ 350.000</td></tr><tr><td>73 a 80a 11m</td><td>R$ 300.000</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>21 a 62a 11m</td><td>R$ 400.000</td></tr><tr><td>63 a 65a 11m</td><td>R$ 350.000</td></tr><tr><td>66 a 72a 11m</td><td>R$ 300.000</td></tr></tbody></table></div>
-            </div>
-
-            <div id="id-totalcash" class="bank-content">
-                <h2 class="resumo-titulo">TOTAL CASH – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li><li>Valor Máx: <span class="destaque-dourado">R$ 85.000,00</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Prazo</th><th>Duração</th><th>Iniciar até</th></tr></thead><tbody><tr><td>108x</td><td>9 anos</td><td>69a 11m 29d</td></tr><tr><td>96x</td><td>8 anos</td><td>70a 11m 29d</td></tr><tr><td>84x</td><td>7 anos</td><td>71a 11m 29d</td></tr><tr><td>72x</td><td>6 anos</td><td>72a 11m 29d</td></tr><tr><td>60x</td><td>5 anos</td><td>73a 11m 29d</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>Idade Mín: <span class="destaque-dourado">55 anos</span> (55-59: mín 15 anos benefício | >=60: normal)</li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul></div>
             </div>
 
             <div id="id-digio" class="bank-content">
                 <h2 class="resumo-titulo">DIGIO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 60a 11m</td><td>R$ 120.000</td><td>108 meses</td></tr><tr><td>61 a 65a 11m</td><td>R$ 100.000</td><td>108 meses</td></tr><tr><td>66 a 70a 11m</td><td>R$ 85.000</td><td>108 meses</td></tr><tr><td>71 anos</td><td>R$ 85.000</td><td>96 meses</td></tr><tr><td>72 anos</td><td>R$ 85.000</td><td>84 meses</td></tr><tr><td>73 anos</td><td>R$ 85.000</td><td>72 meses</td></tr><tr><td>74 anos</td><td>R$ 85.000</td><td>60 meses</td></tr><tr><td>75 anos</td><td>R$ 85.000</td><td>48 meses</td></tr><tr><td>76 anos</td><td>R$ 85.000</td><td>36 meses</td></tr><tr><td>77 anos</td><td>R$ 85.000</td><td>24 meses</td></tr><tr><td>78 anos</td><td>R$ 85.000</td><td>12 meses</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul><li>Idade Mín: <span class="destaque-dourado">60 anos</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul></div>
+            </div>
+
+            <div id="id-banrisul" class="bank-content">
+                <h2 class="resumo-titulo">BANRISUL – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul></div>
+            </div>
+
+            <div id="id-daycoval" class="bank-content">
+                <h2 class="resumo-titulo">DAYCOVAL – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul></div>
+            </div>
+
+            <div id="id-totalcash" class="bank-content">
+                <h2 class="resumo-titulo">TOTAL CASH – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul></div>
+            </div>
+
+            <div id="id-c6" class="bank-content">
+                <h2 class="resumo-titulo">C6 BANK – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul></div>
+            </div>
+
+            <div id="id-facta" class="bank-content">
+                <h2 class="resumo-titulo">FACTA – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul></div>
+            </div>
+
+            <div id="id-safra" class="bank-content">
+                <h2 class="resumo-titulo">BANCO SAFRA – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Idade Máx: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li></ul></div>
+            </div>
+
+            <div id="id-bmg" class="bank-content">
+                <h2 class="resumo-titulo">BANCO BMG – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx: <span class="destaque-dourado">75 anos</span></li></ul></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 3. ROTEIROS INSS (SEM SIDEBAR, LARGURA TOTAL) -->
+<!-- 3. ROTEIROS INSS -->
 <section id="roteiros-inss" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Roteiros INSS</h1><p>Documentação completa e atualizada por banco</p></div>
@@ -409,7 +375,7 @@
     </div>
 </section>
 
-<!-- 4. COMUNICADOS (SEM SIDEBAR, LARGURA TOTAL) -->
+<!-- 4. COMUNICADOS -->
 <section id="mural" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Comunicados</h1><p>Avisos e informações importantes para a equipe</p></div>
@@ -455,7 +421,7 @@
     </div>
 </section>
 
-<!-- 5. SIMULADORES (SEM SIDEBAR, LARGURA TOTAL) -->
+<!-- 5. SIMULADORES -->
 <section id="simuladores" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Simuladores</h1><p>Ferramentas de cálculo e simulação de empréstimos</p></div>
@@ -478,7 +444,7 @@
     </div>
 </section>
 
-<!-- 6. LINKS ÚTEIS (SEM SIDEBAR, LARGURA TOTAL) -->
+<!-- 6. LINKS ÚTEIS -->
 <section id="links-uteis" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Links Úteis</h1><p>Acesso rápido aos portais dos bancos parceiros e ferramentas</p></div>
@@ -486,62 +452,8 @@
         <div class="links-grid" id="linksGrid">
             <a href="https://amigozconsig.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">AMIGOZ</div><div class="new-card-sub">amigozconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
             <a href="https://consig.btwbank.com/WebSites/FIMenuMVC/Login/AC.UI.LOGIN.aspx?FISession=8882e7ec7173" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO BTW</div><div class="new-card-sub">consig.btwbank.com</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://hope.titan.ceoslab.app/operacional/operacoes" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO HOPE</div><div class="new-card-sub">hope.titan.ceoslab.app</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="http://www.bibcred.com.br" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO INDUSTRIAL</div><div class="new-card-sub">www.bibcred.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://front.nossagentecard.com.br/appmenu/Login/ICLogin?ReturnUrl=%2Fappmenu%2F" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO NG CRED</div><div class="new-card-sub">front.nossagentecard.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://anossafintech.com.br/desk" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO NOSSA FINTECH</div><div class="new-card-sub">anossafintech.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://app.pegsystem.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO PEGCARD</div><div class="new-card-sub">app.pegsystem.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://sistema.somabp2.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANCO SOMA</div><div class="new-card-sub">sistema.somabp2.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://portpromotora.corban.tec.br/login/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PORT TECH</div><div class="new-card-sub">portpromotora.corban.tec.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://bemweb.bempromotora.com.br/autenticacao/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BANRISUL</div><div class="new-card-sub">bemweb.bempromotora.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.bmgconsig.com.br/principal/fsconsignataria.jsp" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BMG CONSIG</div><div class="new-card-sub">www.bmgconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://esteira.redconsig.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">BRB RED</div><div class="new-card-sub">esteira.redconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://c6.c6consig.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">C6 BANK</div><div class="new-card-sub">c6.c6consig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://promotoramax.consig360.com.br" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CAIXA 360</div><div class="new-card-sub">promotoramax.consig360.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://proconsig.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CONSULTA MARGEM - GUARULHOS</div><div class="new-card-sub">proconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://crefazon.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CREFAZ</div><div class="new-card-sub">crefazon.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://sfc.sistemascr.com.br" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CREFISA CONSIGNADO</div><div class="new-card-sub">sfc.sistemascr.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://app1.gerencialcredito.com.br/CREFISA/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CREFISA PESSOAL</div><div class="new-card-sub">app1.gerencialcredito.com.br</div></div><div class="new-card-btn">Acessar</div></a>
             <a href="https://consignado.daycoval.com.br/Autorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">DAYCOVAL</div><div class="new-card-sub">consignado.daycoval.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://funcaoconsig.digio.com.br/FIMENU/Login/AC.UI.LOGIN.aspx?FISession=47abfee7fd97" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">DIGIO BRADESCO</div><div class="new-card-sub">funcaoconsig.digio.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.econsig.com.br/ebconsig/v3/autenticar#no-back" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">EXÉRCITO</div><div class="new-card-sub">www.econsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://desenv.facta.com.br/sistemaNovo/login.php" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FACTA</div><div class="new-card-sub">desenv.facta.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://finanto.joinbank.com.br/loan-simulations" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FINANTO (Qualibank MAXI)</div><div class="new-card-sub">finanto.joinbank.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://fintechdocorban.nossafintech.com.br/session/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FINTECH</div><div class="new-card-sub">fintechdocorban.nossafintech.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=df99aad33699" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FUNÇÃO QUERO+</div><div class="new-card-sub">consignado.queromaisconsignado.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://webagente.eaglecred.com.br" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FUTURO PREVIDÊNCIA</div><div class="new-card-sub">webagente.eaglecred.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://webagente.eaglecred.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">FUTURO PREVIDENCIA - EAGLE</div><div class="new-card-sub">webagente.eaglecred.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://happyconsig.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">HAPPY</div><div class="new-card-sub">happyconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.areaprivada.prefeitura.sp.gov.br/PortalPMSP/PortalPMSP/Portal/PMSPprt001.tp" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">HOLERITE ELETRÔNICO - SP</div><div class="new-card-sub">areaprivada.prefeitura.sp.gov.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://openid.itau.com.br/services/oauth/authorize?client_id=f3c7c3bc-b4bb-48a4-8dad-07e0489cce70&redirect_uri=https:%2F%2Fic360.com.br%2Flogin%2Fcallback-partner-sts&scope=openid&response_type=code" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">IC360 - ITAÚ</div><div class="new-card-sub">ic360.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://corban.icred.digital/inss" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">ICRED</div><div class="new-card-sub">corban.icred.digital</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.ibconsigweb.com.br/Index.do?method=prepare" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">ITAUBMG</div><div class="new-card-sub">www.ibconsigweb.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://lemitti.com/home" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">LEMIT</div><div class="new-card-sub">lemitti.com</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://app.lotusmais.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">LOTUS +</div><div class="new-card-sub">app.lotusmais.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://mb-ui-pcb-site-pcb.meumb.mercantil.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">MERCANTIL</div><div class="new-card-sub">mb-ui-pcb-site-pcb.meumb.mercantil.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://wss.credisim.com.br/BSGWEBSITES/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PAGBANK</div><div class="new-card-sub">wss.credisim.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://panconsig.pansolucoes.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PAN</div><div class="new-card-sub">panconsig.pansolucoes.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://portalcentralcorrespondente.paranabanco.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PARANÁ BANCO (Central)</div><div class="new-card-sub">portalcentralcorrespondente.paranabanco.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://front.paranabanco.b.br/front/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PARANÁ BANCO (Front)</div><div class="new-card-sub">front.paranabanco.b.br/front</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://phtech.uy3.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PHTECH</div><div class="new-card-sub">phtech.uy3.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.aerconsig.com.br/fab/servidor/#no-back" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PORTAL AERONÁUTICA</div><div class="new-card-sub">www.aerconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://portaldecredito.daycoval.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PORTAL DAYCOVAL</div><div class="new-card-sub">portaldecredito.daycoval.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.portaldoconsignado.org.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PORTAL DO CONSIGNADO - SP</div><div class="new-card-sub">www.portaldoconsignado.org.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.parceirosantander.com.br/spa-base/landing-page" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PORTAL SANTANDER</div><div class="new-card-sub">www.parceirosantander.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.econsig.com.br/sbc" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PREF. SÃO BERNARDO DO CAMPO</div><div class="new-card-sub">www.econsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://portal.presencabank.com.br/sign-in" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PRESENÇA BANK</div><div class="new-card-sub">portal.presencabank.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://proconsig.com.br" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">PRO CONSIG</div><div class="new-card-sub">proconsig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://quali.joinbank.com.br/sign-in" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">QUALIBANK</div><div class="new-card-sub">quali.joinbank.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://qualibanking.app/WebAutorizador/Login/AC.UI.LOGIN.aspx?FISession=b29389e94368" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">QUALICARD</div><div class="new-card-sub">qualibanking.app</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://consignado.queromaisconsignado.com.br/WebAutorizadorQueroMais/Login/AC.UI.LOGIN.aspx?FISession=b51997a5b3a1" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">QUERO+</div><div class="new-card-sub">consignado.queromaisconsignado.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://portaldecredito.queromaisconsignado.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">QUERO+ BEVI</div><div class="new-card-sub">portaldecredito.queromaisconsignado.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://epfweb.safra.com.br/" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">SAFRA</div><div class="new-card-sub">epfweb.safra.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www.siapenet.gov.br/Portal/Consignataria.asp" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">SIAPE</div><div class="new-card-sub">www.siapenet.gov.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://simplix.partner1.com.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">SIMPLIX</div><div class="new-card-sub">simplix.partner1.com.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormFinanciamentoPrestacoesFixas.do?method=exibirFormFinanciamentoPrestacoesFixas" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">CALCULADORA DO CIDADÃO</div><div class="new-card-sub">bcb.gov.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://totalcash.net.br/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">TOTAL CASH</div><div class="new-card-sub">totalcash.net.br</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="http://app.v8sistema.com" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">V8 DIGITAL</div><div class="new-card-sub">app.v8sistema.com</div></div><div class="new-card-btn">Acessar</div></a>
-            <a href="https://gestao.sistemacorban.com.br/index.php/auth/login" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">VANGUARD</div><div class="new-card-sub">gestao.sistemacorban.com.br</div></div><div class="new-card-btn">Acessar</div></a>
+            <a href="https://c6.c6consig.com.br/WebAutorizador/Login/AC.UI.LOGIN.aspx" target="_blank" class="new-card"><div class="new-card-info"><div class="new-card-title">C6 BANK</div><div class="new-card-sub">c6.c6consig.com.br</div></div><div class="new-card-btn">Acessar</div></a>
         </div>
         <div class="no-results" id="noResultsLinks">Nenhum link encontrado.</div>
     </div>
@@ -558,6 +470,7 @@
 
 <script src="dados.js"></script>
 <script>
+// ✅ FUNÇÃO CORRIGIDA - Sincroniza sidebar ao trocar de aba
 function showSection(sectionId, clickedBtn) {
     document.querySelectorAll('.section').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -565,6 +478,21 @@ function showSection(sectionId, clickedBtn) {
     if (el) { el.style.display = 'block'; setTimeout(() => el.classList.add('active'), 10); }
     if (clickedBtn) clickedBtn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // ✅ NOVO: Se a aba tem sidebar, sincroniza o primeiro item
+    if (sectionId === 'resumo-roteiros' || sectionId === 'regras-idades') {
+        const sidebar = el.querySelector('.sidebar-bancos');
+        if (sidebar) {
+            const primeiroItem = sidebar.querySelector('.sidebar-item');
+            if (primeiroItem) {
+                const onclickAttr = primeiroItem.getAttribute('onclick');
+                const match = onclickAttr.match(/mudarBanco\('([^']+)'/);
+                if (match) {
+                    mudarBanco(match[1], primeiroItem);
+                }
+            }
+        }
+    }
 }
 
 function abrirModal() {
@@ -587,7 +515,7 @@ function fecharModal() {
 function mudarBanco(bankId, btn) {
     const categoriaPai = btn.closest('.section');
     categoriaPai.querySelectorAll('.bank-content').forEach(el => el.classList.remove('active'));
-    categoriaPai.querySelectorAll('.sidebar-item, .bank-btn').forEach(el => el.classList.remove('active'));
+    categoriaPai.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
     document.getElementById(bankId).classList.add('active');
     btn.classList.add('active');
 }
