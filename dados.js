@@ -11,6 +11,7 @@ const bancos = [
     { id: 'safra', nome: 'SAFRA-EMPRESTIMO', data: '17/09/2026' },
     { id: 'daycoval', nome: 'DAYCOVAL-EMPRESTIMO', data: '17/09/2026' },
     { id: 'quero-mais', nome: 'QUERO-MAIS-EMPRESTIMO', data: '17/09/2026' },
+    { id: 'redbank', nome: 'REDBANK-EMPRESTIMO', data: '17/09/2026' },
     { id: 'c6-bank', nome: 'C6 BANK-EMPRESTIMO', data: '17/09/2026' },
     { id: 'finanto', nome: 'FINANTO-EMPRESTIMO', data: '17/09/2026' },
     { id: 'icred', nome: 'ICRED-EMPRESTIMO', data: '17/09/2026' },
