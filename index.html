@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hub Arya</title>
+<title>PORTAL ARYA</title>
 <link rel="stylesheet" href="style.css">
 <style>
 .tabela-comparativa { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; min-width: 1200px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; margin-bottom: 30px; }
@@ -38,7 +38,7 @@
 
 <header class="main-header">
     <div class="header-content">
-        <div class="header-title"><h1>Hub Arya</h1></div>
+        <div class="header-title"><h1>PORTAL ARYA</h1></div>
         <div class="header-logos">
             <img src="logo1.png" alt="Logo 1" class="logo logo1">
             <img src="logo2.png" alt="Logo 2" class="logo logo2">
@@ -62,6 +62,7 @@
             <div class="sidebar-title">Bancos Parceiros</div>
             <button class="sidebar-item active" onclick="mudarBanco('op-quali', this)">Quali</button>
             <button class="sidebar-item" onclick="mudarBanco('op-brb', this)">BRB</button>
+            <button class="sidebar-item" onclick="mudarBanco('op-redbank', this)">RedBank</button>
             <button class="sidebar-item" onclick="mudarBanco('op-icred', this)">iCred</button>
             <button class="sidebar-item" onclick="mudarBanco('op-finanto', this)">Finanto</button>
             <button class="sidebar-item" onclick="mudarBanco('op-parana', this)">Paraná</button>
@@ -80,120 +81,453 @@
 
             <div id="op-quali" class="bank-content active">
                 <h2 class="resumo-titulo">QUALI – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><strong>Port+Refin:</strong> Pan, Daycoval, Facta, C6: <span class="destaque-dourado">360 dias</span> da data do contrato | Demais bancos: <span class="destaque-dourado">0 parcelas pagas</span> (mínimo 30 dias do contrato de origem)</li><li><strong>Portabilidade Pura:</strong> Redução mínima de <span class="destaque-dourado">1% do valor da parcela original</span> (aplicável entre 72 e 108 parcelas em aberto) | Mesma regra de parcelas pagas acima</li><li><span class="destaque-vermelho">NÃO portamos:</span> Inbursa (012), Alfa (025), Sergipe (047), Bradescard (063), Topázio (082), Original (212), Master (243), ABC Brasil (246), <strong>Paraná (254)</strong>, Senff (276), CCB Brasil (320), QI Sociedade (329), Bari (330), AL5 (349), Zema (359), Bradesco Financiamentos (394), Crediare (429), Industrial (604), Pine (643), Digimais (654), Paulista (611)</li><li><span class="destaque-vermelho">Invalidez NÃO opera com Portabilidade Pura</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco mínimo: <span class="destaque-dourado">R$ 100,00</span> OU % do endividamento (2% se 72+ pcl, 3% se 57-71 pcl, 5% se 56- pcl)</li><li>Margem negativa: opera, desde que o negativo seja retirado da parcela e a operação cubra o troco</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Port+Refin: <span class="destaque-dourado">R$ 50,00</span> | Port Pura: <span class="destaque-dourado">R$ 8.000,00</span> de saldo</li><li>Novo (Parcela mín): <span class="destaque-dourado">R$ 20,00</span></li><li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li><li>Limites Port. Pura: 18 a 71a 9m → <span class="destaque-dourado">72 a 108 parcelas em aberto</span> | R$ 150.000,00 | Até 74a 9m → <span class="destaque-dourado">72 parcelas em aberto</span> | R$ 50.000,00</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Rep. Legal, Analfabetos, Port Pura em Invalidez</li><li>PB, AP, TO, RR (60+): CCB assinada + selfie segurando CCB</li><li>Documentos: RG (10 anos), CNH (vencida ok), Passaporte (novo com pais), RNE</li></ul></div>
-            </div>
-
-            <div id="op-parana" class="bank-content">
-                <h2 class="resumo-titulo">PARANÁ BANCO – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Taxa Entrada Port: <span class="destaque-dourado">0,60%</span> | Refin Port: <span class="destaque-dourado">1,60%</span></li><li>Bancos de rede (gerais): <span class="destaque-dourado">0 parcelas pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Qi Sociedade, Picpay, Pine, BNP Paribas, Alfa, Facta, C6, Safra</li><li><span class="destaque-dourado">ACIMA DE 12 PAGAS:</span> Pan, Paraná, Santander, Mercantil, Agibank, Daycoval, Parati</li><li>C6 Consignado (626): <span class="destaque-vermelho">25 pagas</span> | Agibank (121): <span class="destaque-vermelho">13 pagas</span> | Inbursa (012/055): <span class="destaque-vermelho">13 pagas</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Solicitar após <span class="destaque-dourado">7 dias úteis</span> da integração do contrato original</li><li>Margem negativa após regularização: atualizada também após 7 dias úteis</li><li>Permite unificar parcelas e agregar margem (somente no Refin)</li><li>Anuência individual obrigatória no Meu INSS a cada operação</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máximo: <span class="destaque-dourado">108 meses</span> | Taxa Máx: 1,85% a.m.</li><li>Parcela Mín (Novo): <span class="destaque-dourado">R$ 60,00</span> | Port+Refin: <span class="destaque-dourado">R$ 120,00</span></li><li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span> | Demais operações: R$ 1,00</li><li>Máx 13 contratos por benefício | Data de Corte: 2º dia útil</li><li>Margem Negativa: <span class="destaque-vermelho">Não opera</span> (permite port com margem zerada)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Deficientes Visuais, Rep. Legal, LOAS, Pensão Alimentícia</li><li>PB, AP, TO, RR (60+): exigem assinatura física (reprovado automaticamente)</li><li>Bloqueio por operação (desde 22/04): concessão 90 dias | TBM 60 dias</li><li>Documentos: RG, CNH, RNE/RNM | Consulta "Não Me Perturbe": realiza consulta</li></ul></div>
-            </div>
-
-            <div id="op-daycoval" class="bank-content">
-                <h2 class="resumo-titulo">DAYCOVAL – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-dourado">Regra de Pagas:</span> Bancos de rede: <span class="destaque-dourado">6 pagas</span> | Agibank: <span class="destaque-dourado">15 pagas</span> | Facta/NBC: <span class="destaque-dourado">24 pagas</span> | C6: <span class="destaque-dourado">acima de 12 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Paraná, Safra, Inbursa, Alfa, Master e <strong>Quero Mais</strong></li><li>Mesma regra de portabilidade do grupo Quero Mais</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li><span class="destaque-dourado">LIBERADO REFIN COM 1 PARCELA PAGA</span> (mantendo a taxa do contrato original)</li><li>Agregação/Unificação: <span class="destaque-dourado">Apenas no Refin</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li><li>Parcela Mín (Novo/Refin): <span class="destaque-dourado">R$ 20,00</span> | Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li><li>Término do contrato: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li><li>Política de Idade x Prazo: 108x até 71 anos | 96x até 72 anos | 84x até 73 anos</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li><li><span class="destaque-vermelho">Híbrida obrigatória para 60+</span> | Anuência em até 5 dias</li><li>RG ou CNH (vencida ok), Termo IN100, Comprovante Endereço</li></ul></div>
-            </div>
-
-            <div id="op-banrisul" class="bank-content">
-                <h2 class="resumo-titulo">BANRISUL – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Port: <span class="destaque-dourado">Sim</span> | Reduz Taxa: <span class="destaque-vermelho">Não</span> (simular direto no banco)</li><li>Agregação: Sim (na portabilidade especial) | Redução de parcela: Sim</li><li>Unifica Parcela: <span class="destaque-dourado">Apenas no Refin da Port</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">1 paga</span> | Remunera ≥ 360 dias | PAN: <span class="destaque-dourado">30 pagas</span> | Safra e Inbursa: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Banqul e BRB</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento de Carteira</h3><ul><li>Mínimo: <span class="destaque-dourado">10 parcelas pagas</span> (ou 5 com financiamento ≥ R$ 5.000)</li><li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span> | Unifica Parcela: Sim, até 5 parcelas</li><li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Agregação: Sim (se houver linha disponível)</li><li>Redução de parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 700,00</span> | Refin Mín: <span class="destaque-dourado">R$ 100,00</span></li><li>Máx Operação: <span class="destaque-dourado">R$ 70.000,00</span> | Parcela Mín: <span class="destaque-dourado">R$ 8,00</span></li><li>Máx 13 contratos | Margem: 35% | Data de Corte: 2º dia útil</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul><li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> | Acima de 60 anos: sem regras | 55 a 59 anos: obrigatório 15 anos de benefício</li><li><strong>Pensão (Espécie 21):</strong> Sim - verificar tabela de idade no Roteiro Operacional</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização e Restrições</h3><ul><li>Digital ou Figital | <span class="destaque-dourado">Idosos 60+ (TO, AP, RR, PB):</span> Formalização Figital obrigatória</li><li>Kit à New Space em até 5 dias úteis | Anuência via Meu INSS</li><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, LOAS, Rep. Legal, Acordos Internacionais, Empresa Convenente</li><li>Consulta "Não Me Perturbe": <span class="destaque-dourado">Sim, realiza consulta</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos e Pagamento</h3><ul><li>RG, CNH, Passaporte, RNE, CRM | <span class="destaque-vermelho">Não aceita CTPS</span></li><li><strong>Bancos Digitais para Pagamento:</strong> Conta digital cadastrada no INSS + fone da proposta (titularidade do cliente). Demais casos não serão aceitos.</li><li>Migração de Logins: <span class="destaque-vermelho">Não faz</span> (máx 3 logins por CPF em promotoras distintas)</li></ul></div>
-            </div>
-
-            <div id="op-c6" class="bank-content">
-                <h2 class="resumo-titulo">C6 BANK – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-dourado">Taxas:</span> Port: a partir de <span class="destaque-dourado">1,35%</span> | Refin Port: a partir de <span class="destaque-dourado">1,55%</span> | Port Pura: <span class="destaque-dourado">1,75%</span></li><li>Obs: Port abaixo de 1,75% exige refin vinculado | Saldo devedor mín: <span class="destaque-dourado">R$ 2.000,00</span> | Troco mín: <span class="destaque-dourado">R$ 50,00</span></li><li><span class="destaque-dourado">Regras de Pagas:</span> Bancos de rede (agência): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span> (360 dias autorregulação) | Pan: <span class="destaque-dourado">37 pagas</span> | Paraná: <span class="destaque-dourado">25 pagas</span></li><li><span class="destaque-dourado">Tabela Especial (360 dias):</span> QI Tech (329), Facta (935 e 149), Banco Pine (643)</li><li><span class="destaque-vermelho">NÃO PORTA:</span> Daycoval, Agibank, Inbursa, BRB e Safra</li><li>Port Pura: Sim (reduz parcela) | <span class="destaque-vermelho">Não unifica parcelas</span> | Margem negativa: Sim</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco mín: <span class="destaque-dourado">R$ 700,00</span> ou 5% do valor financiado</li><li>Reduz taxa: Sim, até <span class="destaque-dourado">0,10%</span> | Agregação: Sim | Redução de parcela: Sim</li><li>Mínimo de parcelas pagas: <span class="destaque-dourado">12 pagas</span> (nos prazos 96 e 84 meses)</li><li>Carência na 1ª parcela: Sim (30, 60 ou 90 dias)</li><li>Margem negativa: deduzir da parcela do contrato refinanciado</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 1.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li><li>Parcela Mínima: <span class="destaque-dourado">Não tem</span></li><li>Idade: <span class="destaque-dourado">21 até 80 anos e 11 meses</span> (término do contrato)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> RL (nem na port), LOAS 87/88 suspensos, Port LOAS: Não</li><li>Analfabetos: <span class="destaque-dourado">Atende</span> (NOVO-REFIN-PORT) | Invalidez e Pensão 21: Sim</li><li>Idosos 60+ (estados com restrição): Formalização híbrida (Web Plus)</li><li>Documentos: RG, CNH, RNE</li><li><span class="destaque-vermelho">Bancos não aceitos p/ pagamento:</span> Inter, Stone, Arbi, Bs2, Pagseguro, Mercado Pago, Safra, Votorantim, PicPay | Agências Digitais: Caixa Tem, Next, Iti, Neon | Santander contas começando com 77</li></ul></div>
-            </div>
-
-            <div id="op-facta" class="bank-content">
-                <h2 class="resumo-titulo">FACTA – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Margem zerada: <span class="destaque-dourado">Sim</span> | Margem negativa: <span class="destaque-dourado">Sim</span></li><li>Port Pura: <span class="destaque-dourado">Sim</span>, a partir de <span class="destaque-dourado">R$ 1.900,00</span> de saldo</li><li>Redução de parcela: Sim (desde que cubra o saldo devedor, parcela mín <span class="destaque-dourado">R$ 50,00</span>)</li><li>Unifica parcelas: <span class="destaque-vermelho">Não</span> | Porta 2+ contratos: <span class="destaque-vermelho">Não</span> | Prazo mín Refin da Port: <span class="destaque-dourado">60x</span></li><li>Forma de portar: TED STR47, via CIP</li><li><span class="destaque-dourado">Parcelas Pagas:</span> Agibank: <span class="destaque-dourado">15 pagas</span> | BMG, C6, Santander/Olé: <span class="destaque-dourado">12 pagas</span> | Paraná: <span class="destaque-dourado">15 pagas</span> | Daycoval: <span class="destaque-dourado">24 pagas</span> | PAN: <span class="destaque-dourado">30 pagas</span> | BRB (originado pela Facta): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">0 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa (BI), BRB, Pine, Socicred (917), Paulista e Zema (apenas se originados pela Facta)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco Mín: <span class="destaque-dourado">R$ 100,00</span> | Unifica parcelas: Sim (desde que líquido mín do cliente seja <span class="destaque-dourado">R$ 250,00</span>)</li><li>Redução de parcela: Sim (desde que a margem esteja negativa)</li><li>Sem mínimo de parcelas pagas (carteira cedida)</li><li>Mínimo de margem a ser agregada: <span class="destaque-dourado">R$ 6,00</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Risco Máx CPF: <span class="destaque-dourado">R$ 150.000,00</span> | Parcela Mín (Novo/Refin): <span class="destaque-dourado">R$ 50,00</span></li><li>Parcela Mín Refin da Port: <span class="destaque-dourado">R$ 50,00</span></li><li>Dia de Corte: 2º dia útil | Carência: até 180 dias (apenas novos no RS, desde 28/06/2024)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Pensão alimentícia, Previdência complementar, Deficientes visuais/surdos/mudos, Procurador, Perícia < Jan/2018, Benefícios no PI</li><li>PB, AP, TO, RR, SC (60+): formalização digital + via assinada pelo cliente</li><li>Analfabetos: Atende só operações novas | Rogado: 1º ou 2º grau | Selfie + docs obrigatórios</li><li>Documentos: Apenas RG ou CNH (vencida ok) | <span class="destaque-vermelho">Não aceita CTPS</span> | Selfie obrigatória | Ficha Cadastral + Comprovante de Residência</li></ul></div>
-            </div>
-
-            <div id="op-safra" class="bank-content">
-                <h2 class="resumo-titulo">BANCO SAFRA – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-vermelho">PORTABILIDADE SUSPENSA</span> | Opera Margem Negativa: <span class="destaque-vermelho">Não</span></li><li>Portabilidade Especial: a partir de <span class="destaque-dourado">1,44%</span> | Refin da Port: a partir de <span class="destaque-dourado">1,69%</span></li><li>Saldo Devedor Mín: <span class="destaque-dourado">R$ 5.200,00</span> | Troco Mín: <span class="destaque-dourado">R$ 400,00</span></li><li>Port Pura: <span class="destaque-vermelho">Não</span> | Reduz Taxa: Sim | Redução Parcela: Sim | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: Sim</li><li><span class="destaque-dourado">Parcelas Pagas:</span> Banrisul: <span class="destaque-dourado">12 pagas</span> | Pan: <span class="destaque-dourado">15 pagas</span> | C6: <span class="destaque-dourado">18 pagas</span> | Facta: <span class="destaque-dourado">24 pagas</span> | Bancos de rede: <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Daycoval, Inbursa e Alfa</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento de Carteira</h3><ul><li>Retenção: <span class="destaque-dourado">0 parcelas pagas</span> | Refin Carteira: <span class="destaque-dourado">3 parcelas pagas</span></li><li>Reduz Taxa: Sim | Agregação: Sim | Unifica Parcela: Sim</li><li>Redução de Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-vermelho">Não permite</span> agregação no Refin de Portabilidade</li><li>Permite junção 1 para 1 no Refin/Retenção</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Margem: <span class="destaque-dourado">35%</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li><li>Novo Mín: <span class="destaque-dourado">R$ 400,00</span> (não limita parcela mín) | Refin Carteira Mín: <span class="destaque-dourado">R$ 100,00</span></li><li>Refin Port Mín: <span class="destaque-dourado">R$ 5.200,00</span> + troco mín R$ 50,00</li><li>Risco Máx CPF: <span class="destaque-dourado">R$ 80.000,00</span> (com histórico) | Máx 13 empréstimos</li><li>Tempo Mín Benefício: 90 dias | Idade: <span class="destaque-dourado">26 a 76 anos e 11 meses</span> (término do contrato)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> LOAS (87/88), Rep. Legal, Tribos indígenas, Deficientes visuais, Analfabetos, ECT</li><li>Invalidez: <span class="destaque-vermelho">Não autorizado</span> | Pensão 21: Sim (mín 5 meses de benefício)</li><li>Ordem de Pagamento: <span class="destaque-vermelho">Não</span> | Bancos Digitais: <span class="destaque-vermelho">Não opera</span></li><li>Idosos 60+: <span class="destaque-vermelho">Não opera</span> em estados/municípios com restrição</li><li>Fechamento completo: PagSeguro (290) e MercadoPago (323)</li><li>Formalização: <span class="destaque-dourado">Digital</span></li><li>Documentos: RG, CNH, RNE, RNM, CTPS, Carteiras Funcionais, Carteiras de Classe (OAB, CREA, CONFEA e COREN)</li></ul></div>
-            </div>
-
-            <div id="op-bmg" class="bank-content">
-                <h2 class="resumo-titulo">BANCO BMG – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-vermelho">PORTABILIDADE SUSPENSA</span> | Opera Margem Negativa: <span class="destaque-vermelho">Não</span></li><li>Taxa Port: a partir de <span class="destaque-dourado">1,60%</span> | Refin Port: <span class="destaque-dourado">1,85%</span></li><li>Saldo devedor mín: <span class="destaque-dourado">R$ 4.000,00</span> | Troco mín: <span class="destaque-dourado">R$ 50,00</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Bancos de rede (agência): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> 121 Agibank e 169 Ole</li><li>Permite até <span class="destaque-dourado">8 portabilidades</span> em uma única digitação</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Mínimo: <span class="destaque-dourado">5 parcelas pagas</span></li><li>Permite agregação de margem e margem negativa</li><li><span class="destaque-vermelho">Não permite unificação de parcelas</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Margem Global: <span class="destaque-dourado">40%</span> (35% empréstimo + 5% cartão compartilhado)</li><li>Máx 13 contratos por benefício | Prazo Máx: 108 meses</li><li>Idade: <span class="destaque-dourado">21 a 79 anos e 11 meses</span> (término do contrato)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li>Digital/Digital Token | Híbrida obrigatória para Analfabetos e UFs (AP, PB, RR, TO) 60+</li><li>Anuência: Obrigatória em até <span class="destaque-dourado">5 dias corridos</span> após averbação</li><li>Analfabetos: Rogado 21 a 75 anos | Parentesco 1º grau (pai, mãe, filhos) e 2º (irmãos) | Rogado + Polegar cliente + 2 Testemunhas (não podem ser digitadores)</li><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li><li>Documentos: RG/CIN, CNH, Passaporte, Carteira Profissional, CTPS (novo), CRNM/RNM/RNE (Máx 10 anos)</li></ul></div>
-            </div>
-
-            <div id="op-finanto" class="bank-content">
-                <h2 class="resumo-titulo">FINANTO – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-dourado">Taxas:</span> Port Pura: <span class="destaque-dourado">1,70%</span> | Port+Refin: <span class="destaque-dourado">0,90%</span></li><li>Port Pura: Saldo mín <span class="destaque-dourado">R$ 8.000,00</span> | Redução mín 1% (72 a 108 parcelas)</li><li>Opera Margem Negativa: <span class="destaque-dourado">Sim</span></li><li><span class="destaque-dourado">Troco Mínimo:</span> Até 24 pagas → 2% | 25 a 40 pagas → 3% | Acima de 41 pagas → 5% do endividamento</li><li><span class="destaque-dourado">Regras de Pagas:</span> Pan, Santander, Paraná, Parati, Mercantil, Agibank, Daycoval: <span class="destaque-dourado">12 pagas</span> | Demais: <span class="destaque-dourado">1 paga</span> (contrato mín 30 dias)</li><li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa, Qi Sociedade, Picpay, Pine, BNP Paribas, Alfa, Facta, C6, Safra</li><li><span class="destaque-vermelho">Suspensão temporária:</span> BRB (925: só aceita 84x ou 96x)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Taxas Refin da Port: Prime (R$ 300+): 1,85%-1,60% | Select (R$ 101-299): 1,85%-1,66% | Essencial (R$ 50-100): 1,85%-1,72%</li><li>Agregar Margem: <span class="destaque-dourado">Apenas no Refin Puro</span></li><li>Margem Negativa: Opera só em Port+/Refin se cobrir o negativo</li><li>Junção de Parcelas: Via Refin Puro (tabela da menor parcela portada)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo: Taxa 1,85% | 48-108x | Parcela mín <span class="destaque-dourado">R$ 20,00</span></li><li>Idade: <span class="destaque-dourado">21 a 77 anos e 10 meses</span> (término do contrato)</li><li>Port Pura: 72-108x | Port+Refin: 108x</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não opera:</span> Rep. Legal, LOAS 87, PB/AP/TO/RR acima de 60 anos</li><li>Evidência obrigatória para Contrato Novo (Gravação, Vídeo ou Print WhatsApp)</li><li>Anuência: Obrigatória após averbação | Prazo: 5 dias (Novo) | 3 dias (Refin)</li><li>Documentos: RG/CNH (físico/digital), RNE/RNM, Comprovante Residência</li></ul></div>
-            </div>
-
-            <div id="op-icred" class="bank-content">
-                <h2 class="resumo-titulo">ICRED – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-dourado">Port + Refin:</span> Mínimo <span class="destaque-dourado">R$ 3.000,00</span> (saldo devedor Port + troco Refin R$100) | Máximo: <span class="destaque-dourado">R$ 100.000,00</span> | Prazo: <span class="destaque-dourado">108 parcelas</span></li><li><span class="destaque-dourado">Taxas:</span> Refinanciamento a partir de <span class="destaque-dourado">1,50% a.m.</span> | Entrada (ponderada) ex: 60x pagas ≈ 0,97% | Tabelas Normal a Flex 5 / Port 10K-100K: <span class="destaque-dourado">1,50% a 1,85%</span></li><li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span> | Agregar margem/unificar: <span class="destaque-vermelho">Não permitido</span> | Seguro: <span class="destaque-vermelho">Não incluso</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> C6, PAN e Facta: <span class="destaque-dourado">12 pagas</span> | Demais bancos: <span class="destaque-dourado">1 parcela paga</span> (mesmo com benefício bloqueado via IN100)</li><li><span class="destaque-dourado">Refinanciamento automático, sempre</span> - sem portabilidade isolada</li><li><span class="destaque-vermelho">NÃO PORTA:</span> QI, Inbursa, Paraná, PINE</li><li>Não consultamos SRCC e Não Pertube | 100% digital, formalização única na entrada</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Refin Mín: <span class="destaque-dourado">R$ 800,00</span> (Mín 1 parcela paga)</li><li>Margem Livre Mín: <span class="destaque-dourado">R$ 1.200,00</span> (Prazo mín: 36x)</li><li>Permite reduzir só para margem negativa | <span class="destaque-vermelho">Não aumenta parcela, não unifica</span></li><li>Margem Livre: <span class="destaque-vermelho">Não opera com margem negativa</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: <span class="destaque-dourado">35%</span></li><li>Idade permitida: <span class="destaque-dourado">21 a 69 anos</span></li><li>Margem negativa: <span class="destaque-dourado">Aceita</span> (se cumprir requisitos)</li><li>Liberação: PIX na conta do beneficiário (obrigatoriamente vinculada no INSS)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-dourado">100% Digital</span> | Formalização única na entrada da proposta</li><li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Rep. Legal (suspenso IN 190/2025), LOAS/BPC, Pensão Alimentícia, Exterior, ECT</li><li>Documentos: Termo IN100, RG ou CNH (físico em mãos para captura)</li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+                    <li><strong>Port+Refin:</strong> Pan, Daycoval, Facta, C6: <span class="destaque-dourado">360 dias</span> da data do contrato | Demais bancos: <span class="destaque-dourado">0 parcelas pagas</span> (mínimo 30 dias do contrato de origem)</li>
+                    <li><span class="destaque-vermelho">NÃO portamos:</span> Inbursa (012), Alfa (025), Sergipe (047), Bradescard (063), Topázio (082), Original (212), Master (243), ABC Brasil (246), <strong>Paraná (254)</strong>, Senff (276), CCB Brasil (320), QI Sociedade (329), Bari (330), AL5 (349), Zema (359), Bradesco Financiamentos (394), Crediare (429), Industrial (604), Pine (643), Digimais (654), Paulista (611)</li>
+                    <li><span class="destaque-vermelho">Invalidez NÃO opera com Portabilidade</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+                    <li>Troco mínimo: <span class="destaque-dourado">R$ 100,00</span> OU % do endividamento (2% se 72+ pcl, 3% se 57-71 pcl, 5% se 56- pcl)</li>
+                    <li>Margem negativa: opera, desde que o negativo seja retirado da parcela e a operação cubra o troco</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+                    <li>Port+Refin: <span class="destaque-dourado">R$ 50,00</span> | Port: <span class="destaque-dourado">R$ 8.000,00</span> de saldo</li>
+                    <li>Novo (Parcela mín): <span class="destaque-dourado">R$ 20,00</span></li>
+                    <li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li>
+                    <li>Limites: 18 a 71a 9m → <span class="destaque-dourado">72 a 108 parcelas em aberto</span> | R$ 150.000,00 | Até 74a 9m → <span class="destaque-dourado">72 parcelas em aberto</span> | R$ 50.000,00</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Política de Idade e Invalidez</h3><ul>
+                    <li><strong>18 a 71 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">108 parcelas</span></li>
+                    <li><strong>18 a 72 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">96 parcelas</span></li>
+                    <li><strong>Término do contrato:</strong> Até <span class="destaque-dourado">80 anos e 9 meses</span></li>
+                    <li><strong>Invalidez (32/92):</strong> De 55 a 57 anos: mínimo 15 anos de benefício | Acima de 58 anos: sem regra de concessão, mas a <span class="destaque-dourado">idade FINAL é 65 anos e 9 meses</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+                    <li><span class="destaque-vermelho">Não atua:</span> Rep. Legal, Analfabetos</li>
+                    <li>PB, AP, TO, RR (60+): CCB assinada + selfie segurando CCB</li>
+                    <li>Documentos: RG (10 anos), CNH (vencida ok), Passaporte (novo com pais), RNE</li>
+                </ul></div>
             </div>
 
             <div id="op-brb" class="bank-content">
-                <h2 class="resumo-titulo">BRB – RESUMO OPERACIONAL (Setembro/2026)</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Saldo Mín: <span class="destaque-dourado">R$ 5.000,00</span> | Troco Mín: <span class="destaque-dourado">R$ 100,00</span> | Prazo: 108 meses</li><li>Mais de 360 dias da contratação original</li><li><span class="destaque-vermelho">Não porta:</span> PicPay, Agibank, C6, C6 Consignado</li><li>Margem negativa: <span class="destaque-vermelho">Não finaliza só na port</span> (subtrair do troco)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Refin Carteira e Port: Troco mín <span class="destaque-dourado">R$ 50,00</span> | Unifica parcelas e agrega margem</li><li>Taxa não pode ser inferior à do contrato original</li><li><span class="destaque-vermelho">Não refin</span> carteira Facta e Pine (contratos iniciados em 4, 5, 6)</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Margem Livre Mín: <span class="destaque-dourado">R$ 2.000,00</span> (Parcela mín R$ 25)</li><li>Refin Carteira Mín: R$ 500,00</li><li>Data de Corte: 2º dia útil | Vencimento: Dia 20 do mês</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> Menores de 18, Analfabetos, Deficientes visuais, Rep. Legal, LOAS (87/88)</li><li><span class="destaque-vermelho">Invalidez (32/92): NÃO ATUA MAIS</span> (movido para não aceitos em Set/2026)</li><li>Documentos: RG, CNH, CTPS, RNE (originais, sem cópia) | Hiscon | IN100</li></ul></div>
+                <h2 class="resumo-titulo">BRB – RESUMO OPERACIONAL (Plataforma REDCONSIG)</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+                    <li><strong>ATIVO PORTABILIDADE</strong> (Enviando o saldo pra CIP)</li>
+                    <li>Opera Margem Negativa: <span class="destaque-dourado">SIM</span></li>
+                    <li>Taxa portabilidade: <span class="destaque-dourado">Sem taxa de entrada</span></li>
+                    <li>Refin da portabilidade: A partir de <span class="destaque-dourado">1,79%</span> (taxa refin 1,85% para saldo menor)</li>
+                    <li>Saldo devedor mínimo: <span class="destaque-dourado">R$ 3.000,00</span> (taxa refin 1,85) | <span class="destaque-dourado">R$ 4.000,00</span> (taxa refin 1,79)</li>
+                    <li>Troco mínimo: Pelo menos o valor de uma parcela portada OU <span class="destaque-dourado">R$ 150,00</span> (com vídeo chamada)</li>
+                    <li><strong>Regras de Bancos Portados:</strong> QI TECH e INTER: Consulte seu gerente comercial | <span class="destaque-dourado">Todos os bancos: 12 pagas</span></li>
+                    <li><span class="destaque-vermelho">NÃO PORTA:</span> Santinvest, C6 Bank, Picpay Bank, Bradesco S.A., Inbursa, Pagbank e Agibank</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+                    <li>Idade: <span class="destaque-dourado">22 até 81 anos e 11 meses</span> (término do contrato)</li>
+                    <li>Prazo Máx: <span class="destaque-dourado">36 parcelas</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+                    <li><span class="destaque-vermelho">Não atua:</span> Menores de 18, Analfabetos, Deficientes visuais, Rep. Legal, LOAS (87/88)</li>
+                    <li><span class="destaque-vermelho">Invalidez (32/92): NÃO ATUA MAIS</span> (movido para não aceitos em Set/2026)</li>
+                    <li>Documentos: RG, CNH, CTPS, RNE (originais, sem cópia) | Hiscon | IN100</li>
+                </ul></div>
             </div>
 
-            <div id="op-quero-mais" class="bank-content">
-                <h2 class="resumo-titulo">QUERO MAIS – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li><span class="destaque-dourado">Taxas:</span> Port: a partir de <span class="destaque-dourado">1,34% a.m.</span> | Refin Port: a partir de <span class="destaque-dourado">1,56% a.m.</span></li><li><span class="destaque-dourado">Regras de Pagas:</span> Bancos de rede: <span class="destaque-dourado">6 pagas</span> | Agibank (121): <span class="destaque-dourado">15 pagas</span> | Facta/NBC: <span class="destaque-dourado">24 pagas</span> | C6: <span class="destaque-dourado">acima de 12 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Paraná, Safra, Inbursa, Alfa, Daycoval, Master</li><li><span class="destaque-dourado">NOVIDADE:</span> Permite juntar até <span class="destaque-dourado">3 parcelas</span> no Refin da Portabilidade</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Permite <span class="destaque-dourado">agregar margem e unificar parcelas</span></li><li>Port: <span class="destaque-vermelho">NÃO permite</span> agregar margem nem unificar parcelas</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: <span class="destaque-dourado">40%</span></li><li>Parcela Mín: <span class="destaque-dourado">R$ 20,00</span> | Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li><li>Data de Corte: 2º dia útil | Digitação até 16h (D+0) | Port até 13h</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li>Digital: Link via SMS | <span class="destaque-vermelho">Híbrida obrigatória para 60+</span> (imprimir e assinar fisicamente)</li><li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC (87/88), Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia, ECT</li><li>Invalidez (32/92): 40-52 anos | 53-59 anos (mín 13 anos benefício) | 60+ (normal)</li><li>Documentos: Ficha Cadastral, CCB, Detalhamento Crédito, CNH/RG, Termo Autorização, Extrato Bancário, Comprovante Endereço</li></ul></div>
+            <div id="op-redbank" class="bank-content">
+                <h2 class="resumo-titulo">REDBANK – RESUMO OPERACIONAL (Plataforma REDCONSIG)</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+                    <li>Saldo Mín: <span class="destaque-dourado">R$ 5.000,00</span> | Troco Mín Port: <span class="destaque-dourado">R$ 100,00</span> | Refin da Port: <span class="destaque-dourado">R$ 50,00</span></li>
+                    <li>Taxa Portabilidade: <span class="destaque-vermelho">Não há</span></li>
+                    <li>Taxa mín. Refin: <span class="destaque-dourado">1,75% a.m.</span></li>
+                    <li>Parcela Mín: <span class="destaque-dourado">R$ 110,00</span> (Port e Refin da Port)</li>
+                    <li>Saldo Máx: <span class="destaque-dourado">R$ 125.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 parcelas</span> | Máx 13 contratos</li>
+                    <li>SRCC: <span class="destaque-dourado">Não consulta</span> | Não Me Perturbe: atualização em até <span class="destaque-dourado">48h</span> após retirada</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Parcelas Pagas</h3><ul>
+                    <li><span class="destaque-dourado">1 parcela paga:</span> Banco do Brasil, Caixa, Santander (contratos iniciados em 20, 30 e 40), Banco Alfa, Alfa Financeira, Sicoob, Digimais (654), Itaú (341), Bradesco (237), NU CFI, Inter, Q.I. e Mercantil</li>
+                    <li><span class="destaque-dourado">Paraná (254):</span> mínimo de <span class="destaque-vermelho">25 parcelas pagas</span></li>
+                    <li><span class="destaque-dourado">Panamericano (623):</span> mínimo de <span class="destaque-vermelho">37 parcelas pagas</span></li>
+                    <li><span class="destaque-dourado">Demais bancos:</span> mínimo de <span class="destaque-dourado">12 parcelas pagas</span> (respeitando autorregulação dos 360 dias)</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Bancos que NÃO Porta</h3><ul>
+                    <li><span class="destaque-vermelho">Inbursa (012)</span></li>
+                    <li><span class="destaque-vermelho">BRB (070, 071, 925)</span></li>
+                    <li><span class="destaque-vermelho">Agibank (121)</span></li>
+                    <li><span class="destaque-vermelho">Daycoval (707)</span></li>
+                    <li><span class="destaque-vermelho">Safra (422)</span></li>
+                    <li><span class="destaque-vermelho">C6 (626, 336)</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrição por UF (59+ anos)</h3><ul>
+                    <li><span class="destaque-vermelho">Não atende clientes com 59 anos ou mais nos estados:</span></li>
+                    <li>AP – Amapá | PB – Paraíba | RR – Roraima | TO – Tocantins</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+                    <li>Formalização: <span class="destaque-dourado">Digital</span></li>
+                    <li><span class="destaque-vermelho">Não elegíveis:</span> Representante legal, LOAS, Assinatura física e Analfabeto</li>
+                    <li>Idade: <span class="destaque-dourado">21 a 71 anos</span></li>
+                    <li>⚠️ <strong>Atenção:</strong> BRB e RedBank possuem regras diferentes. Sempre confira o banco, tabela, quantidade de parcelas pagas e demais critérios antes de realizar a operação.</li>
+                </ul></div>
             </div>
 
-            <div id="op-totalcash" class="bank-content">
-                <h2 class="resumo-titulo">TOTAL CASH – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Saldo Mín Port: <span class="destaque-dourado">R$ 3.000,00</span> | Port Pura: <span class="destaque-dourado">Sim</span> | Reduz Taxa: Sim | Redução de Parcela: Sim | Margem Negativa: Sim</li><li>Unifica Parcelas: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">1 paga</span> | PAN/FACTA: <span class="destaque-dourado">12 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> BRB, Pine, Inbursa, QI</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span></li><li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Redução de Parcela: Sim | Unifica Parcelas: <span class="destaque-vermelho">Não</span> | Margem Negativa: Sim</li><li>Refin Puro: <span class="destaque-vermelho">Temporariamente Suspenso</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 1.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li><li>Valor Máx: <span class="destaque-dourado">R$ 85.000,00</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li><li>Invalidez: <span class="destaque-dourado">Sim</span> (55+ com 15 anos benefício) | Pensão 21: Sim | Analfabetos: Sim</li><li>Coobrigação: <span class="destaque-dourado">180 dias</span> | Risco averbação: Banco | Risco fraude: Parceiro</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li>Formalização: <span class="destaque-dourado">Digital</span></li><li>Idosos 60+ (AP, PB, TO, RR e BH-MG): formalização <span class="destaque-dourado">fígital</span> (apenas anexo da via CCB, sem envio físico)</li><li><span class="destaque-vermelho">Não atua:</span> RL, LOAS 88 (87 suspenso), Idade < 21 anos, PEP, CPF irregular, ECT, Previdência Complementar</li><li>Ordem de Pagamento: <span class="destaque-vermelho">Não</span> | Bancos Digitais: verificar listagem no RO</li><li>Documentos: RG, CNH, CTPS e RNE</li></ul></div>
-            </div>
+            <!-- FIM DA PARTE 1 - Continue com a Parte 2 (iCred, Finanto, Paraná, Quero Mais, Digio, Banrisul, Daycoval, TotalCash, C6, Facta, Safra, BMG) -->
 
-            <div id="op-digio" class="bank-content">
-                <h2 class="resumo-titulo">DIGIO – RESUMO OPERACIONAL</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul><li>Saldo Mínimo Port: <span class="destaque-dourado">R$ 4.500,00</span> | Port Pura: <span class="destaque-dourado">Sim</span> | Reduz Taxa: Sim | Redução de Parcela: Sim</li><li>Agregação: <span class="destaque-vermelho">Não</span> | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">12 pagas</span> | Banco de rede: <span class="destaque-dourado">0 pagas</span></li><li><span class="destaque-vermelho">NÃO PORTA:</span> Banco do Brasil, Banrisul, Bradesco (237), Pan, Caixa e Paraná</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul><li>Troco Mín: <span class="destaque-dourado">R$ 250,00</span> | Mín parcelas pagas: <span class="destaque-dourado">8 pagas</span></li><li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Agregação: Sim (mín R$ 25,00) | Redução de Parcela: <span class="destaque-vermelho">Não</span></li><li>Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li><li>Sem agregação + prazo 108x: <span class="destaque-dourado">1 paga</span> | Sem agregação + prazo menor 108x: <span class="destaque-dourado">8 pagas</span></li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul><li>Novo Mín: <span class="destaque-dourado">R$ 1.200,00</span> | Refin Mín: <span class="destaque-dourado">R$ 250,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li><li>Parcela Mínima: <span class="destaque-dourado">Não tem</span> | Máx 13 contratos | Taxa Máx: 1,85%</li><li>Invalidez: <span class="destaque-dourado">Sim</span> (acima de 60 anos) | Pensão 21: Sim</li></ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul><li><span class="destaque-vermelho">Não atua:</span> RL, LOAS (87/88), Analfabetos, Ordem de Pagamento</li><li>Idosos 60+: Figital obrigatória em AP, PB, RR, TO e Poços de Caldas (MG)</li><li><span class="destaque-vermelho">Bancos não aceitos p/ crédito:</span> Pagbank, BS2, BMG, Mercado Pago, Digio, C6, Super Digital, XP, PicPay, HUB, iugu, Fitbank, Omni, C6 Consignado, Smartbank, Sofisa, Indusval, SouDigi+, Neon, Modal, Sicoob</li><li>Documentos: RG, CNH</li></ul></div>
-            </div>
-        </div>
-    </div>
+<div id="op-icred" class="bank-content">
+    <h2 class="resumo-titulo">ICRED – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-dourado">Port + Refin:</span> Mínimo <span class="destaque-dourado">R$ 3.000,00</span> (saldo devedor Port + troco Refin R$100) | Máximo: <span class="destaque-dourado">R$ 100.000,00</span> | Prazo: <span class="destaque-dourado">108 parcelas</span></li>
+        <li><span class="destaque-dourado">Taxas:</span> Refinanciamento a partir de <span class="destaque-dourado">1,50% a.m.</span> | Entrada (ponderada) ex: 60x pagas ≈ 0,97% | Tabelas Normal a Flex 5 / Port 10K-100K: <span class="destaque-dourado">1,50% a 1,85%</span></li>
+        <li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span> | Agregar margem/unificar: <span class="destaque-vermelho">Não permitido</span> | Seguro: <span class="destaque-vermelho">Não incluso</span></li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> C6, PAN e Facta: <span class="destaque-dourado">12 pagas</span> | Demais bancos: <span class="destaque-dourado">1 parcela paga</span> (mesmo com benefício bloqueado via IN100)</li>
+        <li><span class="destaque-dourado">Refinanciamento automático, sempre</span> - sem portabilidade isolada</li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> QI, Inbursa, Paraná, PINE</li>
+        <li>Não consultamos SRCC e Não Pertube | 100% digital, formalização única na entrada</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Refin Mín: <span class="destaque-dourado">R$ 800,00</span> (Mín 1 parcela paga)</li>
+        <li>Margem Livre Mín: <span class="destaque-dourado">R$ 1.200,00</span> (Prazo mín: 36x)</li>
+        <li>Permite reduzir só para margem negativa | <span class="destaque-vermelho">Não aumenta parcela, não unifica</span></li>
+        <li>Margem Livre: <span class="destaque-vermelho">Não opera com margem negativa</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: <span class="destaque-dourado">35%</span></li>
+        <li>Idade permitida: <span class="destaque-dourado">21 a 69 anos</span></li>
+        <li>Margem negativa: <span class="destaque-dourado">Aceita</span> (se cumprir requisitos)</li>
+        <li>Liberação: PIX na conta do beneficiário (obrigatoriamente vinculada no INSS)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-dourado">100% Digital</span> | Formalização única na entrada da proposta</li>
+        <li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Rep. Legal (suspenso IN 190/2025), LOAS/BPC, Pensão Alimentícia, Exterior, ECT</li>
+        <li>Documentos: Termo IN100, RG ou CNH (físico em mãos para captura)</li>
+    </ul></div>
+</div>
+
+<div id="op-finanto" class="bank-content">
+    <h2 class="resumo-titulo">FINANTO – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-dourado">Taxas:</span> Port: <span class="destaque-dourado">1,70%</span> | Port+Refin: <span class="destaque-dourado">0,90%</span></li>
+        <li>Opera Margem Negativa: <span class="destaque-dourado">Sim</span></li>
+        <li><span class="destaque-dourado">Troco Mínimo:</span> Até 24 pagas → 2% | 25 a 40 pagas → 3% | Acima de 41 pagas → 5% do endividamento</li>
+        <li><span class="destaque-dourado">Regras de Pagas:</span> Pan, Facta, C6: <span class="destaque-dourado">acima de 12 pagas</span> | Demais bancos: <span class="destaque-dourado">0 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa, Pine, QI, Paraná</li>
+        <li>Parcela mínima: <span class="destaque-dourado">R$ 50,00</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Taxas Refin da Port: Prime (R$ 300+): 1,85%-1,60% | Select (R$ 101-299): 1,85%-1,66% | Essencial (R$ 50-100): 1,85%-1,72%</li>
+        <li>Agregar Margem: <span class="destaque-dourado">Apenas no Refin Puro</span></li>
+        <li>Margem Negativa: Opera só em Port+/Refin se cobrir o negativo</li>
+        <li>Junção de Parcelas: Via Refin Puro (tabela da menor parcela portada)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Novo: Taxa 1,85% | 48-108x | Parcela mín <span class="destaque-dourado">R$ 20,00</span></li>
+        <li>Idade: <span class="destaque-dourado">21 a 77 anos e 10 meses</span> (término do contrato)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não opera:</span> Rep. Legal, LOAS 87, PB/AP/TO/RR acima de 60 anos</li>
+        <li>Evidência obrigatória para Contrato Novo (Gravação, Vídeo ou Print WhatsApp)</li>
+        <li>Anuência: Obrigatória após averbação | Prazo: 5 dias (Novo) | 3 dias (Refin)</li>
+        <li>Documentos: RG/CNH (físico/digital), RNE/RNM, Comprovante Residência</li>
+    </ul></div>
+</div>
+
+<div id="op-parana" class="bank-content">
+    <h2 class="resumo-titulo">PARANÁ BANCO – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li>Taxa Entrada Port: <span class="destaque-dourado">0,60%</span> | Refin Port: <span class="destaque-dourado">1,60%</span></li>
+        <li>Bancos de rede (gerais): <span class="destaque-dourado">0 parcelas pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Qi Sociedade, Picpay, Pine, BNP Paribas, Alfa, Facta, C6, Safra</li>
+        <li><span class="destaque-dourado">ACIMA DE 12 PAGAS:</span> Pan, Paraná, Santander, Mercantil, Agibank, Daycoval, Parati</li>
+        <li>C6 Consignado (626): <span class="destaque-vermelho">25 pagas</span> | Agibank (121): <span class="destaque-vermelho">13 pagas</span> | Inbursa (012/055): <span class="destaque-vermelho">13 pagas</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Solicitar após <span class="destaque-dourado">7 dias úteis</span> da integração do contrato original</li>
+        <li>Margem negativa após regularização: atualizada também após 7 dias úteis</li>
+        <li>Permite unificar parcelas e agregar margem (somente no Refin)</li>
+        <li>Anuência individual obrigatória no Meu INSS a cada operação</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Prazo Máximo: <span class="destaque-dourado">108 meses</span> | Taxa Máx: 1,85% a.m.</li>
+        <li>Parcela Mín (Novo): <span class="destaque-dourado">R$ 60,00</span> | Port+Refin: <span class="destaque-dourado">R$ 120,00</span></li>
+        <li>Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span> | Demais operações: R$ 1,00</li>
+        <li>Máx 13 contratos por benefício | Data de Corte: 2º dia útil</li>
+        <li>Margem Negativa: <span class="destaque-vermelho">Não opera</span> (permite port com margem zerada)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> Analfabetos, Deficientes Visuais, Rep. Legal, LOAS, Pensão Alimentícia</li>
+        <li>PB, AP, TO, RR (60+): exigem assinatura física (reprovado automaticamente)</li>
+        <li>Bloqueio por operação (desde 22/04): concessão 90 dias | TBM 60 dias</li>
+        <li>Documentos: RG, CNH, RNE/RNM | Consulta "Não Me Perturbe": realiza consulta</li>
+    </ul></div>
+</div>
+
+<div id="op-quero-mais" class="bank-content">
+    <h2 class="resumo-titulo">QUERO MAIS – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-dourado">Taxas:</span> Port: a partir de <span class="destaque-dourado">1,34% a.m.</span> | Refin Port: a partir de <span class="destaque-dourado">1,56% a.m.</span></li>
+        <li><span class="destaque-dourado">Regras de Pagas:</span> Bancos de rede: <span class="destaque-dourado">6 pagas</span> | Agibank (121): <span class="destaque-dourado">15 pagas</span> | Facta/NBC: <span class="destaque-dourado">24 pagas</span> | C6: <span class="destaque-dourado">acima de 12 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Paraná, Safra, Inbursa, Alfa, Daycoval, Master</li>
+        <li><span class="destaque-dourado">NOVIDADE:</span> Permite juntar até <span class="destaque-dourado">3 parcelas</span> no Refin da Portabilidade</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Permite <span class="destaque-dourado">agregar margem e unificar parcelas</span></li>
+        <li>Port: <span class="destaque-vermelho">NÃO permite</span> agregar margem nem unificar parcelas</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: <span class="destaque-dourado">40%</span></li>
+        <li>Parcela Mín: <span class="destaque-dourado">R$ 20,00</span> | Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li>
+        <li>Data de Corte: 2º dia útil | Digitação até 16h (D+0) | Port até 13h</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li>Digital: Link via SMS | <span class="destaque-vermelho">Híbrida obrigatória para 60+</span> (imprimir e assinar fisicamente)</li>
+        <li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC (87/88), Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia, ECT</li>
+        <li>Invalidez (32/92): 40-52 anos | 53-59 anos (mín 13 anos benefício) | 60+ (normal)</li>
+        <li>Documentos: Ficha Cadastral, CCB, Detalhamento Crédito, CNH/RG, Termo Autorização, Extrato Bancário, Comprovante Endereço</li>
+    </ul></div>
+</div>
+
+<div id="op-digio" class="bank-content">
+    <h2 class="resumo-titulo">DIGIO – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li>Saldo Mínimo Port: <span class="destaque-dourado">R$ 4.500,00</span></li>
+        <li>Agregação: <span class="destaque-vermelho">Não</span> | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">12 pagas</span> | Banco de rede: <span class="destaque-dourado">0 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Banco do Brasil, Banrisul, Bradesco (237), Pan, Caixa e Paraná</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Troco Mín: <span class="destaque-dourado">R$ 250,00</span> | Mín parcelas pagas: <span class="destaque-dourado">8 pagas</span></li>
+        <li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Agregação: Sim (mín R$ 25,00) | Redução de Parcela: <span class="destaque-vermelho">Não</span></li>
+        <li>Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li>Sem agregação + prazo 108x: <span class="destaque-dourado">1 paga</span> | Sem agregação + prazo menor 108x: <span class="destaque-dourado">8 pagas</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Novo Mín: <span class="destaque-dourado">R$ 1.200,00</span> | Refin Mín: <span class="destaque-dourado">R$ 250,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li>
+        <li>Parcela Mínima: <span class="destaque-dourado">Não tem</span> | Máx 13 contratos | Taxa Máx: 1,85%</li>
+        <li>Invalidez: <span class="destaque-dourado">Sim</span> (acima de 60 anos) | Pensão 21: Sim</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> RL, LOAS (87/88), Analfabetos, Ordem de Pagamento</li>
+        <li>Idosos 60+: Figital obrigatória em AP, PB, RR, TO e Poços de Caldas (MG)</li>
+        <li><span class="destaque-vermelho">Bancos não aceitos p/ crédito:</span> Pagbank, BS2, BMG, Mercado Pago, Digio, C6, Super Digital, XP, PicPay, HUB, iugu, Fitbank, Omni, C6 Consignado, Smartbank, Sofisa, Indusval, SouDigi+, Neon, Modal, Sicoob</li>
+        <li>Documentos: RG, CNH</li>
+    </ul></div>
+</div>
+
+<div id="op-banrisul" class="bank-content">
+    <h2 class="resumo-titulo">BANRISUL – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li>Port: <span class="destaque-dourado">Sim</span> | Reduz Taxa: <span class="destaque-vermelho">Não</span> (simular direto no banco)</li>
+        <li>Agregação: Sim (na portabilidade especial) | Redução de parcela: Sim</li>
+        <li>Unifica Parcela: <span class="destaque-dourado">Apenas no Refin da Port</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">1 paga</span> | Remunera ≥ 360 dias | PAN: <span class="destaque-dourado">30 pagas</span> | Safra e Inbursa: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Banqul e BRB</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento de Carteira</h3><ul>
+        <li>Mínimo: <span class="destaque-dourado">10 parcelas pagas</span> (ou 5 com financiamento ≥ R$ 5.000)</li>
+        <li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span> | Unifica Parcela: Sim, até 5 parcelas</li>
+        <li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Agregação: Sim (se houver linha disponível)</li>
+        <li>Redução de parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Novo Mín: <span class="destaque-dourado">R$ 700,00</span> | Refin Mín: <span class="destaque-dourado">R$ 100,00</span></li>
+        <li>Máx Operação: <span class="destaque-dourado">R$ 70.000,00</span> | Parcela Mín: <span class="destaque-dourado">R$ 8,00</span></li>
+        <li>Máx 13 contratos | Margem: 35% | Data de Corte: 2º dia útil</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul>
+        <li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> | Acima de 60 anos: sem regras | 55 a 59 anos: obrigatório 15 anos de benefício</li>
+        <li><strong>Pensão (Espécie 21):</strong> Sim - verificar tabela de idade no Roteiro Operacional</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização e Restrições</h3><ul>
+        <li>Digital ou Figital | <span class="destaque-dourado">Idosos 60+ (TO, AP, RR, PB):</span> Formalização Figital obrigatória</li>
+        <li>Kit à New Space em até 5 dias úteis | Anuência via Meu INSS</li>
+        <li><span class="destaque-vermelho">Não atua:</span> Analfabetos, LOAS, Rep. Legal, Acordos Internacionais, Empresa Convenente</li>
+        <li>Consulta "Não Me Perturbe": <span class="destaque-dourado">Sim, realiza consulta</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Documentos e Pagamento</h3><ul>
+        <li>RG, CNH, Passaporte, RNE, CRM | <span class="destaque-vermelho">Não aceita CTPS</span></li>
+        <li><strong>Bancos Digitais para Pagamento:</strong> Conta digital cadastrada no INSS + fone da proposta (titularidade do cliente). Demais casos não serão aceitos.</li>
+        <li>Migração de Logins: <span class="destaque-vermelho">Não faz</span> (máx 3 logins por CPF em promotoras distintas)</li>
+    </ul></div>
+</div>
+
+<div id="op-daycoval" class="bank-content">
+    <h2 class="resumo-titulo">DAYCOVAL – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-dourado">Regra de Pagas:</span> Bancos de rede: <span class="destaque-dourado">6 pagas</span> | Agibank: <span class="destaque-dourado">15 pagas</span> | Facta/NBC: <span class="destaque-dourado">24 pagas</span> | C6: <span class="destaque-dourado">acima de 12 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Paraná, Safra, Inbursa, Alfa, Master e <strong>Quero Mais</strong></li>
+        <li>Mesma regra de portabilidade do grupo Quero Mais</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li><span class="destaque-dourado">LIBERADO REFIN COM 1 PARCELA PAGA</span> (mantendo a taxa do contrato original)</li>
+        <li>Agregação/Unificação: <span class="destaque-dourado">Apenas no Refin</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li>
+        <li>Parcela Mín (Novo/Refin): <span class="destaque-dourado">R$ 20,00</span> | Troco Mín (Port+Refin): <span class="destaque-dourado">R$ 100,00</span></li>
+        <li>Término do contrato: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li>
+        <li>Política de Idade x Prazo: 108x até 71 anos | 96x até 72 anos | 84x até 73 anos</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li>
+        <li><span class="destaque-vermelho">Híbrida obrigatória para 60+</span> | Anuência em até 5 dias</li>
+        <li>RG ou CNH (vencida ok), Termo IN100, Comprovante Endereço</li>
+    </ul></div>
+</div>
+
+<div id="op-totalcash" class="bank-content">
+    <h2 class="resumo-titulo">TOTAL CASH – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li>Saldo Mín Port: <span class="destaque-dourado">R$ 3.000,00</span> | Reduz Taxa: Sim | Redução de Parcela: Sim | Margem Negativa: Sim</li>
+        <li>Unifica Parcelas: <span class="destaque-vermelho">Não</span></li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Regra geral: <span class="destaque-dourado">1 paga</span> | PAN/FACTA: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> BRB, Pine, Inbursa, QI</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Troco Mínimo: <span class="destaque-dourado">R$ 100,00</span></li>
+        <li>Reduz Taxa: <span class="destaque-vermelho">Não</span> | Redução de Parcela: Sim | Unifica Parcelas: <span class="destaque-vermelho">Não</span> | Margem Negativa: Sim</li>
+        <li>Refin Puro: <span class="destaque-vermelho">Temporariamente Suspenso</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Novo Mín: <span class="destaque-dourado">R$ 1.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span> | Máx 13 contratos | Margem: 40%</li>
+        <li>Valor Máx: <span class="destaque-dourado">R$ 85.000,00</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li>
+        <li>Invalidez: <span class="destaque-dourado">Sim</span> (55+ com 15 anos benefício) | Pensão 21: Sim | Analfabetos: Sim</li>
+        <li>Coobrigação: <span class="destaque-dourado">180 dias</span> | Risco averbação: Banco | Risco fraude: Parceiro</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li>Formalização: <span class="destaque-dourado">Digital</span></li>
+        <li>Idosos 60+ (AP, PB, TO, RR e BH-MG): formalização <span class="destaque-dourado">fígital</span> (apenas anexo da via CCB, sem envio físico)</li>
+        <li><span class="destaque-vermelho">Não atua:</span> RL, LOAS 88 (87 suspenso), Idade < 21 anos, PEP, CPF irregular, ECT, Previdência Complementar</li>
+        <li>Ordem de Pagamento: <span class="destaque-vermelho">Não</span> | Bancos Digitais: verificar listagem no RO</li>
+        <li>Documentos: RG, CNH, CTPS e RNE</li>
+    </ul></div>
+</div>
+
+<div id="op-c6" class="bank-content">
+    <h2 class="resumo-titulo">C6 BANK – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-dourado">Taxas:</span> Port: a partir de <span class="destaque-dourado">1,35%</span> | Refin Port: a partir de <span class="destaque-dourado">1,55%</span></li>
+        <li>Obs: Port abaixo de 1,75% exige refin vinculado | Saldo devedor mín: <span class="destaque-dourado">R$ 2.000,00</span> | Troco mín: <span class="destaque-dourado">R$ 50,00</span></li>
+        <li><span class="destaque-dourado">Regras de Pagas:</span> Bancos de rede (agência): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span> (360 dias autorregulação) | Pan: <span class="destaque-dourado">37 pagas</span> | Paraná: <span class="destaque-dourado">25 pagas</span></li>
+        <li><span class="destaque-dourado">Tabela Especial (360 dias):</span> QI Tech (329), Facta (935 e 149), Banco Pine (643)</li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Daycoval, Agibank, Inbursa, BRB e Safra</li>
+        <li><span class="destaque-vermelho">Não unifica parcelas</span> | Margem negativa: Sim</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Troco mín: <span class="destaque-dourado">R$ 700,00</span> ou 5% do valor financiado</li>
+        <li>Reduz taxa: Sim, até <span class="destaque-dourado">0,10%</span> | Agregação: Sim | Redução de parcela: Sim</li>
+        <li>Mínimo de parcelas pagas: <span class="destaque-dourado">12 pagas</span> (nos prazos 96 e 84 meses)</li>
+        <li>Carência na 1ª parcela: Sim (30, 60 ou 90 dias)</li>
+        <li>Margem negativa: deduzir da parcela do contrato refinanciado</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Novo Mín: <span class="destaque-dourado">R$ 1.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li>
+        <li>Parcela Mínima: <span class="destaque-dourado">Não tem</span></li>
+        <li>Idade: <span class="destaque-dourado">21 até 80 anos e 11 meses</span> (término do contrato)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> RL (nem na port), LOAS 87/88 suspensos</li>
+        <li>Analfabetos: <span class="destaque-dourado">Atende</span> (NOVO-REFIN-PORT) | Invalidez e Pensão 21: Sim</li>
+        <li>Idosos 60+ (estados com restrição): Formalização híbrida (Web Plus)</li>
+        <li>Documentos: RG, CNH, RNE</li>
+        <li><span class="destaque-vermelho">Bancos não aceitos p/ pagamento:</span> Inter, Stone, Arbi, Bs2, Pagseguro, Mercado Pago, Safra, Votorantim, PicPay | Agências Digitais: Caixa Tem, Next, Iti, Neon | Santander contas começando com 77</li>
+    </ul></div>
+</div>
+
+<div id="op-facta" class="bank-content">
+    <h2 class="resumo-titulo">FACTA – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li>Margem zerada: <span class="destaque-dourado">Sim</span> | Margem negativa: <span class="destaque-dourado">Sim</span></li>
+        <li>Redução de parcela: Sim (desde que cubra o saldo devedor, parcela mín <span class="destaque-dourado">R$ 50,00</span>)</li>
+        <li>Unifica parcelas: <span class="destaque-vermelho">Não</span> | Porta 2+ contratos: <span class="destaque-vermelho">Não</span> | Prazo mín Refin da Port: <span class="destaque-dourado">60x</span></li>
+        <li>Forma de portar: TED STR47, via CIP</li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Agibank: <span class="destaque-dourado">15 pagas</span> | BMG, C6, Santander/Olé: <span class="destaque-dourado">12 pagas</span> | Paraná: <span class="destaque-dourado">15 pagas</span> | Daycoval: <span class="destaque-dourado">24 pagas</span> | PAN: <span class="destaque-dourado">30 pagas</span> | BRB (originado pela Facta): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">0 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Inbursa (BI), BRB, Pine, Socicred (917), Paulista e Zema (apenas se originados pela Facta)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Troco Mín: <span class="destaque-dourado">R$ 100,00</span> | Unifica parcelas: Sim (desde que líquido mín do cliente seja <span class="destaque-dourado">R$ 250,00</span>)</li>
+        <li>Redução de parcela: Sim (desde que a margem esteja negativa)</li>
+        <li>Sem mínimo de parcelas pagas (carteira cedida)</li>
+        <li>Mínimo de margem a ser agregada: <span class="destaque-dourado">R$ 6,00</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Risco Máx CPF: <span class="destaque-dourado">R$ 150.000,00</span> | Parcela Mín (Novo/Refin): <span class="destaque-dourado">R$ 50,00</span></li>
+        <li>Parcela Mín Refin da Port: <span class="destaque-dourado">R$ 50,00</span></li>
+        <li>Dia de Corte: 2º dia útil | Carência: até 180 dias (apenas novos no RS, desde 28/06/2024)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> Pensão alimentícia, Previdência complementar, Deficientes visuais/surdos/mudos, Procurador, Perícia < Jan/2018, Benefícios no PI</li>
+        <li>PB, AP, TO, RR, SC (60+): formalização digital + via assinada pelo cliente</li>
+        <li>Analfabetos: Atende só operações novas | Rogado: 1º ou 2º grau | Selfie + docs obrigatórios</li>
+        <li>Documentos: Apenas RG ou CNH (vencida ok) | <span class="destaque-vermelho">Não aceita CTPS</span> | Selfie obrigatória | Ficha Cadastral + Comprovante de Residência</li>
+    </ul></div>
+</div>
+
+<div id="op-safra" class="bank-content">
+    <h2 class="resumo-titulo">BANCO SAFRA – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-vermelho">PORTABILIDADE SUSPENSA</span> | Opera Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li>Portabilidade Especial: a partir de <span class="destaque-dourado">1,44%</span> | Refin da Port: a partir de <span class="destaque-dourado">1,69%</span></li>
+        <li>Saldo Devedor Mín: <span class="destaque-dourado">R$ 5.200,00</span> | Troco Mín: <span class="destaque-dourado">R$ 400,00</span></li>
+        <li>Reduz Taxa: Sim | Redução Parcela: Sim | Unifica Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: Sim</li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Banrisul: <span class="destaque-dourado">12 pagas</span> | Pan: <span class="destaque-dourado">15 pagas</span> | C6: <span class="destaque-dourado">18 pagas</span> | Facta: <span class="destaque-dourado">24 pagas</span> | Bancos de rede: <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> Daycoval, Inbursa e Alfa</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento de Carteira</h3><ul>
+        <li>Retenção: <span class="destaque-dourado">0 parcelas pagas</span> | Refin Carteira: <span class="destaque-dourado">3 parcelas pagas</span></li>
+        <li>Reduz Taxa: Sim | Agregação: Sim | Unifica Parcela: Sim</li>
+        <li>Redução de Parcela: <span class="destaque-vermelho">Não</span> | Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li><span class="destaque-vermelho">Não permite</span> agregação no Refin de Portabilidade</li>
+        <li>Permite junção 1 para 1 no Refin/Retenção</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Margem: <span class="destaque-dourado">35%</span> | Prazo Máx: <span class="destaque-dourado">108 meses</span></li>
+        <li>Novo Mín: <span class="destaque-dourado">R$ 400,00</span> (não limita parcela mín) | Refin Carteira Mín: <span class="destaque-dourado">R$ 100,00</span></li>
+        <li>Refin Port Mín: <span class="destaque-dourado">R$ 5.200,00</span> + troco mín R$ 50,00</li>
+        <li>Risco Máx CPF: <span class="destaque-dourado">R$ 80.000,00</span> (com histórico) | Máx 13 empréstimos</li>
+        <li>Tempo Mín Benefício: 90 dias | Idade: <span class="destaque-dourado">26 a 76 anos e 11 meses</span> (término do contrato)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li><span class="destaque-vermelho">Não atua:</span> LOAS (87/88), Rep. Legal, Tribos indígenas, Deficientes visuais, Analfabetos, ECT</li>
+        <li>Invalidez: <span class="destaque-vermelho">Não autorizado</span> | Pensão 21: Sim (mín 5 meses de benefício)</li>
+        <li>Ordem de Pagamento: <span class="destaque-vermelho">Não</span> | Bancos Digitais: <span class="destaque-vermelho">Não opera</span></li>
+        <li>Idosos 60+: <span class="destaque-vermelho">Não opera</span> em estados/municípios com restrição</li>
+        <li>Fechamento completo: PagSeguro (290) e MercadoPago (323)</li>
+        <li>Formalização: <span class="destaque-dourado">Digital</span></li>
+        <li>Documentos: RG, CNH, RNE, RNM, CTPS, Carteiras Funcionais, Carteiras de Classe (OAB, CREA, CONFEA e COREN)</li>
+    </ul></div>
+</div>
+
+<div id="op-bmg" class="bank-content">
+    <h2 class="resumo-titulo">BANCO BMG – RESUMO OPERACIONAL</h2>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Regras de Portabilidade</h3><ul>
+        <li><span class="destaque-vermelho">PORTABILIDADE SUSPENSA</span> | Opera Margem Negativa: <span class="destaque-vermelho">Não</span></li>
+        <li>Taxa Port: a partir de <span class="destaque-dourado">1,60%</span> | Refin Port: <span class="destaque-dourado">1,85%</span></li>
+        <li>Saldo devedor mín: <span class="destaque-dourado">R$ 4.000,00</span> | Troco mín: <span class="destaque-dourado">R$ 50,00</span></li>
+        <li><span class="destaque-dourado">Parcelas Pagas:</span> Bancos de rede (agência): <span class="destaque-dourado">0 pagas</span> | Demais: <span class="destaque-dourado">12 pagas</span></li>
+        <li><span class="destaque-vermelho">NÃO PORTA:</span> 121 Agibank e 169 Ole</li>
+        <li>Permite até <span class="destaque-dourado">8 portabilidades</span> em uma única digitação</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Refinanciamento</h3><ul>
+        <li>Mínimo: <span class="destaque-dourado">5 parcelas pagas</span></li>
+        <li>Permite agregação de margem e margem negativa</li>
+        <li><span class="destaque-vermelho">Não permite unificação de parcelas</span></li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Valores e Prazos</h3><ul>
+        <li>Margem Global: <span class="destaque-dourado">40%</span> (35% empréstimo + 5% cartão compartilhado)</li>
+        <li>Máx 13 contratos por benefício | Prazo Máx: 108 meses</li>
+        <li>Idade: <span class="destaque-dourado">21 a 79 anos e 11 meses</span> (término do contrato)</li>
+    </ul></div>
+    <div class="resumo-secao"><h3 class="resumo-secao-titulo">Formalização, Restrições e Documentos</h3><ul>
+        <li>Digital/Digital Token | Híbrida obrigatória para Analfabetos e UFs (AP, PB, RR, TO) 60+</li>
+        <li>Anuência: Obrigatória em até <span class="destaque-dourado">5 dias corridos</span> após averbação</li>
+        <li>Analfabetos: Rogado 21 a 75 anos | Parentesco 1º grau (pai, mãe, filhos) e 2º (irmãos) | Rogado + Polegar cliente + 2 Testemunhas (não podem ser digitadores)</li>
+        <li><span class="destaque-vermelho">Não atua:</span> LOAS/BPC, Rep. Legal, Exterior, Timbiras-MA, Pensão Alimentícia</li>
+        <li>Documentos: RG/CIN, CNH, Passaporte, Carteira Profissional, CTPS (novo), CRNM/RNM/RNE (Máx 10 anos)</li>
+    </ul></div>
+</div>
+
+</div>
+</div>
 </section>
+
+<!-- FIM DA PARTE 2 - Continue com a Parte 3 (Regras Idades - Tabelas Comparativas) -->
 
 <!-- 2. REGRAS IDADES -->
 <section id="regras-idades" class="section">
@@ -203,6 +537,7 @@
             <button class="sidebar-item active" onclick="mudarBanco('id-tabela', this)">📊 Tabela Comparativa</button>
             <button class="sidebar-item" onclick="mudarBanco('id-quali', this)">Quali</button>
             <button class="sidebar-item" onclick="mudarBanco('id-brb', this)">BRB</button>
+            <button class="sidebar-item" onclick="mudarBanco('id-redbank', this)">RedBank</button>
             <button class="sidebar-item" onclick="mudarBanco('id-icred', this)">iCred</button>
             <button class="sidebar-item" onclick="mudarBanco('id-finanto', this)">Finanto</button>
             <button class="sidebar-item" onclick="mudarBanco('id-parana', this)">Paraná</button>
@@ -221,21 +556,20 @@
             
             <div id="id-tabela" class="bank-content active">
                 <h2 class="resumo-titulo">TABELA COMPARATIVA DE PRAZOS POR IDADE</h2>
-                <p style="color:#666; margin-bottom:20px; font-size:0.9rem;">Comparativo rápido de prazos máximos (X parcelas) por faixa etária. <em style="font-size:0.8rem;">(Passe o mouse sobre o ícone <strong>ⓘ</strong> para ver as regras de tempo de benefício)</em></p>
                 
                 <h3 class="titulo-tabela-comparativa">1. PORTABILIDADE</h3>
                 <div class="table-container"><div class="table-scroll">
                     <table class="tabela-comparativa">
-                        <thead><tr><th>Idade do Cliente</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>Safra</th><th>BMG</th></tr></thead>
+                        <thead><tr><th>Idade</th><th>Quali</th><th>BRB</th><th>RedBank</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>Safra</th></tr></thead>
                         <tbody>
-                            <tr><td>Até 68 anos</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>69 anos</td><td>108x</td><td>108x</td><td>108x</td><td class="status-none">Não Porta</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>70 anos</td><td>108x</td><td>108x</td><td>96x</td><td class="status-none">Não Porta</td><td>72x</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td>96x</td><td>108x</td><td>96x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>71 anos</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">Não Porta</td><td>72x</td><td>108x</td><td>96x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td>84x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>72 anos</td><td>96x</td><td>108x</td><td>72x</td><td class="status-none">Não Porta</td><td>60x</td><td>96x</td><td>84x</td><td>108x</td><td>84x</td><td>72x</td><td>108x</td><td>72x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>73 anos</td><td>84x</td><td>108x</td><td>60x</td><td class="status-none">Não Porta</td><td>36x</td><td class="status-none">Não Porta</td><td>72x</td><td>108x</td><td class="status-none">Não Porta</td><td>60x</td><td>84x</td><td>60x</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>74 anos</td><td>72x</td><td>108x</td><td class="status-none">—</td><td class="status-none">Não Porta</td><td>36x</td><td class="status-none">Não Porta</td><td>60x</td><td>108x</td><td class="status-none">Não Porta</td><td class="status-none">—</td><td>72x</td><td class="status-none">—</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
-                            <tr><td>75+ anos</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>48x a 12x</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td>60x a 12x</td><td class="status-none">—</td><td class="status-suspended">Suspenso</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>Até 68 anos</td><td>108x</td><td>36x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>69 anos</td><td>108x</td><td>36x</td><td>108x</td><td>108x</td><td class="status-none">Não Porta</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>70 anos</td><td>108x</td><td>36x</td><td class="status-none">—</td><td>96x</td><td class="status-none">Não Porta</td><td>72x</td><td>108x</td><td>108x</td><td>48x</td><td>108x</td><td>96x</td><td>108x</td><td>84x</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>71 anos</td><td>108x</td><td>36x</td><td class="status-none">—</td><td>84x</td><td class="status-none">Não Porta</td><td>72x</td><td>108x</td><td>96x</td><td>48x</td><td>108x</td><td>84x</td><td>108x</td><td>72x</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>72 anos</td><td>96x</td><td>36x</td><td class="status-none">—</td><td>72x</td><td class="status-none">Não Porta</td><td>60x</td><td>96x</td><td>84x</td><td>48x</td><td>96x</td><td>72x</td><td>96x</td><td>60x</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>73 anos</td><td>84x</td><td>36x</td><td class="status-none">—</td><td>60x</td><td class="status-none">Não Porta</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td>60x</td><td>84x</td><td class="status-none">—</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>74 anos</td><td>72x</td><td>36x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">Não Porta</td><td>36x</td><td>72x</td><td>60x</td><td>36x</td><td>72x</td><td class="status-none">—</td><td>72x</td><td class="status-none">—</td><td class="status-suspended">Suspenso</td></tr>
+                            <tr><td>75+ anos</td><td class="status-none">—</td><td>36x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>48x a 12x</td><td>24x</td><td>60x</td><td class="status-none">—</td><td>60x a 12x</td><td class="status-none">—</td><td class="status-suspended">Suspenso</td></tr>
                         </tbody>
                     </table>
                 </div></div>
@@ -243,17 +577,19 @@
                 <h3 class="titulo-tabela-comparativa">2. NOVO / REFINANCIAMENTO</h3>
                 <div class="table-container"><div class="table-scroll">
                     <table class="tabela-comparativa">
-                        <thead><tr><th>Idade do Cliente</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>Safra</th><th>BMG</th></tr></thead>
+                        <thead><tr><th>Idade</th><th>Quali</th><th>BRB</th><th>RedBank</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>Safra</th></tr></thead>
                         <tbody>
-                            <tr><td>Até 68 anos</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
-                            <tr><td>69 anos</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td></tr>
-                            <tr><td>70 anos</td><td>108x</td><td>108x</td><td>96x</td><td>84x</td><td>72x</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td>96x</td><td>108x</td><td>96x</td><td>108x</td><td>84x</td></tr>
-                            <tr><td>71 anos</td><td>108x</td><td>108x</td><td>84x</td><td>72x</td><td>72x</td><td>108x</td><td>96x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td>84x</td><td>108x</td><td>72x</td></tr>
-                            <tr><td>72 anos</td><td>96x</td><td>108x</td><td>72x</td><td>60x</td><td>60x</td><td>96x</td><td>84x</td><td>108x</td><td>84x</td><td>72x</td><td>96x</td><td>72x</td><td>108x</td><td>60x</td></tr>
-                            <tr><td>73 anos</td><td>84x</td><td>108x</td><td>60x</td><td>48x</td><td>36x</td><td>96x</td><td>72x</td><td>108x</td><td>84x</td><td>60x</td><td>84x</td><td>60x</td><td>108x</td><td>48x</td></tr>
-                            <tr><td>74 anos</td><td>72x</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>96x</td><td>60x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td></tr>
-                            <tr><td>75 anos</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>96x</td><td>48x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td></tr>
-                            <tr><td>76 a 79 anos</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>96x a 84x</td><td>36x a 12x</td><td class="status-none">—</td><td>84x</td><td class="status-none">—</td><td>48x a 12x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td></tr>
+                            <tr><td>Até 60 anos</td><td>108x</td><td>36x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+                            <tr><td>61 a 68 anos</td><td>108x</td><td>36x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+                            <tr><td>69 anos</td><td>108x</td><td>36x</td><td>108x</td><td>108x</td><td>96x</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>96x</td><td>108x</td><td>96x</td><td>84x</td></tr>
+                            <tr><td>70 anos</td><td>108x</td><td>36x</td><td class="status-none">—</td><td>96x</td><td>84x</td><td>72x</td><td>108x</td><td>108x</td><td>48x</td><td>108x</td><td>96x</td><td>108x</td><td>84x</td><td>72x</td></tr>
+                            <tr><td>71 anos</td><td>108x</td><td>36x</td><td class="status-none">—</td><td>84x</td><td>72x</td><td>72x</td><td>108x</td><td>96x</td><td>48x</td><td>108x</td><td>84x</td><td>108x</td><td>72x</td><td>60x</td></tr>
+                            <tr><td>72 anos</td><td>96x</td><td>36x</td><td class="status-none">—</td><td>72x</td><td>60x</td><td>60x</td><td>96x</td><td>84x</td><td>48x</td><td>96x</td><td>72x</td><td>96x</td><td>60x</td><td class="status-none">—</td></tr>
+                            <tr><td>73 anos</td><td>84x</td><td>36x</td><td class="status-none">—</td><td>60x</td><td>48x</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td>60x</td><td>84x</td><td class="status-none">—</td><td class="status-none">—</td></tr>
+                            <tr><td>74 anos</td><td>72x</td><td>36x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>72x</td><td>60x</td><td>36x</td><td>72x</td><td class="status-none">—</td><td>72x</td><td class="status-none">—</td><td class="status-none">—</td></tr>
+                            <tr><td>75 anos</td><td class="status-none">—</td><td>36x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>48x</td><td>24x</td><td>60x</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td class="status-none">—</td></tr>
+                            <tr><td>76 a 78 anos</td><td class="status-none">—</td><td>36x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x a 12x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>48x a 12x</td><td class="status-none">—</td><td class="status-none">—</td></tr>
+                            <tr><td>79+ anos</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>12x</td><td class="status-none">—</td><td class="status-none">—</td></tr>
                         </tbody>
                     </table>
                 </div></div>
@@ -261,109 +597,293 @@
                 <h3 class="titulo-tabela-comparativa">3. INVALIDEZ</h3>
                 <div class="table-container"><div class="table-scroll">
                     <table class="tabela-comparativa">
-                        <thead><tr><th>Idade do Cliente</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>Safra</th><th>BMG</th></tr></thead>
+                        <thead><tr><th>Idade do Cliente</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>PAN</th></tr></thead>
                         <tbody>
-                            <tr><td>Até 40 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
-                            <tr><td>41 a 52 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
-                            <tr><td>53 a 54 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">96x <span class="tooltip-icon"></span></td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="status-none">Não Autorizado</td><td class="status-none">Não Opera</td></tr>
-                            <tr><td>55 a 59 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Opera</td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon"></span></td><td class="status-none">Não Opera</td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">108x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>60 a 64 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon"></span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">108x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">96x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>65 a 68 anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">108x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">60x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">60x <span class="tooltip-icon"></span></td><td class="has-tooltip" title="Apenas >= 60 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">60x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon"></span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">96x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">84x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>69 a 72 anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">96x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Espécie 32 só >60 anos. Espécie 92 só >68 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-57 exige 15 anos de benefício. >=58 normal. Término 73a11m29d.">36x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">48x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Apenas >= 60 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="has-tooltip" title="Aceita desde 40 anos. 53-59 exige 13 anos de benefício. 60+ normal.">48x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="Início aos 55 anos. 55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">84x <span class="tooltip-icon">ⓘ</span></td><td class="has-tooltip" title="55-59 exige 15 anos de benefício. 60+ normal.">72x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Autorizado</td><td class="has-tooltip" title=">=60: Opera. 55-59: exige 15 anos de benefício. <55: Não opera.">72x <span class="tooltip-icon">ⓘ</span></td></tr>
-                            <tr><td>73+ anos</td><td class="has-tooltip" title="Início aos 65a 9m. Término antes dos 75 anos. 58+ normal, 55-57 exige 15 anos.">84x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">Não Atua</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="Apenas >= 60 anos.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="has-tooltip" title="< 55: Perícia desde JAN/2017. 55-59: exige 15 anos de benefício. >=60: Isento.">72x a 12x <span class="tooltip-icon">ⓘ</span></td><td class="status-none">—</td><td class="status-none">Não Autorizado</td><td class="status-none">—</td></tr>
+                            <tr><td>Até 40 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
+                            <tr><td>41 a 52 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
+                            <tr><td>53 a 54 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
+                            <tr><td>55 a 57 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td></tr>
+                            <tr><td>58 a 59 anos</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td></tr>
+                            <tr><td>60 a 64 anos e 11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>65 a 67 anos e 11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT 96x</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>68 anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>69 anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>70 a 71* anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>72 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 96x</td><td>NOVO/PORT 84x</td></tr>
+                            <tr><td>73 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 84x</td><td>NOVO/PORT 72x</td></tr>
+                            <tr><td>74 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 72x</td><td>NOVO/PORT 60x</td></tr>
                         </tbody>
                     </table>
                 </div></div>
 
                 <div class="info-boxes-container">
-                    <div class="info-box"><h4>📌 Idade Máxima de Término do Contrato</h4><ul><li><strong>Daycoval / Quero Mais:</strong> 80 anos, 11 meses e 29 dias</li><li><strong>Quali:</strong> 80 anos e 9 meses</li><li><strong>TotalCash / Digio:</strong> 78 anos, 11 meses e 29 dias</li><li><strong>Paraná / Banrisul / BRB:</strong> 77 anos, 11 meses e 29 dias</li><li><strong>Safra:</strong> 76 anos, 11 meses e 29 dias</li><li><strong>BMG:</strong> 75 anos</li><li><strong>C6 / iCred:</strong> 73 anos e 11 meses</li><li><strong>Finanto:</strong> 73 anos e 10 meses (Novo) | 68a10m (Port+Refin)</li></ul></div>
-                    <div class="info-box"><h4>⚠️ Regras Especiais de Portabilidade</h4><ul><li><strong>Safra e BMG:</strong> Portabilidade Suspensa.</li><li><strong>Daycoval e Quero Mais:</strong> Na Portabilidade, o limite de idade é menor (para em 72a11m).</li><li><strong>C6 Bank:</strong> Na Portabilidade, permite mais parcelas que o Novo aos 72 e 73 anos (108x).</li><li><strong>Finanto:</strong> Port+Refin para até 68a10m. Port Pura até 70 anos.</li></ul></div>
+                    <div class="info-box"><h4>📌 Idade Máxima de Término do Contrato</h4><ul>
+                        <li><strong>Daycoval / Quero Mais:</strong> 80 anos, 11 meses e 29 dias</li>
+                        <li><strong>Quali:</strong> 80 anos e 9 meses</li>
+                        <li><strong>C6 / Facta:</strong> 80 anos</li>
+                        <li><strong>TotalCash:</strong> 78 anos, 11 meses e 29 dias</li>
+                        <li><strong>Digio:</strong> 79 anos</li>
+                        <li><strong>Paraná / Banrisul:</strong> 77 anos, 11 meses e 29 dias</li>
+                        <li><strong>BRB:</strong> 81 anos e 11 meses</li>
+                        <li><strong>Safra:</strong> 76 anos, 11 meses e 29 dias</li>
+                        <li><strong>iCred:</strong> 77 anos</li>
+                        <li><strong>RedBank:</strong> 71 anos</li>
+                    </ul></div>
+                    <div class="info-box"><h4>⚠️ Regras Especiais</h4><ul>
+                        <li><strong>Safra:</strong> Portabilidade Suspensa.</li>
+                        <li><strong>RedBank:</strong> Restrição UF (AP, PB, RR, TO) para 59+.</li>
+                        <li><strong>Paraná:</strong> Invalidez limitada a 96x na faixa de 65 a 67 anos.</li>
+                        <li><strong>C6 / Daycoval / PAN:</strong> Invalidez exige perícia após JAN/17 em algumas faixas.</li>
+                    </ul></div>
                 </div>
                 <div class="legenda-comparativa">
                     <div class="legenda-item"><div class="cor-box" style="background:#fef2f2; border-color:#ef4444"></div> Port. Suspensa</div>
                     <div class="legenda-item"><div class="cor-box" style="background:#f1f5f9; border-color:#e2e8f0"></div> Não opera</div>
-                    <div class="legenda-item"><div class="cor-box" style="background:#fff; border-color:#94a3b8"></div> <span class="tooltip-icon" style="margin:0;">ⓘ</span> Regra de idade (passe o mouse)</div>
+                    <div class="legenda-item"><div class="cor-box" style="background:#fff; border-color:#94a3b8"></div> * Regra especial (ver info box)</div>
                 </div>
             </div>
 
+            <!-- FIM DA PARTE 3 - Continue com a Parte 4 (Blocos individuais dos bancos na aba Regras Idades) -->
+
             <div id="id-quali" class="bank-content">
                 <h2 class="resumo-titulo">QUALI – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Final: <span class="destaque-dourado">80 anos e 9 meses</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 71a 9m</td><td>R$ 150.000</td><td>108x</td></tr><tr><td>18 a 72a 9m</td><td>R$ 150.000</td><td>96x</td></tr><tr><td>18 a 73a 11m</td><td>R$ 150.000</td><td>84x</td></tr><tr><td>18 a 74a 11m</td><td>R$ 50.000</td><td>72x</td></tr></tbody></table></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Portabilidade Pura</h3>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>18 a 71a 9m</td><td>R$ 150.000</td><td>72-108x</td></tr><tr><td>Até 74a 9m</td><td>R$ 50.000</td><td>72x</td></tr></tbody></table><p style="color:#dc3545; font-weight:bold; margin-top:10px;">* Port. Pura NÃO opera com Invalidez</p></div>
-            </div>
-
-            <div id="id-parana" class="bank-content">
-                <h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (INSS Padrão)</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th><th>Prazo Máx</th></tr></thead><tbody><tr><td>Até 68 anos</td><td>R$ 100.000</td><td>108x</td></tr><tr><td>69 anos</td><td>R$ 100.000</td><td>96x</td></tr><tr><td>70 e 71 anos</td><td>R$ 100.000</td><td>72x</td></tr><tr><td>72 anos</td><td>R$ 25.000</td><td>60x</td></tr><tr><td>73 e 74 anos</td><td>R$ 10.000</td><td>36x</td></tr></tbody></table></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li><strong>18 a 71 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">108 parcelas</span></li>
+                    <li><strong>18 a 72 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">96 parcelas</span></li>
+                    <li><strong>Término do contrato:</strong> Até <span class="destaque-dourado">80 anos e 9 meses</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez (32/92)</h3><ul>
+                    <li><strong>De 55 a 57 anos:</strong> mínimo 15 anos de benefício</li>
+                    <li><strong>Acima de 58 anos:</strong> sem regra de concessão, mas a <span class="destaque-dourado">idade FINAL é 65 anos e 9 meses</span></li>
+                </ul></div>
             </div>
 
             <div id="id-brb" class="bank-content">
-                <h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 65 anos</td><td>R$ 70.000</td></tr><tr><td>66 a 69 anos</td><td>R$ 50.000</td></tr><tr><td>70 a 73 anos</td><td>R$ 40.000</td></tr><tr><td>74 a 75 anos</td><td>R$ 15.000</td></tr></tbody></table></div>
+                <h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES (Plataforma REDCONSIG)</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li>Idade: <span class="destaque-dourado">22 até 81 anos e 11 meses</span> (término do contrato)</li>
+                    <li>Prazo Máx: <span class="destaque-dourado">36 parcelas</span></li>
+                    <li>Parcela mínima: <span class="destaque-dourado">R$ 25,00</span> (margem livre)</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                    <li><span class="destaque-vermelho">NÃO ATUA MAIS</span> (movido para não aceitos em Set/2026)</li>
+                </ul></div>
+            </div>
+
+            <div id="id-redbank" class="bank-content">
+                <h2 class="resumo-titulo">REDBANK – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li>Idade: <span class="destaque-dourado">21 a 71 anos</span></li>
+                    <li>Saldo Máx: <span class="destaque-dourado">R$ 125.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 parcelas</span></li>
+                    <li>Parcela Mín: <span class="destaque-dourado">R$ 110,00</span> | Saldo Mín: <span class="destaque-dourado">R$ 5.000,00</span></li>
+                    <li>Máx 13 contratos | Formalização: <span class="destaque-dourado">Digital</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Restrição por UF (59+ anos)</h3><ul>
+                    <li><span class="destaque-vermelho">Não atende clientes com 59 anos ou mais nos estados:</span></li>
+                    <li>AP – Amapá | PB – Paraíba | RR – Roraima | TO – Tocantins</li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Não Elegíveis</h3><ul>
+                    <li><span class="destaque-vermelho">Representante legal, LOAS, Assinatura física e Analfabeto</span></li>
+                </ul></div>
             </div>
 
             <div id="id-icred" class="bank-content">
                 <h2 class="resumo-titulo">ICRED – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx: <span class="destaque-dourado">73 anos e 11 meses</span> (para 60x)</li></ul>
-                <table class="tabela-idades"><thead><tr><th>Idade Início</th><th>Prazo Máx</th><th>Valor Máx</th></tr></thead><tbody><tr><td>18 a 69a 11m</td><td>108x</td><td>R$ 100.000 → R$ 25.000</td></tr><tr><td>>= 74 anos</td><td>Não opera</td><td>Não opera</td></tr></tbody></table></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li>Idade Máx Término: <span class="destaque-dourado">77 anos</span></li>
+                    <li>18 a 61a11m29d: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
+                    <li>62a a 62a11m29d: <span class="destaque-dourado">108x</span> | R$ 90.000</li>
+                    <li>63a a 63a11m29d: <span class="destaque-dourado">108x</span> | R$ 80.000</li>
+                    <li>64a a 64a11m29d: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
+                    <li>65a a 65a11m29d: <span class="destaque-dourado">108x</span> | R$ 60.000</li>
+                    <li>66a a 66a11m29d: <span class="destaque-dourado">108x</span> | R$ 50.000</li>
+                    <li>67a a 67a11m29d: <span class="destaque-dourado">108x</span> | R$ 40.000</li>
+                    <li>68a a 68a11m29d: <span class="destaque-dourado">108x</span> | R$ 25.000</li>
+                    <li>69a a 69a11m29d: <span class="destaque-dourado">108x</span> | R$ 25.000</li>
+                    <li>70a a 70a11m29d: <span class="destaque-dourado">96x</span> | R$ 25.000</li>
+                    <li>71a a 71a11m29d: <span class="destaque-dourado">84x</span> | R$ 25.000</li>
+                    <li>72a a 72a11m29d: <span class="destaque-dourado">72x</span> | R$ 25.000</li>
+                    <li>73a a 73a11m29d: <span class="destaque-dourado">60x</span> | R$ 25.000</li>
+                    <li>74 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
             </div>
 
             <div id="id-finanto" class="bank-content">
                 <h2 class="resumo-titulo">FINANTO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Limites</h3><ul><li>Idade Mín: <span class="destaque-dourado">22 anos</span></li><li>Idade Máx Novo: <span class="destaque-vermelho">73a 10m</span> (48x) | Port+Refin: <span class="destaque-vermelho">68a 10m</span> | Port Pura: <span class="destaque-vermelho">70 anos</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                    <li>22 a 68 anos: <span class="destaque-dourado">108x</span></li>
+                    <li>69 anos: <span class="destaque-dourado">96x</span></li>
+                    <li>70 anos: <span class="destaque-dourado">84x</span></li>
+                    <li>71 anos: <span class="destaque-dourado">72x</span></li>
+                    <li>72 anos: <span class="destaque-dourado">60x</span></li>
+                    <li>73 anos: <span class="destaque-dourado">48x</span></li>
+                    <li>74 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
+            </div>
+
+            <div id="id-parana" class="bank-content">
+                <h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li>
+                    <li>Até 68 anos: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
+                    <li>69 anos: <span class="destaque-dourado">96x</span> | R$ 100.000</li>
+                    <li>70 e 71 anos: <span class="destaque-dourado">72x</span> | R$ 100.000</li>
+                    <li>72 anos: <span class="destaque-dourado">60x</span> | R$ 25.000</li>
+                    <li>73 e 74 anos: <span class="destaque-dourado">36x</span> | R$ 10.000</li>
+                </ul></div>
             </div>
 
             <div id="id-quero-mais" class="bank-content">
                 <h2 class="resumo-titulo">QUERO MAIS – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li>
+                    <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 400.000</li>
+                    <li>70 e 71 anos: <span class="destaque-dourado">108x</span> | R$ 350.000</li>
+                    <li>72 anos: <span class="destaque-dourado">96x</span> | R$ 350.000</li>
+                    <li>73 anos: <span class="destaque-dourado">84x</span> | R$ 300.000</li>
+                    <li>74 anos: <span class="destaque-dourado">72x</span> | R$ 300.000</li>
+                    <li>75 anos: <span class="destaque-dourado">60x</span> | R$ 300.000</li>
+                    <li>76 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
             </div>
 
             <div id="id-digio" class="bank-content">
                 <h2 class="resumo-titulo">DIGIO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Término: <span class="destaque-dourado">79 anos</span></li>
+                    <li>18 a 60 anos: <span class="destaque-dourado">108x</span> | R$ 120.000</li>
+                    <li>61 a 65 anos: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
+                    <li>66 a 70 anos: <span class="destaque-dourado">108x</span> | R$ 85.000</li>
+                    <li>71 anos: <span class="destaque-dourado">96x</span> | R$ 85.000</li>
+                    <li>72 anos: <span class="destaque-dourado">84x</span> | R$ 85.000</li>
+                    <li>73 anos: <span class="destaque-dourado">72x</span> | R$ 85.000</li>
+                    <li>74 anos: <span class="destaque-dourado">60x</span> | R$ 85.000</li>
+                    <li>75 anos: <span class="destaque-dourado">48x</span> | R$ 85.000</li>
+                    <li>76 anos: <span class="destaque-dourado">36x</span> | R$ 85.000</li>
+                    <li>77 anos: <span class="destaque-dourado">24x</span> | R$ 85.000</li>
+                    <li>78 anos: <span class="destaque-dourado">12x</span> | R$ 85.000</li>
+                    <li>79 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
             </div>
 
             <div id="id-banrisul" class="bank-content">
                 <h2 class="resumo-titulo">BANRISUL – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
+                    <li>Idade Máx Término: <span class="destaque-dourado">77 anos</span></li>
+                    <li>18 a 65 anos: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
+                    <li>66 a 68 anos: <span class="destaque-dourado">108x</span> | R$ 50.000</li>
+                    <li>69 anos: <span class="destaque-dourado">96x</span> | R$ 40.000</li>
+                    <li>70 a 73 anos: <span class="destaque-dourado">48x</span> | R$ 40.000</li>
+                    <li>74 anos: <span class="destaque-dourado">36x</span> | R$ 15.000</li>
+                    <li>75 anos: <span class="destaque-dourado">24x</span> | R$ 15.000</li>
+                    <li>76 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul>
+                    <li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> | Acima de 60 anos: sem regras | 55 a 59 anos: obrigatório 15 anos de benefício</li>
+                    <li><strong>Pensão (Espécie 21):</strong> Sim - verificar tabela de idade no Roteiro Operacional</li>
+                </ul></div>
             </div>
 
             <div id="id-daycoval" class="bank-content">
                 <h2 class="resumo-titulo">DAYCOVAL – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li>
+                    <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 400.000</li>
+                    <li>70 e 71 anos: <span class="destaque-dourado">108x</span> | R$ 350.000</li>
+                    <li>72 anos: <span class="destaque-dourado">96x</span> | R$ 350.000</li>
+                    <li>73 anos: <span class="destaque-dourado">84x</span> | R$ 300.000</li>
+                    <li>74 anos: <span class="destaque-dourado">72x</span> | R$ 300.000</li>
+                    <li>75 anos: <span class="destaque-dourado">60x</span> | R$ 300.000</li>
+                    <li>76 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
             </div>
 
             <div id="id-totalcash" class="bank-content">
                 <h2 class="resumo-titulo">TOTAL CASH – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx Final: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Novo/Margem Livre)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li>
+                    <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 85.000</li>
+                    <li>70 anos: <span class="destaque-dourado">96x</span> | R$ 85.000</li>
+                    <li>71 anos: <span class="destaque-dourado">84x</span> | R$ 85.000</li>
+                    <li>72 anos: <span class="destaque-dourado">72x</span> | R$ 85.000</li>
+                    <li>73 anos: <span class="destaque-dourado">60x</span> | R$ 85.000</li>
+                    <li>74 anos: <span class="destaque-vermelho">Não atende</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                    <li><span class="destaque-dourado">Sim</span> (55+ com 15 anos benefício) | Pensão 21: Sim | Analfabetos: Sim</li>
+                </ul></div>
             </div>
 
             <div id="id-c6" class="bank-content">
                 <h2 class="resumo-titulo">C6 BANK – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos</span></li>
+                    <li>21 a 71 anos: <span class="destaque-dourado">108x</span> | Margem consignável</li>
+                    <li>72 anos: <span class="destaque-dourado">96x</span> | Margem consignável</li>
+                    <li>73 anos: <span class="destaque-dourado">84x</span> | Margem consignável</li>
+                    <li>74 anos: <span class="destaque-dourado">72x</span> | R$ 35.000</li>
+                    <li>75 anos: <span class="destaque-dourado">60x</span> | R$ 20.000</li>
+                    <li>76 anos: <span class="destaque-dourado">48x</span> | R$ 15.000</li>
+                    <li>77 anos: <span class="destaque-dourado">36x</span> | R$ 10.000</li>
+                    <li>78 anos: <span class="destaque-dourado">24x</span> | R$ 8.000</li>
+                    <li>79 anos: <span class="destaque-dourado">12x</span> | R$ 5.000</li>
+                    <li>80 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                    <li><span class="destaque-dourado">Sim</span> | Perícia após JAN/17 em algumas faixas | Pensão 21: Sim</li>
+                </ul></div>
             </div>
 
             <div id="id-facta" class="bank-content">
                 <h2 class="resumo-titulo">FACTA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-vermelho">21 anos</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo, Refin, Port)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos</span></li>
+                    <li>21 a 71a11m29d: <span class="destaque-dourado">108x</span> | R$ 150.000</li>
+                    <li>72a a 72a11m29d: <span class="destaque-dourado">96x</span> | R$ 150.000</li>
+                    <li>73a a 73a11m29d: <span class="destaque-dourado">84x</span> | R$ 150.000</li>
+                    <li>74a a 74a11m29d: <span class="destaque-dourado">72x</span> | R$ 50.000</li>
+                    <li>75a a 75a11m29d: <span class="destaque-dourado">60x</span> | R$ 30.000</li>
+                </ul></div>
             </div>
 
             <div id="id-safra" class="bank-content">
                 <h2 class="resumo-titulo">BANCO SAFRA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Idade Máx: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Término: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li>
+                    <li>26 a 67 anos: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
+                    <li>68 anos: <span class="destaque-dourado">96x</span> | R$ 70.000</li>
+                    <li>69 anos: <span class="destaque-dourado">84x</span> | R$ 70.000</li>
+                    <li>70 anos: <span class="destaque-dourado">72x</span> | R$ 70.000</li>
+                    <li>71 anos: <span class="destaque-dourado">60x</span> | R$ 70.000</li>
+                    <li>72 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                    <li><span class="destaque-vermelho">Não autorizado</span> | Pensão 21: Sim (mín 5 meses de benefício)</li>
+                </ul></div>
             </div>
 
             <div id="id-bmg" class="bank-content">
                 <h2 class="resumo-titulo">BANCO BMG – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul><li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Idade Máx: <span class="destaque-dourado">75 anos</span></li></ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">75 anos</span></li>
+                    <li>21 a 70 anos: <span class="destaque-dourado">108x</span></li>
+                    <li>71 anos: <span class="destaque-dourado">96x</span></li>
+                    <li>72 anos: <span class="destaque-dourado">84x</span></li>
+                    <li>73 anos: <span class="destaque-dourado">72x</span></li>
+                    <li>74 anos: <span class="destaque-dourado">60x</span></li>
+                    <li>75 anos: <span class="destaque-dourado">48x</span></li>
+                </ul></div>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul>
+                    <li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> (55-59: 15 anos de benefício | 60+: normal)</li>
+                    <li><strong>Pensão 21:</strong> Sim</li>
+                </ul></div>
             </div>
+
         </div>
     </div>
 </section>
+
+<!-- FIM DA PARTE 4 - Continue com a Parte 5 (Roteiros INSS + Comunicados + Simuladores + Links Úteis + Modal + Footer + JavaScript) -->
 
 <!-- 3. ROTEIROS INSS -->
 <section id="roteiros-inss" class="section">
@@ -385,7 +905,6 @@
                 </div>
                 <p style="color:#475569; font-size:0.9rem; margin:0;">Banco BRB ESTA DE VOLTA, ATENÇÃO AS NOVAS REGRAS</p>
             </div>
-
             <div class="new-card mural-card-large-new" style="flex-direction: column; align-items: flex-start;">
                 <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:15px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
                     <span class="new-card-title" style="font-size:1.2rem;">Destaque</span><span class="new-card-sub">28/09/2026</span>
@@ -395,21 +914,18 @@
                 </div>
                 <p style="text-align:center; color:#94a3b8; font-size:0.8rem; margin-top:10px;">Clique para ampliar</p>
             </div>
-
             <div class="new-card" style="flex-direction: column; align-items: flex-start;">
                 <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
                     <span class="new-card-title">Novo Simulador</span><span class="new-card-sub">28/09/2026</span>
                 </div>
                 <p style="color:#475569; font-size:0.9rem; margin:0;">Simulador Daycoval disponível. Arquivo atualizado.</p>
             </div>
-
             <div class="new-card" style="flex-direction: column; align-items: flex-start;">
                 <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
                     <span class="new-card-title">Análise ICRED</span><span class="new-card-sub">28/09/2026</span>
                 </div>
                 <p style="color:#475569; font-size:0.9rem; margin:0;">COMUNICADO ICRED<br>clientes especie 32<br>Se atentar a tabela liberada.</p>
             </div>
-
             <div class="new-card" style="flex-direction: column; align-items: flex-start;">
                 <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
                     <span class="new-card-title">Melhores Oportunidades</span><span class="new-card-sub">28/09/2026</span>
@@ -443,7 +959,7 @@
     </div>
 </section>
 
-<!-- 6. LINKS ÚTEIS (COMPLETO) -->
+<!-- 6. LINKS ÚTEIS -->
 <section id="links-uteis" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Links Úteis</h1><p>Acesso rápido aos portais dos bancos parceiros e ferramentas</p></div>
@@ -519,7 +1035,7 @@
     <div class="modal-legenda" id="modalLegenda"></div>
 </div>
 
-<footer><p>© 2026 - Uso Interno | Hub Arya</p></footer>
+<footer><p>© 2026 - Uso Interno | PORTAL ARYA</p></footer>
 
 <script src="dados.js"></script>
 <script>
