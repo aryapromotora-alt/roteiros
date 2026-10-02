@@ -1,6 +1,6 @@
 const bancos = [
     { id: 'daycoval-cartaobeneficio-rcc', nome: 'DAYCOVAL-RCC', data: '21/09/2026' },
-    { id: 'daycoval-cartoconsignado-rmc', nome: 'DAYCOVAL-RMC', data: '21/09/2026' },
+    { id: 'daycoval-cartaoconsignado-rmc', nome: 'DAYCOVAL-RMC', data: '21/09/2026' },
     { id: 'quero-mais-cartaobeneficio-rcc', nome: 'QUERO-MAIS-RCC', data: '21/09/2026' },
     { id: 'quero-mais-cartaoconsignado-rmc', nome: 'QUERO-MAIS-RMC', data: '21/09/2026' },
     { id: 'banrisul', nome: 'BANRISUL-EMPRESTIMO', data: '17/09/2026' },
