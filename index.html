@@ -19,12 +19,12 @@
 </header>
 
 <nav class="nav-bar">
-    <button class="nav-btn active" onclick="showSection('resumo-roteiros', this)">RESUMO ROTEIROS</button>
-    <button class="nav-btn" onclick="showSection('regras-idades', this)">REGRAS IDADES</button>
-    <button class="nav-btn" onclick="showSection('roteiros-inss', this)">ROTEIROS INSS</button>
-    <button class="nav-btn" onclick="showSection('mural', this)">COMUNICADOS</button>
-    <button class="nav-btn" onclick="showSection('simuladores', this)">SIMULADORES</button>
-    <button class="nav-btn" onclick="showSection('links-uteis', this)">LINKS ÚTEIS</button>
+    <button class="nav-btn active" data-section="resumo-roteiros">RESUMO ROTEIROS</button>
+    <button class="nav-btn" data-section="regras-idades">REGRAS IDADES</button>
+    <button class="nav-btn" data-section="roteiros-inss">ROTEIROS INSS</button>
+    <button class="nav-btn" data-section="mural">COMUNICADOS</button>
+    <button class="nav-btn" data-section="simuladores">SIMULADORES</button>
+    <button class="nav-btn" data-section="links-uteis">LINKS ÚTEIS</button>
 </nav>
 
 <!-- 1. RESUMO ROTEIROS -->
@@ -32,21 +32,21 @@
     <div class="main-layout">
         <div class="sidebar-bancos">
             <div class="sidebar-title">Bancos Parceiros</div>
-            <button class="sidebar-item active" onclick="mudarBanco('op-quali', this)">Quali</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-brb', this)">BRB</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-redbank', this)">RedBank</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-icred', this)">iCred</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-finanto', this)">Finanto</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-parana', this)">Paraná</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-quero-mais', this)">Quero Mais</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-digio', this)">Digio</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-banrisul', this)">Banrisul</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-daycoval', this)">Daycoval</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-totalcash', this)">TotalCash</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-c6', this)">C6</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-facta', this)">Facta</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-safra', this)">Safra</button>
-            <button class="sidebar-item" onclick="mudarBanco('op-bmg', this)">BMG</button>
+            <button class="sidebar-item active" data-bank="op-quali">Quali</button>
+            <button class="sidebar-item" data-bank="op-brb">BRB</button>
+            <button class="sidebar-item" data-bank="op-redbank">RedBank</button>
+            <button class="sidebar-item" data-bank="op-icred">iCred</button>
+            <button class="sidebar-item" data-bank="op-finanto">Finanto</button>
+            <button class="sidebar-item" data-bank="op-parana">Paraná</button>
+            <button class="sidebar-item" data-bank="op-quero-mais">Quero Mais</button>
+            <button class="sidebar-item" data-bank="op-digio">Digio</button>
+            <button class="sidebar-item" data-bank="op-banrisul">Banrisul</button>
+            <button class="sidebar-item" data-bank="op-daycoval">Daycoval</button>
+            <button class="sidebar-item" data-bank="op-totalcash">TotalCash</button>
+            <button class="sidebar-item" data-bank="op-c6">C6</button>
+            <button class="sidebar-item" data-bank="op-facta">Facta</button>
+            <button class="sidebar-item" data-bank="op-safra">Safra</button>
+            <button class="sidebar-item" data-bank="op-bmg">BMG</button>
         </div>
         <div class="content-area">
             <div class="mural-header"><h2>RESUMO OPERACIONAL DOS BANCOS</h2><p class="mural-subtitle">Regras rápidas e valores de referência</p></div>
@@ -837,22 +837,22 @@
     <div class="main-layout">
         <div class="sidebar-bancos">
             <div class="sidebar-title">Bancos Parceiros</div>
-            <button class="sidebar-item active" onclick="mudarBanco('id-tabela', this)">📊 Tabela Comparativa</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-quali', this)">Quali</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-brb', this)">BRB</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-redbank', this)">RedBank</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-icred', this)">iCred</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-finanto', this)">Finanto</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-parana', this)">Paraná</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-quero-mais', this)">Quero Mais</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-digio', this)">Digio</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-banrisul', this)">Banrisul</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-daycoval', this)">Daycoval</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-totalcash', this)">TotalCash</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-c6', this)">C6</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-facta', this)">Facta</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-safra', this)">Safra</button>
-            <button class="sidebar-item" onclick="mudarBanco('id-bmg', this)">BMG</button>
+            <button class="sidebar-item active" data-bank="id-tabela">📊 Tabela Comparativa</button>
+            <button class="sidebar-item" data-bank="id-quali">Quali</button>
+            <button class="sidebar-item" data-bank="id-brb">BRB</button>
+            <button class="sidebar-item" data-bank="id-redbank">RedBank</button>
+            <button class="sidebar-item" data-bank="id-icred">iCred</button>
+            <button class="sidebar-item" data-bank="id-finanto">Finanto</button>
+            <button class="sidebar-item" data-bank="id-parana">Paraná</button>
+            <button class="sidebar-item" data-bank="id-quero-mais">Quero Mais</button>
+            <button class="sidebar-item" data-bank="id-digio">Digio</button>
+            <button class="sidebar-item" data-bank="id-banrisul">Banrisul</button>
+            <button class="sidebar-item" data-bank="id-daycoval">Daycoval</button>
+            <button class="sidebar-item" data-bank="id-totalcash">TotalCash</button>
+            <button class="sidebar-item" data-bank="id-c6">C6</button>
+            <button class="sidebar-item" data-bank="id-facta">Facta</button>
+            <button class="sidebar-item" data-bank="id-safra">Safra</button>
+            <button class="sidebar-item" data-bank="id-bmg">BMG</button>
         </div>
         <div class="content-area">
             <div class="mural-header"><h2>POLÍTICA DE IDADES POR BANCO</h2><p class="mural-subtitle">Prazos e valores conforme a faixa etária</p></div>
@@ -865,13 +865,13 @@
 <table class="tabela-comparativa">
 <thead><tr><th>Idade</th><th>Quali</th><th>BRB</th><th>RedBank</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th></tr></thead>
 <tbody>
-<tr><td>Até 68 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
-<tr><td>69 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-none">—</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
-<tr><td>70 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>108x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>71 anos 9 meses</td><td>108x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>71 anos 11 meses</td><td>96x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>72x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>72 anos 11 meses</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>96x</td><td>84x</td><td>60x</td><td>96x</td><td class="status-none">—</td><td>108x</td><td>96x</td></tr>
-<tr><td>73 anos 11 meses</td><td class="status-none">—</td><td>96x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td class="status-none">—</td><td>108x</td><td>84x</td></tr>
+<tr><td>68 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+<tr><td>69 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-none">—</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+<tr><td>70 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>108x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>71 anos<br>9 meses</td><td>108x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>71 anos<br>11 meses</td><td>96x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>72x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>72 anos<br>11 meses</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>96x</td><td>84x</td><td>60x</td><td>96x</td><td class="status-none">—</td><td>108x</td><td>96x</td></tr>
+<tr><td>73 anos<br>11 meses</td><td class="status-none">—</td><td>96x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td class="status-none">—</td><td>108x</td><td>84x</td></tr>
 <tr><td>74 anos</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>96x</td><td>72x</td></tr>
 <tr><td>75+ anos</td><td class="status-none">—</td><td>46x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>48x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x a 12x</td><td>60x</td></tr>
 </tbody>
@@ -883,13 +883,13 @@
 <table class="tabela-comparativa">
 <thead><tr><th>Idade</th><th>Quali</th><th>BRB</th><th>RedBank</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th></tr></thead>
 <tbody>
-<tr><td>Até 68 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
-<tr><td>69 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-none">—</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
-<tr><td>70 anos 11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>108x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>71 anos 9 meses</td><td>108x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>71 anos 11 meses</td><td>96x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>72x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
-<tr><td>72 anos 11 meses</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>96x</td><td>84x</td><td>60x</td><td>96x</td><td class="status-none">—</td><td>108x</td><td>96x</td></tr>
-<tr><td>73 anos 11 meses</td><td class="status-none">—</td><td>96x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td class="status-none">—</td><td>108x</td><td>84x</td></tr>
+<tr><td>68 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+<tr><td>69 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td><td class="status-none">—</td><td>96x</td><td>108x</td><td>108x</td><td>96x</td><td>108x</td><td>108x</td><td>108x</td><td>108x</td></tr>
+<tr><td>70 anos<br>11 meses</td><td>108x</td><td>108x</td><td>108x</td><td>96x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>108x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>71 anos<br>9 meses</td><td>108x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>84x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>71 anos<br>11 meses</td><td>96x</td><td>108x</td><td>108x</td><td>84x</td><td class="status-none">—</td><td>72x</td><td>108x</td><td>96x</td><td>72x</td><td>108x</td><td class="status-none">—</td><td>108x</td><td>108x</td></tr>
+<tr><td>72 anos<br>11 meses</td><td class="status-none">—</td><td>108x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x</td><td>96x</td><td>84x</td><td>60x</td><td>96x</td><td class="status-none">—</td><td>108x</td><td>96x</td></tr>
+<tr><td>73 anos<br>11 meses</td><td class="status-none">—</td><td>96x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td>84x</td><td>72x</td><td>48x</td><td>84x</td><td class="status-none">—</td><td>108x</td><td>84x</td></tr>
 <tr><td>74 anos</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>36x</td><td class="status-none">—</td><td>60x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>96x</td><td>72x</td></tr>
 <tr><td>75+ anos</td><td class="status-none">—</td><td>46x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>48x</td><td class="status-none">—</td><td class="status-none">—</td><td class="status-none">—</td><td>60x a 12x</td><td>60x</td></tr>
 </tbody>
@@ -899,18 +899,18 @@
                 <h3 class="titulo-tabela-comparativa">3. INVALIDEZ</h3>
                 <div class="table-container"><div class="table-scroll">
                     <table class="tabela-comparativa">
-                        <thead><tr><th>Idade do Cliente</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>PAN</th></tr></thead>
+                        <thead><tr><th>Idade</th><th>Quali</th><th>BRB</th><th>iCred</th><th>Finanto</th><th>Paraná</th><th>Quero+</th><th>Digio</th><th>Banrisul</th><th>Daycoval</th><th>TotalCash</th><th>C6</th><th>Facta</th><th>PAN</th></tr></thead>
                         <tbody>
-                            <tr><td>Até 40 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
+                            <tr><td>40 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
                             <tr><td>41 a 52 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
                             <tr><td>53 a 54 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (perícia após JAN/17)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td></tr>
                             <tr><td>55 a 57 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td></tr>
                             <tr><td>58 a 59 anos</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (13 anos de ben)</td><td class="status-none">Não Opera</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td><td>NOVO/PORT (15 anos de ben)</td></tr>
-                            <tr><td>60 a 64 anos e 11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
-                            <tr><td>65 a 67 anos e 11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT 96x</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
-                            <tr><td>68 anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
-                            <tr><td>69 anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
-                            <tr><td>70 a 71* anos e 11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>60 a 64 anos<br>11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>65 a 67 anos<br>11 meses</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT 96x</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>68 anos<br>11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>69 anos<br>11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
+                            <tr><td>70 a 71* anos<br>11 meses</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td class="status-none">Não Opera</td><td>NOVO/PORT*</td><td>NOVO/PORT</td><td>NOVO/PORT</td></tr>
                             <tr><td>72 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 96x</td><td>NOVO/PORT 84x</td></tr>
                             <tr><td>73 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 84x</td><td>NOVO/PORT 72x</td></tr>
                             <tr><td>74 anos</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td class="status-none">Não Opera</td><td>NOVO/PORT 72x</td><td>NOVO/PORT 60x</td></tr>
@@ -947,7 +947,7 @@
 
             <div id="id-quali" class="bank-content">
                 <h2 class="resumo-titulo">QUALI – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li><strong>18 a 71 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">108 parcelas</span></li>
                     <li><strong>18 a 72 anos e 9 meses (início de contrato):</strong> Até <span class="destaque-dourado">96 parcelas</span></li>
                     <li><strong>Término do contrato:</strong> Até <span class="destaque-dourado">80 anos e 9 meses</span></li>
@@ -960,20 +960,24 @@
 
             <div id="id-brb" class="bank-content">
                 <h2 class="resumo-titulo">BRB – POLÍTICA DE IDADES (Plataforma REDCONSIG)</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
-                    <li>Idade: <span class="destaque-dourado">22 até 81 anos e 11 meses</span> (término do contrato)</li>
-                    <li>Prazo Máx: <span class="destaque-dourado">36 parcelas</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>22 a 72 anos e 11 meses: <span class="destaque-dourado">108x</span></li>
+                    <li>73 anos e 11 meses: <span class="destaque-dourado">96x</span></li>
+                    <li>74 anos: <span class="destaque-dourado">60x</span></li>
+                    <li>75 anos ou mais: <span class="destaque-dourado">46x</span></li>
+                    <li>Faixas de idade e prazo conforme a tabela comparativa revisada.</li>
                     <li>Parcela mínima: <span class="destaque-dourado">R$ 25,00</span> (margem livre)</li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><span class="destaque-vermelho">NÃO ATUA MAIS</span> (movido para não aceitos em Set/2026)</li>
                 </ul></div>
             </div>
 
             <div id="id-redbank" class="bank-content">
                 <h2 class="resumo-titulo">REDBANK – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
-                    <li>Idade: <span class="destaque-dourado">21 a 71 anos</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>21 a 71 anos e 11 meses: <span class="destaque-dourado">108x</span></li>
+                    <li>72 anos ou mais: <span class="destaque-vermelho">Não atende</span></li>
                     <li>Saldo Máx: <span class="destaque-dourado">R$ 125.000,00</span> | Prazo Máx: <span class="destaque-dourado">108 parcelas</span></li>
                     <li>Parcela Mín: <span class="destaque-dourado">R$ 110,00</span> | Saldo Mín: <span class="destaque-dourado">R$ 5.000,00</span></li>
                     <li>Máx 13 contratos | Formalização: <span class="destaque-dourado">Digital</span></li>
@@ -989,7 +993,7 @@
 
             <div id="id-icred" class="bank-content">
                 <h2 class="resumo-titulo">ICRED – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Máx Término: <span class="destaque-dourado">77 anos</span></li>
                     <li>18 a 61a11m29d: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
                     <li>62a a 62a11m29d: <span class="destaque-dourado">108x</span> | R$ 90.000</li>
@@ -1010,20 +1014,18 @@
 
             <div id="id-finanto" class="bank-content">
                 <h2 class="resumo-titulo">FINANTO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
-                    <li>22 a 68 anos: <span class="destaque-dourado">108x</span></li>
-                    <li>69 anos: <span class="destaque-dourado">96x</span></li>
-                    <li>70 anos: <span class="destaque-dourado">84x</span></li>
-                    <li>71 anos: <span class="destaque-dourado">72x</span></li>
-                    <li>72 anos: <span class="destaque-dourado">60x</span></li>
-                    <li>73 anos: <span class="destaque-dourado">48x</span></li>
-                    <li>74 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>22 a 69 anos e 11 meses: <span class="destaque-dourado">108x</span></li>
+                    <li>70 anos e 11 meses: <span class="destaque-dourado">96x</span></li>
+                    <li>71 anos e 9 meses: <span class="destaque-dourado">84x</span></li>
+                    <li>71 anos e 11 meses: <span class="destaque-dourado">84x</span></li>
+                    <li>72 anos e 11 meses ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
                 </ul></div>
             </div>
 
             <div id="id-parana" class="bank-content">
                 <h2 class="resumo-titulo">PARANÁ BANCO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Máx Término: <span class="destaque-dourado">77 anos, 11 meses e 29 dias</span></li>
                     <li>Até 68 anos: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
                     <li>69 anos: <span class="destaque-dourado">96x</span> | R$ 100.000</li>
@@ -1035,7 +1037,7 @@
 
             <div id="id-quero-mais" class="bank-content">
                 <h2 class="resumo-titulo">QUERO MAIS – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li>
                     <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 400.000</li>
                     <li>70 e 71 anos: <span class="destaque-dourado">108x</span> | R$ 350.000</li>
@@ -1049,36 +1051,30 @@
 
             <div id="id-digio" class="bank-content">
                 <h2 class="resumo-titulo">DIGIO – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
-                    <li>Idade Mín: <span class="destaque-dourado">18 anos</span> | Término: <span class="destaque-dourado">79 anos</span></li>
-                    <li>18 a 60 anos: <span class="destaque-dourado">108x</span> | R$ 120.000</li>
-                    <li>61 a 65 anos: <span class="destaque-dourado">108x</span> | R$ 100.000</li>
-                    <li>66 a 70 anos: <span class="destaque-dourado">108x</span> | R$ 85.000</li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">18 anos</span></li>
+                    <li>18 a 70 anos: <span class="destaque-dourado">108x</span> | R$ 120.000</li>
                     <li>71 anos: <span class="destaque-dourado">96x</span> | R$ 85.000</li>
                     <li>72 anos: <span class="destaque-dourado">84x</span> | R$ 85.000</li>
                     <li>73 anos: <span class="destaque-dourado">72x</span> | R$ 85.000</li>
                     <li>74 anos: <span class="destaque-dourado">60x</span> | R$ 85.000</li>
-                    <li>75 anos: <span class="destaque-dourado">48x</span> | R$ 85.000</li>
-                    <li>76 anos: <span class="destaque-dourado">36x</span> | R$ 85.000</li>
-                    <li>77 anos: <span class="destaque-dourado">24x</span> | R$ 85.000</li>
-                    <li>78 anos: <span class="destaque-dourado">12x</span> | R$ 85.000</li>
-                    <li>79 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                    <li>75 anos ou mais: <span class="destaque-dourado">48x</span> | R$ 85.000</li>
                 </ul></div>
             </div>
 
             <div id="id-banrisul" class="bank-content">
                 <h2 class="resumo-titulo">BANRISUL – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
-                    <li>Idade Máx Término: <span class="destaque-dourado">77 anos</span></li>
-                    <li>18 a 65 anos: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
-                    <li>66 a 68 anos: <span class="destaque-dourado">108x</span> | R$ 50.000</li>
-                    <li>69 anos: <span class="destaque-dourado">96x</span> | R$ 40.000</li>
-                    <li>70 a 73 anos: <span class="destaque-dourado">48x</span> | R$ 40.000</li>
-                    <li>74 anos: <span class="destaque-dourado">36x</span> | R$ 15.000</li>
-                    <li>75 anos: <span class="destaque-dourado">24x</span> | R$ 15.000</li>
-                    <li>76 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>18 a 68 anos e 11 meses: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
+                    <li>69 anos e 11 meses: <span class="destaque-dourado">96x</span> | R$ 40.000</li>
+                    <li>70 anos e 11 meses: <span class="destaque-dourado">84x</span> | R$ 40.000</li>
+                    <li>71 anos e 9 meses: <span class="destaque-dourado">84x</span> | R$ 40.000</li>
+                    <li>71 anos e 11 meses: <span class="destaque-dourado">72x</span> | R$ 40.000</li>
+                    <li>72 anos e 11 meses: <span class="destaque-dourado">60x</span> | R$ 15.000</li>
+                    <li>73 anos e 11 meses: <span class="destaque-dourado">48x</span> | R$ 15.000</li>
+                    <li>74 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> | Acima de 60 anos: sem regras | 55 a 59 anos: obrigatório 15 anos de benefício</li>
                     <li><strong>Pensão (Espécie 21):</strong> Sim - verificar tabela de idade no Roteiro Operacional</li>
                 </ul></div>
@@ -1086,7 +1082,7 @@
 
             <div id="id-daycoval" class="bank-content">
                 <h2 class="resumo-titulo">DAYCOVAL – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos, 11 meses e 29 dias</span></li>
                     <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 400.000</li>
                     <li>70 e 71 anos: <span class="destaque-dourado">108x</span> | R$ 350.000</li>
@@ -1100,55 +1096,44 @@
 
             <div id="id-totalcash" class="bank-content">
                 <h2 class="resumo-titulo">TOTAL CASH – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Novo/Margem Livre)</h3><ul>
-                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">78 anos, 11 meses e 29 dias</span></li>
-                    <li>21 a 69 anos: <span class="destaque-dourado">108x</span> | R$ 85.000</li>
-                    <li>70 anos: <span class="destaque-dourado">96x</span> | R$ 85.000</li>
-                    <li>71 anos: <span class="destaque-dourado">84x</span> | R$ 85.000</li>
-                    <li>72 anos: <span class="destaque-dourado">72x</span> | R$ 85.000</li>
-                    <li>73 anos: <span class="destaque-dourado">60x</span> | R$ 85.000</li>
-                    <li>74 anos: <span class="destaque-vermelho">Não atende</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span></li>
+                    <li>21 a 69 anos e 11 meses: <span class="destaque-dourado">108x</span> | R$ 85.000</li>
+                    <li>70 anos e 11 meses ou mais: <span class="destaque-vermelho">Não atende</span></li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><span class="destaque-dourado">Sim</span> (55+ com 15 anos benefício) | Pensão 21: Sim | Analfabetos: Sim</li>
                 </ul></div>
             </div>
 
             <div id="id-c6" class="bank-content">
                 <h2 class="resumo-titulo">C6 BANK – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo)</h3><ul>
-                    <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos</span></li>
-                    <li>21 a 71 anos: <span class="destaque-dourado">108x</span> | Margem consignável</li>
-                    <li>72 anos: <span class="destaque-dourado">96x</span> | Margem consignável</li>
-                    <li>73 anos: <span class="destaque-dourado">84x</span> | Margem consignável</li>
-                    <li>74 anos: <span class="destaque-dourado">72x</span> | R$ 35.000</li>
-                    <li>75 anos: <span class="destaque-dourado">60x</span> | R$ 20.000</li>
-                    <li>76 anos: <span class="destaque-dourado">48x</span> | R$ 15.000</li>
-                    <li>77 anos: <span class="destaque-dourado">36x</span> | R$ 10.000</li>
-                    <li>78 anos: <span class="destaque-dourado">24x</span> | R$ 8.000</li>
-                    <li>79 anos: <span class="destaque-dourado">12x</span> | R$ 5.000</li>
-                    <li>80 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span></li>
+                    <li>21 a 73 anos e 11 meses: <span class="destaque-dourado">108x</span></li>
+                    <li>74 anos: <span class="destaque-dourado">96x</span></li>
+                    <li>75 anos ou mais: <span class="destaque-dourado">60x a 12x</span></li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><span class="destaque-dourado">Sim</span> | Perícia após JAN/17 em algumas faixas | Pensão 21: Sim</li>
                 </ul></div>
             </div>
 
             <div id="id-facta" class="bank-content">
                 <h2 class="resumo-titulo">FACTA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Margem Livre/Novo, Refin, Port)</h3><ul>
-                    <li>Idade Mín: <span class="destaque-vermelho">21 anos</span> | Término: <span class="destaque-dourado">80 anos</span></li>
-                    <li>21 a 71a11m29d: <span class="destaque-dourado">108x</span> | R$ 150.000</li>
-                    <li>72a a 72a11m29d: <span class="destaque-dourado">96x</span> | R$ 150.000</li>
-                    <li>73a a 73a11m29d: <span class="destaque-dourado">84x</span> | R$ 150.000</li>
-                    <li>74a a 74a11m29d: <span class="destaque-dourado">72x</span> | R$ 50.000</li>
-                    <li>75a a 75a11m29d: <span class="destaque-dourado">60x</span> | R$ 30.000</li>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
+                    <li>Idade Mín: <span class="destaque-dourado">21 anos</span></li>
+                    <li>21 a 71 anos e 11 meses: <span class="destaque-dourado">108x</span> | R$ 150.000</li>
+                    <li>72 anos e 11 meses: <span class="destaque-dourado">96x</span> | R$ 150.000</li>
+                    <li>73 anos e 11 meses: <span class="destaque-dourado">84x</span> | R$ 150.000</li>
+                    <li>74 anos: <span class="destaque-dourado">72x</span> | R$ 50.000</li>
+                    <li>75 anos ou mais: <span class="destaque-dourado">60x</span> | R$ 30.000</li>
                 </ul></div>
             </div>
 
             <div id="id-safra" class="bank-content">
                 <h2 class="resumo-titulo">BANCO SAFRA – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral (Empréstimo)</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Mín: <span class="destaque-dourado">26 anos</span> | Término: <span class="destaque-dourado">76 anos, 11 meses e 29 dias</span></li>
                     <li>26 a 67 anos: <span class="destaque-dourado">108x</span> | R$ 70.000</li>
                     <li>68 anos: <span class="destaque-dourado">96x</span> | R$ 70.000</li>
@@ -1157,14 +1142,14 @@
                     <li>71 anos: <span class="destaque-dourado">60x</span> | R$ 70.000</li>
                     <li>72 anos ou mais: <span class="destaque-vermelho">Não será atendido</span></li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><span class="destaque-vermelho">Não autorizado</span> | Pensão 21: Sim (mín 5 meses de benefício)</li>
                 </ul></div>
             </div>
 
             <div id="id-bmg" class="bank-content">
                 <h2 class="resumo-titulo">BANCO BMG – POLÍTICA DE IDADES</h2>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Geral</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">IDADE E PRAZOS</h3><ul>
                     <li>Idade Mín: <span class="destaque-dourado">21 anos</span> | Término: <span class="destaque-dourado">75 anos</span></li>
                     <li>21 a 70 anos: <span class="destaque-dourado">108x</span></li>
                     <li>71 anos: <span class="destaque-dourado">96x</span></li>
@@ -1173,7 +1158,7 @@
                     <li>74 anos: <span class="destaque-dourado">60x</span></li>
                     <li>75 anos: <span class="destaque-dourado">48x</span></li>
                 </ul></div>
-                <div class="resumo-secao"><h3 class="resumo-secao-titulo">Invalidez e Pensão</h3><ul>
+                <div class="resumo-secao"><h3 class="resumo-secao-titulo">INVALIDEZ E PENSÃO</h3><ul>
                     <li><strong>Invalidez:</strong> <span class="destaque-dourado">Sim</span> (55-59: 15 anos de benefício | 60+: normal)</li>
                     <li><strong>Pensão 21:</strong> Sim</li>
                 </ul></div>
@@ -1207,7 +1192,7 @@
                 <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:15px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
                     <span class="new-card-title" style="font-size:1.2rem;">Destaque</span><span class="new-card-sub">28/09/2026</span>
                 </div>
-                <div class="mural-imagem-container" onclick="abrirModal()">
+                <div class="mural-imagem-container" data-action="abrir-modal">
                     <img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#94a3b8;\'>[Imagem do Destaque]</div>'">
                 </div>
                 <p style="text-align:center; color:#94a3b8; font-size:0.8rem; margin-top:10px;">Clique para ampliar</p>
@@ -1327,7 +1312,7 @@
 </section>
 
 <!-- MODAL DE IMAGEM -->
-<div id="modalImagem" class="modal-imagem" onclick="fecharModal()">
+<div id="modalImagem" class="modal-imagem">
     <span class="modal-fechar">&times;</span>
     <img id="imgExpandida" alt="Imagem ampliada">
     <div class="modal-legenda" id="modalLegenda"></div>
@@ -1345,16 +1330,13 @@ function showSection(sectionId, clickedBtn) {
     if (clickedBtn) clickedBtn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    if (sectionId === 'resumo-roteiros' || sectionId === 'regras-idades') {
+    if (el && (sectionId === 'resumo-roteiros' || sectionId === 'regras-idades')) {
         const sidebar = el.querySelector('.sidebar-bancos');
         if (sidebar) {
             const primeiroItem = sidebar.querySelector('.sidebar-item');
             if (primeiroItem) {
-                const onclickAttr = primeiroItem.getAttribute('onclick');
-                const match = onclickAttr.match(/mudarBanco\('([^']+)'/);
-                if (match) {
-                    mudarBanco(match[1], primeiroItem);
-                }
+                const bankId = primeiroItem.dataset.bank;
+                if (bankId) mudarBanco(bankId, primeiroItem);
             }
         }
     }
@@ -1367,7 +1349,8 @@ function abrirModal() {
     const legenda = document.getElementById('modalLegenda');
     if (imgMini && imgExpandida && legenda) {
         imgExpandida.src = imgMini.src;
-        legenda.textContent = 'Destaque - ' + document.querySelector('.mural-card-large-new .new-card-sub').textContent;
+        const legendaOrigem = document.querySelector('.mural-card-large-new .new-card-sub');
+        legenda.textContent = 'Destaque' + (legendaOrigem ? ' - ' + legendaOrigem.textContent : '');
         modal.style.display = 'flex';
     }
 }
@@ -1378,11 +1361,32 @@ function fecharModal() {
 }
 
 function mudarBanco(bankId, btn) {
+    if (!btn) return;
     const categoriaPai = btn.closest('.section');
+    const banco = document.getElementById(bankId);
+    if (!categoriaPai || !banco) return;
     categoriaPai.querySelectorAll('.bank-content').forEach(el => el.classList.remove('active'));
     categoriaPai.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
-    document.getElementById(bankId).classList.add('active');
+    banco.classList.add('active');
     btn.classList.add('active');
+}
+
+document.querySelectorAll('[data-section]').forEach(botao => {
+    botao.addEventListener('click', () => showSection(botao.dataset.section, botao));
+});
+
+document.querySelectorAll('[data-bank]').forEach(botao => {
+    botao.addEventListener('click', () => mudarBanco(botao.dataset.bank, botao));
+});
+
+const imagemDestaque = document.querySelector('[data-action="abrir-modal"]');
+if (imagemDestaque) imagemDestaque.addEventListener('click', abrirModal);
+
+const modalImagem = document.getElementById('modalImagem');
+if (modalImagem) {
+    modalImagem.addEventListener('click', e => {
+        if (e.target === modalImagem || e.target.closest('.modal-fechar')) fecharModal();
+    });
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
@@ -1462,14 +1466,9 @@ if(searchLinksInput) {
 }
 </script>
 
-...
-<footer><p>© 2026 - Uso Interno | PORTAL ARYA</p></footer>
-
 <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8b416caa20e04f4aa200bef8539bb591"}'></script>
 <!-- End Cloudflare Web Analytics -->
 
-</body>
-</html>
 </body>
 </html>
