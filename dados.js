@@ -1,4 +1,5 @@
 const bancos = [
+    { id: 'fintech-corban', nome: 'FINTECH-CORBAN',data:  '27/10/2026' },
     { id: 'daycoval-cartaobeneficio-rcc', nome: 'DAYCOVAL-RCC', data: '21/09/2026' },
     { id: 'daycoval-cartaoconsignado-rmc', nome: 'DAYCOVAL-RMC', data: '21/09/2026' },
     { id: 'quero-mais-cartaobeneficio-rcc', nome: 'QUERO-MAIS-RCC', data: '21/09/2026' },
