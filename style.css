@@ -498,3 +498,41 @@ footer { text-align: center; color: #0f172a; padding: 20px; font-size: 0.9rem; m
 .header-logos {
     overflow: hidden;
 }
+
+
+/* Identidade do cabeçalho: reflexo único somente dentro da palavra PORTAL. */
+.header-title h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+.portal-word {
+    display: inline-block;
+    color: transparent;
+    background: linear-gradient(110deg,
+        #dfe6ee 0%,
+        #dfe6ee 43%,
+        #ffffff 48%,
+        #ffffff 52%,
+        #dfe6ee 57%,
+        #dfe6ee 100%);
+    background-size: 300% 100%;
+    background-position: 160% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: portalWordShine 14s ease-in-out infinite;
+}
+.arya-word {
+    color: #e4bd45;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+@keyframes portalWordShine {
+    0%, 72% { background-position: 160% 0; }
+    88% { background-position: -60% 0; }
+    100% { background-position: -60% 0; }
+}
