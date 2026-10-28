@@ -492,3 +492,9 @@ footer { text-align: center; color: #0f172a; padding: 20px; font-size: 0.9rem; m
     text-align: center;
     line-height: 1.25;
 }
+
+/* Correção: impede que a animação dos logos crie overflow horizontal na página. */
+.main-header,
+.header-logos {
+    overflow: hidden;
+}
