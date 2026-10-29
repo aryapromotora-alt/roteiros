@@ -1441,6 +1441,13 @@ if(searchLinksInput) {
         if (noResultsLinks) noResultsLinks.style.display = (visiveis === 0 && filtro !== '') ? 'block' : 'none';
     });
 }
+
+const mainHeader = document.querySelector('.main-header');
+const updateHeaderOnScroll = () => {
+    if (mainHeader) mainHeader.classList.toggle('scrolled', window.scrollY > 5);
+};
+window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+updateHeaderOnScroll();
 </script>
 
 <!-- Cloudflare Web Analytics -->

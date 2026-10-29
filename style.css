@@ -553,11 +553,15 @@ body {
     left: 0;
     height: 70px;
     padding: 8px 20px;
-    background: rgba(0, 0, 0, 0.74);
+    background: #000000;
     border-bottom: 1px solid rgba(212, 175, 55, 0.72);
     box-shadow: 0 5px 18px rgba(15, 23, 42, 0.18);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    transition: background-color 0.25s ease;
+}
+.main-header.scrolled {
+    background: rgba(0, 0, 0, 0.55);
 }
 .header-content {
     position: relative;
@@ -722,7 +726,6 @@ body {
 /* Ajustes exclusivos para celular; o layout de telas maiores permanece inalterado. */
 @media (max-width: 600px) {
     body { padding-top: 104px; }
-
     .main-header {
         height: 104px;
         padding: 8px 12px;
