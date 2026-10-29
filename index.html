@@ -11,21 +11,19 @@
 <header class="main-header">
     <div class="header-content">
         <div class="header-title"><h1><span class="brand-wordmark"><span class="portal-word">PORTAL</span> <span class="arya-word">ARYA</span></span></h1></div>
+        <nav class="nav-bar" aria-label="Navegação principal">
+            <button class="nav-btn active" data-section="resumo-roteiros">RESUMO ROTEIROS</button>
+            <button class="nav-btn" data-section="regras-idades">REGRAS IDADES</button>
+            <button class="nav-btn" data-section="roteiros-inss">ROTEIROS INSS</button>
+            <button class="nav-btn" data-section="simuladores">SIMULADORES</button>
+            <button class="nav-btn" data-section="links-uteis">LINKS ÚTEIS</button>
+        </nav>
         <div class="header-logos">
             <img src="logo1.png" alt="Logo 1" class="logo logo1">
             <img src="logo2.png" alt="Logo 2" class="logo logo2">
         </div>
     </div>
 </header>
-
-<nav class="nav-bar">
-    <button class="nav-btn active" data-section="resumo-roteiros">RESUMO ROTEIROS</button>
-    <button class="nav-btn" data-section="regras-idades">REGRAS IDADES</button>
-    <button class="nav-btn" data-section="roteiros-inss">ROTEIROS INSS</button>
-    <button class="nav-btn" data-section="mural">COMUNICADOS</button>
-    <button class="nav-btn" data-section="simuladores">SIMULADORES</button>
-    <button class="nav-btn" data-section="links-uteis">LINKS ÚTEIS</button>
-</nav>
 
 <!-- 1. RESUMO ROTEIROS -->
 <section id="resumo-roteiros" class="section active">
@@ -47,7 +45,7 @@
             <button class="sidebar-item" data-bank="op-facta">Facta</button>
             <button class="sidebar-item" data-bank="op-safra">Safra</button>
             <button class="sidebar-item" data-bank="op-bmg">BMG</button>
-            <button class="sidebar-item" data-bank="op-fintech-corban">FINTECH DO CORBAN</button>
+            <button class="sidebar-item" data-bank="op-fintech-corban">FINTECH</button>
         </div>
         <div class="content-area">
             <div class="mural-header"><h2>RESUMO OPERACIONAL DOS BANCOS</h2><p class="mural-subtitle">Regras rápidas e valores de referência</p></div>
@@ -364,7 +362,7 @@
                         <li><strong>Saldo devedor mínimo:</strong> -</li>
                         <li><strong>Parcela mínima:</strong> <span class="destaque-dourado">R$ 20,00</span></li>
                         <li><strong>Troco mínimo:</strong> <span class="destaque-dourado">R$ 100,00</span></li>
-                        <li><strong>Regras de Bancos Portados:</strong> Bancos de rede: 6 parcelas pagas | Agibank (121): 15 parcelas pagas | Facta/NBC: 24 parcelas pagas | Demais bancos: 12 parcelas pagas</li>
+                        <li><strong>Regras de Bancos Portados:</strong> 6 parcelas pagas: 104 CAIXA e 001 BANCO DO BRASIL | Agibank (121): 15 parcelas pagas | Facta/NBC: 24 parcelas pagas | Demais bancos: 12 parcelas pagas</li>
                         <li><strong>Novidade:</strong> Permite juntar até 3 parcelas no Refin da Portabilidade</li>
                         <li><strong>NÃO PORTA:</strong> <span class="destaque-vermelho">C6, Daycoval, Safra, Alfa, Master e Inbursa</span></li>
                         <li><strong>Aceite quando volta o saldo:</strong> <span class="destaque-vermelho">Não</span></li>
@@ -517,8 +515,7 @@
                         <li><strong>Saldo devedor mínimo:</strong> -</li>
                         <li><strong>Parcela mínima:</strong> <span class="destaque-dourado">R$ 20,00</span></li>
                         <li><strong>Troco mínimo:</strong> <span class="destaque-dourado">R$ 100,00</span></li>
-                        <li><strong>Regras de Bancos Portados:</strong> Bancos de rede: 6 pagas | Agibank (121): 15 pagas | Facta/NBC: 24 pagas </li>
-                        <li><strong>Demais bancos:</strong> 12 pagas</li>
+                        <li><strong>Regras de Bancos Portados:</strong> 6 parcelas pagas: 104 CAIXA e 001 BANCO DO BRASIL | Agibank (121): 15 parcelas pagas | Facta/NBC: 24 parcelas pagas | Demais bancos: 12 parcelas pagas</li>
                         <li><strong>Novidade:</strong> Permite juntar até 3 parcelas no Refin da Portabilidade</li>
                         <li><strong>NÃO PORTA:</strong> <span class="destaque-vermelho">C6 Bank, Safra, Inbursa, Alfa, Quero Mais e Master</span></li>
                         <li><strong>Aceite quando volta o saldo:</strong> <span class="destaque-vermelho">Não</span></li>
@@ -882,7 +879,7 @@
             <button class="sidebar-item" data-bank="id-facta">Facta</button>
             <button class="sidebar-item" data-bank="id-safra">Safra</button>
             <button class="sidebar-item" data-bank="id-bmg">BMG</button>
-            <button class="sidebar-item" data-bank="id-fintech-corban">FINTECH DO CORBAN</button>
+            <button class="sidebar-item" data-bank="id-fintech-corban">FINTECH</button>
         </div>
         <div class="content-area">
             <div class="mural-header"><h2>POLÍTICA DE IDADES POR BANCO</h2><p class="mural-subtitle">Prazos e valores conforme a faixa etária</p></div>
@@ -1227,49 +1224,7 @@
     </div>
 </section>
 
-<!-- 4. COMUNICADOS -->
-<section id="mural" class="section">
-    <div class="content-area full-width">
-        <div class="page-header"><h1>Comunicados</h1><p>Avisos e informações importantes para a equipe</p></div>
-        <div class="mural-grid-new">
-            <div class="new-card" style="flex-direction: column; align-items: flex-start;">
-                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
-                    <span class="new-card-title">Banco BRB</span><span class="new-card-sub">28/09/2026</span>
-                </div>
-                <p style="color:#475569; font-size:0.9rem; margin:0;">Banco BRB ESTA DE VOLTA, ATENÇÃO AS NOVAS REGRAS</p>
-            </div>
-            <div class="new-card mural-card-large-new" style="flex-direction: column; align-items: flex-start;">
-                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:15px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
-                    <span class="new-card-title" style="font-size:1.2rem;">Destaque</span><span class="new-card-sub">28/09/2026</span>
-                </div>
-                <div class="mural-imagem-container" data-action="abrir-modal">
-                    <img src="imagens/imagem-do-dia.jpg" alt="Destaque" class="mural-imagem" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'color:#94a3b8;\'>[Imagem do Destaque]</div>'">
-                </div>
-                <p style="text-align:center; color:#94a3b8; font-size:0.8rem; margin-top:10px;">Clique para ampliar</p>
-            </div>
-            <div class="new-card" style="flex-direction: column; align-items: flex-start;">
-                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
-                    <span class="new-card-title">Novo Simulador</span><span class="new-card-sub">28/09/2026</span>
-                </div>
-                <p style="color:#475569; font-size:0.9rem; margin:0;">Simulador Daycoval disponível. Arquivo atualizado.</p>
-            </div>
-            <div class="new-card" style="flex-direction: column; align-items: flex-start;">
-                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
-                    <span class="new-card-title">Análise ICRED</span><span class="new-card-sub">28/09/2026</span>
-                </div>
-                <p style="color:#475569; font-size:0.9rem; margin:0;">COMUNICADO ICRED<br>clientes especie 32<br>Se atentar a tabela liberada.</p>
-            </div>
-            <div class="new-card" style="flex-direction: column; align-items: flex-start;">
-                <div style="display:flex; justify-content:space-between; width:100%; margin-bottom:10px; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
-                    <span class="new-card-title">Melhores Oportunidades</span><span class="new-card-sub">28/09/2026</span>
-                </div>
-                <p style="color:#475569; font-size:0.9rem; margin:0;">QUALI<br>BRB<br>BANCO PARANÁ<br>ICRED<br>TOTALCASH</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 5. SIMULADORES -->
+<!-- 4. SIMULADORES -->
 <section id="simuladores" class="section">
     <div class="content-area full-width">
         <div class="page-header"><h1>Simuladores</h1><p>Ferramentas de cálculo e simulação de empréstimos</p></div>
@@ -1369,13 +1324,6 @@
     </div>
 </section>
 
-<!-- MODAL DE IMAGEM -->
-<div id="modalImagem" class="modal-imagem">
-    <span class="modal-fechar">&times;</span>
-    <img id="imgExpandida" alt="Imagem ampliada">
-    <div class="modal-legenda" id="modalLegenda"></div>
-</div>
-
 <footer><p>© 2026 - Uso Interno | PORTAL ARYA</p></footer>
 
 <script src="dados.js"></script>
@@ -1400,24 +1348,6 @@ function showSection(sectionId, clickedBtn) {
     }
 }
 
-function abrirModal() {
-    const modal = document.getElementById('modalImagem');
-    const imgMini = document.querySelector('.mural-imagem');
-    const imgExpandida = document.getElementById('imgExpandida');
-    const legenda = document.getElementById('modalLegenda');
-    if (imgMini && imgExpandida && legenda) {
-        imgExpandida.src = imgMini.src;
-        const legendaOrigem = document.querySelector('.mural-card-large-new .new-card-sub');
-        legenda.textContent = 'Destaque' + (legendaOrigem ? ' - ' + legendaOrigem.textContent : '');
-        modal.style.display = 'flex';
-    }
-}
-
-function fecharModal() { 
-    const modal = document.getElementById('modalImagem'); 
-    if (modal) modal.style.display = 'none'; 
-}
-
 function mudarBanco(bankId, btn) {
     if (!btn) return;
     const categoriaPai = btn.closest('.section');
@@ -1437,17 +1367,6 @@ document.querySelectorAll('[data-bank]').forEach(botao => {
     botao.addEventListener('click', () => mudarBanco(botao.dataset.bank, botao));
 });
 
-const imagemDestaque = document.querySelector('[data-action="abrir-modal"]');
-if (imagemDestaque) imagemDestaque.addEventListener('click', abrirModal);
-
-const modalImagem = document.getElementById('modalImagem');
-if (modalImagem) {
-    modalImagem.addEventListener('click', e => {
-        if (e.target === modalImagem || e.target.closest('.modal-fechar')) fecharModal();
-    });
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
 
 const list = document.getElementById('banksList');
 const searchBanksInput = document.getElementById('searchBanksInput');
