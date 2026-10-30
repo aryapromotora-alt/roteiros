@@ -33,8 +33,8 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 /* =========================================
    4. LAYOUT PRINCIPAL (SIDEBAR + CONTEÚDO)
    ========================================= */
-.main-layout { display: flex; min-height: calc(100vh - 122px); max-width: 1400px; margin: 0 auto; background: #fff; }
-.sidebar-bancos { width: 240px; background-color: #ffffff; border-right: 1px solid #e2e8f0; padding: 20px 16px; flex-shrink: 0; }
+.main-layout { display: flex; min-height: calc(100vh - 122px); max-width: 1400px; margin: 0 auto; background: #F8FAFC; }
+.sidebar-bancos { width: 240px; background-color: #F8FAFC; border-right: 1px solid #e2e8f0; padding: 20px 16px; flex-shrink: 0; }
 .sidebar-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin-bottom: 12px; padding-left: 8px; font-weight: 600; }
 .sidebar-item { 
     display: block; width: 100%; text-align: left; background: transparent; border: none; 
@@ -49,6 +49,7 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
    ========================================= */
 .container { max-width: 1400px; margin: 0 auto; padding: 20px; width: 100%; }
 .content-area { flex: 1; padding: 32px; }
+.main-layout > .content-area { background: #F8FAFC; }
 .content-area.full-width { max-width: 1400px; margin: 0 auto; width: 100%; padding: 32px 20px; }
 
 .section { display: none; animation: fadeIn 0.3s ease; }
@@ -65,6 +66,12 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     background: transparent;
     border-radius: 0;
     text-align: left;
+}
+.main-layout .mural-header {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 .mural-header h2, .page-header h1 { 
@@ -267,6 +274,23 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     position: relative; 
 }
 
+/* Resumos: alinha rótulos e respectivos valores em colunas consistentes. */
+#resumo-roteiros .resumo-secao li.regra-item {
+    display: grid;
+    grid-template-columns: minmax(205px, 245px) minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: baseline;
+}
+#resumo-roteiros .resumo-secao li.regra-item > strong {
+    color: #334155;
+    font-weight: 700;
+}
+#resumo-roteiros .resumo-secao li.regra-item > .regra-detalhe {
+    display: block;
+    min-width: 0;
+    color: #475569;
+}
+
 .resumo-secao li::before { 
     content: "•"; 
     color: #64748b; 
@@ -275,6 +299,29 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     font-weight: bold; 
     font-size: 1.1rem;
     line-height: 1.4;
+}
+
+/* Resumo Roteiros: apresentação em linhas, inspirada em tabelas de especificações. */
+#resumo-roteiros {
+    font-family: "DM Sans", sans-serif;
+}
+#resumo-roteiros .resumo-secao li {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+#resumo-roteiros .resumo-secao li::before {
+    content: none;
+    display: none;
+}
+#resumo-roteiros .resumo-secao li:last-child {
+    border-bottom: none;
+}
+#resumo-roteiros .resumo-secao li.regra-item {
+    padding-left: 0;
 }
 
 .destaque-vermelho { 
@@ -513,12 +560,12 @@ footer { text-align: center; color: #0f172a; padding: 20px; font-size: 0.9rem; m
     display: inline-block;
     color: transparent;
     background: linear-gradient(110deg,
-        #D9DEE5 0%,
-        #D9DEE5 43%,
+        #F0F2F5 0%,
+        #F0F2F5 43%,
         #FFFFFF 48%,
         #FFFFFF 52%,
-        #D9DEE5 57%,
-        #D9DEE5 100%);
+        #F0F2F5 57%,
+        #F0F2F5 100%);
     background-size: 300% 100%;
     background-position: 160% 0;
     -webkit-background-clip: text;
@@ -553,18 +600,27 @@ body {
     left: 0;
     height: 70px;
     padding: 8px 20px;
-    background: #000000;
+    background: transparent;
     border-bottom: 1px solid rgba(212, 175, 55, 0.72);
     box-shadow: 0 5px 18px rgba(15, 23, 42, 0.18);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    isolation: isolate;
+}
+.main-header::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: #000000;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     transition: background-color 0.25s ease;
 }
-.main-header.scrolled {
-    background: rgba(0, 0, 0, 0.55);
+.main-header.scrolled::before {
+    background: rgba(0, 0, 0, 0.28);
 }
 .header-content {
     position: relative;
+    z-index: 1;
     height: 100%;
     max-width: 1400px;
 }
@@ -592,7 +648,7 @@ body {
     border: 0;
     border-radius: 0;
     background: transparent;
-    color: rgba(217, 222, 229, 0.82);
+    color: #F4F6F8;
     font-size: 0.82rem;
     font-weight: 500;
 }
@@ -664,7 +720,7 @@ body {
 
 /* Lateral clara e tipografia ampliada para navegação. */
 .sidebar-bancos {
-    background: #ffffff;
+    background: #F8FAFC;
     border-right-color: #e2e8f0;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -712,10 +768,14 @@ body {
 
 /* Contraste dourado dos estados selecionados e linha contínua do cabeçalho. */
 .main-header {
-    border-bottom: 2px solid #D4AF37;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.72);
+    transition: border-color 0.25s ease;
+}
+.main-header.scrolled {
+    border-bottom-color: rgba(212, 175, 55, 0.24);
 }
 .nav-btn.active {
-    color: #D4AF37;
+    color: #FFD84D;
 }
 .sidebar-item.active {
     color: #B8860B;
@@ -804,5 +864,10 @@ body {
     .content-area.full-width { padding: 18px 14px; }
     .bank-content { padding: 18px 14px; }
     .resumo-secao li { font-size: 0.88rem; }
+    #resumo-roteiros .resumo-secao li { font-size: 0.88rem; }
+    #resumo-roteiros .resumo-secao li.regra-item {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 2px;
+    }
     .table-container { max-width: calc(100vw - 28px); }
 }
