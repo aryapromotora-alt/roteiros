@@ -480,6 +480,23 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     min-width: 0;
     overflow: visible;
 }
+/* Mantém a coluna Idade visível ao rolar horizontalmente as três tabelas comparativas. */
+#id-tabela .tabela-comparativa th:first-child,
+#id-tabela .tabela-comparativa td:first-child {
+    position: sticky !important;
+    left: 0 !important;
+    background-clip: padding-box;
+    box-shadow: 3px 0 5px rgba(15, 23, 42, 0.10);
+}
+#id-tabela .tabela-comparativa {
+    overflow: visible !important;
+}
+#id-tabela .tabela-comparativa tbody td:first-child { z-index: 6; }
+#id-tabela .tabela-comparativa thead th:first-child {
+    z-index: 20;
+    background: #0f172a;
+    color: #facc15;
+}
 .table-container::-webkit-scrollbar { height: 10px; }
 .table-container::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
 .table-container::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
